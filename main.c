@@ -67,7 +67,7 @@ void inicioSesion() {
             break;
         case claveRecepcionista:
             printf(colorAmarillo "=== MENU RECEPCIONISTA ===\n" reiniciarColor);
-            // Aquí va el código del menú del recepcionista
+            menuBotellas();
             break;
         case claveLimpieza:
             printf(colorAmarillo "=== MENU LIMPIEZA ===\n" reiniciarColor);

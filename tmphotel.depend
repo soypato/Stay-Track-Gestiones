@@ -236,7 +236,7 @@
 
 1686955202 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\const.h
 
-1687123820 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\main.c
+1687232992 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tiempo.h"
@@ -245,6 +245,7 @@
 	<time.h>
 	<unistd.h>
 	"linkdepago.h"
+	"botellas.h"
 
 1687039618 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\tiempo.h
 	<stdio.h>

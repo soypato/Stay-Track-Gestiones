@@ -124,7 +124,6 @@ void cargarBotellasArchivo(char nombre[])
     botellita temp;
     if (Archi != NULL)
     {
-        printf("Entra\n");
         while (decision == 's')
         {
             printf("Ingrese el ID de la botella: ");
@@ -190,7 +189,7 @@ void mostrarTodoElArchivoDeBotellas(char nombre[])
     }
     else
     {
-        printf("Error en la apertura del archivo");
+        printf("Error en la apertura del archivo.\n");
     }
 
 }
