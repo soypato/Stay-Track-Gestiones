@@ -227,3 +227,61 @@
 	<string.h>
 	"tiempo.h"
 
+1685476004 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\linkdepago.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"const.h"
+
+1686955202 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\const.h
+
+1687123820 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tiempo.h"
+	"reservas.h"
+	"const.h"
+	<time.h>
+	<unistd.h>
+	"linkdepago.h"
+
+1687039618 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\tiempo.h
+	<stdio.h>
+	<stdlib.h>
+
+1687232147 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\reservas.h
+
+1685475290 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\linkdepago.h
+
+1687214982 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"reservas.h"
+	<stdio.h>
+	<string.h>
+
+1687119499 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\tiempo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+
+1687232090 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\botellas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"botellas.h"
+
+1687232090 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\botellas.h
+	"pila.h"
+
+1238047208 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1679999162 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\pila.c
+	"pila.h"
+

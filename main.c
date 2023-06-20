@@ -6,6 +6,7 @@
 #include <time.h>
 #include <unistd.h> // Libreria  para usleep (retraso en microsegundos)
 #include "linkdepago.h"
+#include "botellas.h"
 
 void inicioSesion();
 void limpiarPantalla();
