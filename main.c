@@ -7,6 +7,7 @@
 #include <unistd.h> // Libreria  para usleep (retraso en microsegundos)
 #include "linkdepago.h"
 #include "botellas.h"
+#include "empleados.h"
 
 void inicioSesion();
 void limpiarPantalla();
@@ -75,6 +76,7 @@ void inicioSesion() {
             break;
         case claveAdmin:
             printf(colorAmarillo "=== MENU ADMINISTRADOR ===\n" reiniciarColor);
+            menuEmpleados();
             // Aquí va el código del menú del administrador
             break;
         default:
