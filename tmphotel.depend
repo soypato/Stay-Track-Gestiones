@@ -311,12 +311,13 @@
 1687244091 source:c:\users\juanm\gestion-hotel\pila.c
 	"pila.h"
 
-1687244091 source:c:\users\juanm\gestion-hotel\reservas.c
+1687246555 source:c:\users\juanm\gestion-hotel\reservas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"tiempo.h"
 	"reservas.h"
+	"preguntarDNI.h"
 	<stdio.h>
 	<string.h>
 
@@ -324,7 +325,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1687244091 c:\users\juanm\gestion-hotel\reservas.h
+1687247002 c:\users\juanm\gestion-hotel\reservas.h
 
 1687244091 source:c:\users\juanm\gestion-hotel\tiempo.c
 	<stdio.h>
@@ -332,7 +333,7 @@
 	<string.h>
 	"tiempo.h"
 
-1687244459 source:c:\users\juanm\gestion-hotel\empleados.c
+1687247042 source:c:\users\juanm\gestion-hotel\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -340,10 +341,12 @@
 	"empleados.h"
 	<time.h>
 	<unistd.h>
+	"const.h"
+	"preguntarDNI.h"
 
-1687244563 c:\users\juanm\gestion-hotel\empleados.h
+1687246736 c:\users\juanm\gestion-hotel\empleados.h
 
-1687244485 source:c:\users\juanm\gestion-hotel\main.c
+1687245650 source:c:\users\juanm\gestion-hotel\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tiempo.h"
@@ -354,6 +357,13 @@
 	"linkdepago.h"
 	"botellas.h"
 	"empleados.h"
+	"preguntarDNI.h"
 
 1687244091 c:\users\juanm\gestion-hotel\linkdepago.h
+
+1687245650 c:\users\juanm\gestion-hotel\preguntardni.h
+
+1687246555 source:c:\users\juanm\gestion-hotel\preguntardni.c
+	<stdlib.h>
+	<stdio.h>
 
