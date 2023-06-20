@@ -185,3 +185,45 @@
 	<stdio.h>
 	<string.h>
 
+1687231550 source:c:\users\usuario\desktop\repodepatotb\reserva-hotel\linkdepago.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"const.h"
+
+1687231550 c:\users\usuario\desktop\repodepatotb\reserva-hotel\const.h
+
+1687231550 source:c:\users\usuario\desktop\repodepatotb\reserva-hotel\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tiempo.h"
+	"reservas.h"
+	"const.h"
+	<time.h>
+	<unistd.h>
+	"linkdepago.h"
+
+1687231550 c:\users\usuario\desktop\repodepatotb\reserva-hotel\tiempo.h
+	<stdio.h>
+	<stdlib.h>
+
+1687231550 c:\users\usuario\desktop\repodepatotb\reserva-hotel\reservas.h
+
+1687231550 c:\users\usuario\desktop\repodepatotb\reserva-hotel\linkdepago.h
+
+1687231550 source:c:\users\usuario\desktop\repodepatotb\reserva-hotel\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"reservas.h"
+	<stdio.h>
+	<string.h>
+
+1687231550 source:c:\users\usuario\desktop\repodepatotb\reserva-hotel\tiempo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+
