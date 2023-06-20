@@ -11,7 +11,7 @@
 ///ARCHIVOS///
 const char empleadosArchivo[]="arEmpleados.dat";
 
-stEmpleado buscarEnDni(int dniOrigen, const char archivo[]);
+
 
 
 int menuEmpleados()
@@ -131,7 +131,9 @@ stEmpleado alta1Empleado(int DNITemporal)
     {
         printf("\nIngrese Numero de DNI: \n");
         scanf("%i", &A.dni);
-
+    }else
+    {
+        A.dni = DNITemporal;
     }
     printf("\nIngrese correo electronico: \n");
     fflush(stdin);
@@ -184,7 +186,7 @@ int altaEmpleados(stEmpleado A[], int dimension, int DNITemporal)
         scanf("%c", &control);
 
         // Llama a la función cargar1EmpleadoEnArchivo para guardar el empleado en el archivo
-        cargar1EmpleadoEnArchivo(A[i-1], "empleados.dat");
+        cargar1EmpleadoEnArchivo(A[i-1], "arEmpleados.dat");
     }
 
     return i;
@@ -243,102 +245,90 @@ void mostrarArchivo(char nombreArchivo[], int validos)
 
 
 // [Funcion para modificar un empleado del archivo] //
-void modificarEmpleadoEnArchivo (char nombreArchivo[])
-{
+void modificarEmpleadoEnArchivo(char nombreArchivo[]) {
     char nombreBuscado[35];
     int eleccion;
     int decision = 1;
     stEmpleado aux;
-    int flag=0;
-    FILE * buffer;
-    buffer = fopen (nombreArchivo, "r+b" );
-    if (buffer != NULL)
-    {
-        while (flag==0 && decision== 1 && (fread(&aux,sizeof(stEmpleado),1, buffer)) > 0)
-        {
-            printf ("\n\n Ingrese nombre y apellido a buscar: ");
-            fflush (stdin);
-            gets (nombreBuscado);
-            if (strcmp(aux.nombreyApellido, nombreBuscado)==0)
-            {
-                flag=1;
+    int flag = 0;
+    FILE* buffer;
+    buffer = fopen(nombreArchivo, "r+b");
+    if (buffer != NULL) {
+        printf("\n\n Ingrese nombre y apellido a buscar: ");
+        fflush(stdin);
+        gets(nombreBuscado);
+        while (flag == 0 && decision == 1 && fread(&aux, sizeof(stEmpleado), 1, buffer) > 0) {
+            if (strcmp(aux.nombreyApellido, nombreBuscado) == 0) {
+                flag = 1;
+                listar1Empleado(aux);
+                printf("=============================================\n");
+                printf("|              Menu modificacion           |\n");
+                printf("=============================================\n");
+                printf("| Opcion |           Descripcion           |\n");
+                printf("=============================================\n");
+                printf("|   1    | Edad                            |\n");
+                printf("|   2    | Genero                          |\n");
+                printf("|   3    | Telefono                        |\n");
+                printf("|   4    | DNI                             |\n");
+                printf("|   5    | Correo Electronico              |\n");
+                printf("|   6    | Nacionalidad                    |\n");
+                printf("|   7    | Puesto de trabajo               |\n");
+                printf("|   8    | Fecha de inicio                 |\n");
+                printf("|   0    | Salir                           |\n");
+                printf("=============================================\n");
+                printf("Su decision: ");
+                scanf("%d", &eleccion);
+                switch (eleccion) {
+                    case 1:
+                        printf("Ingrese la nueva edad:\n");
+                        scanf("%d", &aux.edad);
+                        break;
+                    case 2:
+                        printf("Ingrese el nuevo genero:\n");
+                        fflush(stdin);
+                        gets(aux.genero);
+                        break;
+                    case 3:
+                        printf("Ingrese el nuevo telefono:\n");
+                        scanf("%d", &aux.telefono);
+                        break;
+                    case 4:
+                        printf("Ingrese el nuevo DNI:\n");
+                        scanf("%d", &aux.dni);
+                        break;
+                    case 5:
+                        printf("Ingrese el nuevo correo electronico:\n");
+                        fflush(stdin);
+                        gets(aux.correo);
+                        break;
+                    case 6:
+                        printf("Ingrese la nueva nacionalidad:\n");
+                        fflush(stdin);
+                        gets(aux.nacionalidad);
+                        break;
+                    case 7:
+                        printf("Ingrese el nuevo puesto de trabajo:\n");
+                        fflush(stdin);
+                        gets(aux.oficio);
+                        break;
+                    case 8:
+                        printf("Ingrese la nueva fecha de inicio:\n");
+                        cargaDeFechas(&aux.fechaAlta);
+                        break;
+                    case 0:
+                        return;
+                    default:
+                        printf("La opción es incorrecta.\n");
+                        break;
+                }
+                fseek(buffer, sizeof(stEmpleado) * (-1), SEEK_CUR);
+                fwrite(&aux, sizeof(stEmpleado), 1, buffer);
+                printf("Empleado actualizado\n");
             }
         }
-        listar1Empleado(aux);
-        printf("Que dato quiere modificar? \n");
-        printf("1- Edad\n");
-        printf("2- Genero\n");
-        printf("3- Telefono\n");
-        printf("4- DNI\n");
-        printf("5- Correo Electronico\n");
-        printf("6- Nacionalidad\n");
-        printf("7- Puesto de trabajo\n");
-        printf("8- Fecha de inicio\n");
-        printf("=============================================\n");
-        printf("|              Menu modificacion           |\n");
-        printf("=============================================\n");
-        printf("| Opcion |           Descripcion           |\n");
-        printf("=============================================\n");
-        printf("|   1    | Edad                            |\n");
-        printf("|   2    | Genero                          |\n");
-        printf("|   3    | Telefono                        |\n");
-        printf("|   4    | DNI                             |\n");
-        printf("|   5    | Correo Electronico              |\n");
-        printf("|   6    | Nacionalidad                    |\n");
-        printf("|   7    | Puesto de trabajo               |\n");
-        printf("|   8    | Fecha de inicio                 |\n");
-        printf("|   0    | Salir                           |\n");
-        printf("=============================================\n");
-        printf("Su decision: ");
-        scanf("%d", &eleccion);
-        switch (eleccion)
-        {
-        case 1:
-            printf("Ingrese la nueva edad:\n");
-            scanf("%d", &aux.edad);
-            break;
-        case 2:
-            printf("Ingrese el nuevo género:\n");
-            fflush(stdin);
-            gets(aux.genero);
-            break;
-        case 3:
-            printf("Ingrese el nuevo teléfono:\n");
-            scanf("%d", &aux.telefono);
-            break;
-        case 4:
-            printf("Ingrese el nuevo DNI:\n");
-            scanf("%d", &aux.dni);
-            break;
-        case 5:
-            printf("Ingrese el nuevo correo electrónico:\n");
-            fflush(stdin);
-            gets(aux.correo);
-            break;
-        case 6:
-            printf("Ingrese la nueva nacionalidad:\n");
-            fflush(stdin);
-            gets(aux.nacionalidad);
-            break;
-        case 7:
-            printf("Ingrese el nuevo puesto de trabajo:\n");
-            fflush(stdin);
-            gets(aux.oficio);
-            break;
-        case 8:
-            printf("Ingrese la nueva fecha de inicio:\n");
-            cargaDeFechas(&aux.fechaAlta);
-            break;
-        case 0:
-            return;
-        default:
-            printf("La opción es incorrecta.\n");
-            break;
+        if (strcmp(aux.nombreyApellido, nombreBuscado) != 0) {
+            printf("El nombre que ingreso no se encuentra en el sistema\n");
         }
-
-        fseek(buffer,sizeof(stEmpleado)*(-1), SEEK_CUR);
-        fwrite(&aux,sizeof(stEmpleado),1, buffer);
-        printf("Empleado actualizado\n");
         rewind(buffer);
         printf("Quiere modificar otro empleado?\n");
         printf("1- Si\n");
@@ -347,6 +337,7 @@ void modificarEmpleadoEnArchivo (char nombreArchivo[])
         fclose(buffer);
     }
 }
+
 
 // [Funcion para dar de baja un empleado] //
 void bajaEmpleado(char nombreArchivo[])
@@ -618,7 +609,7 @@ void mostrarEmpleadosOrdenadosPorNombre(const char* nombreArchivo)
 stEmpleado buscarEnDni(int dniOrigen, const char archivo[])
 {
     stEmpleado Encontrado;
-    Encontrado.dni = -1; // Valor inicial para indicar que no se encontró ningún huésped
+    Encontrado.dni = -1; // Valor inicial para indicar que no se encontró ningún empleado
     int flag = 0;
     stEmpleado A;
 

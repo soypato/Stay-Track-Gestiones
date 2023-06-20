@@ -31,5 +31,6 @@ void mostrarEmpleadosDadosDeBaja(const char* nombreArchivo);
 void reactivarEmpleado(const char* nombreArchivo);
 void mostrarEmpleadosOrdenadosPorEdad(const char* nombreArchivo);
 void mostrarEmpleadosOrdenadosPorNombre(const char* nombreArchivo);
+stEmpleado buscarEnDni(int dniOrigen, const char archivo[]);
 
 #endif // EMPLEADOS_H_INCLUDED

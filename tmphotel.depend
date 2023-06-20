@@ -333,7 +333,7 @@
 	<string.h>
 	"tiempo.h"
 
-1687247042 source:c:\users\juanm\gestion-hotel\empleados.c
+1687302956 source:c:\users\juanm\gestion-hotel\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -344,7 +344,7 @@
 	"const.h"
 	"preguntarDNI.h"
 
-1687246736 c:\users\juanm\gestion-hotel\empleados.h
+1687292550 c:\users\juanm\gestion-hotel\empleados.h
 
 1687245650 source:c:\users\juanm\gestion-hotel\main.c
 	<stdio.h>
