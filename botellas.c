@@ -4,7 +4,7 @@
 #include "botellas.h"
 
 
-
+///Nombre del archivo
 const char Arch[]="BotellasFrigo.dat";
 
 
