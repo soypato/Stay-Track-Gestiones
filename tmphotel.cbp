@@ -36,6 +36,10 @@
 		</Unit>
 		<Unit filename="botellas.h" />
 		<Unit filename="const.h" />
+		<Unit filename="habitaciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="habitaciones.h" />
 		<Unit filename="linkdepago.c">
 			<Option compilerVar="CC" />
 		</Unit>

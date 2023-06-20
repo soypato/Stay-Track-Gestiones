@@ -367,3 +367,69 @@
 	<stdlib.h>
 	<stdio.h>
 
+1687297936 source:d:\codeblock\codigos\reserva-hotel\botellas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"botellas.h"
+
+1687297936 d:\codeblock\codigos\reserva-hotel\botellas.h
+	"pila.h"
+
+1687297936 d:\codeblock\codigos\reserva-hotel\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1687297936 source:d:\codeblock\codigos\reserva-hotel\linkdepago.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"const.h"
+
+1687297936 d:\codeblock\codigos\reserva-hotel\const.h
+
+1687297936 source:d:\codeblock\codigos\reserva-hotel\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tiempo.h"
+	"reservas.h"
+	"const.h"
+	<time.h>
+	<unistd.h>
+	"linkdepago.h"
+	"botellas.h"
+	"empleados.h"
+	"preguntarDNI.h"
+
+1687297936 d:\codeblock\codigos\reserva-hotel\tiempo.h
+	<stdio.h>
+	<stdlib.h>
+
+1687297936 d:\codeblock\codigos\reserva-hotel\reservas.h
+
+1687297936 d:\codeblock\codigos\reserva-hotel\linkdepago.h
+
+1687297936 d:\codeblock\codigos\reserva-hotel\empleados.h
+
+1687297936 d:\codeblock\codigos\reserva-hotel\preguntardni.h
+
+1687297936 source:d:\codeblock\codigos\reserva-hotel\pila.c
+	"pila.h"
+
+1687297936 source:d:\codeblock\codigos\reserva-hotel\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"reservas.h"
+	"preguntarDNI.h"
+	<stdio.h>
+	<string.h>
+
+1687297936 source:d:\codeblock\codigos\reserva-hotel\tiempo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+
