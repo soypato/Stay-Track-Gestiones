@@ -8,7 +8,11 @@
 #include "linkdepago.h"
 #include "botellas.h"
 #include "empleados.h"
+<<<<<<< HEAD
+#include "porLimpiar.h"
+=======
 #include "preguntarDNI.h"
+>>>>>>> 58d32f6160dc9bdee81f4bf67edee4af5402a548
 
 void inicioSesion();
 void limpiarPantalla();
@@ -73,6 +77,7 @@ void inicioSesion() {
             break;
         case claveLimpieza:
             printf(colorAmarillo "=== MENU LIMPIEZA ===\n" reiniciarColor);
+            menuLimpiar();
             // Aquí va el código del menú de limpieza
             break;
         case claveAdmin:
