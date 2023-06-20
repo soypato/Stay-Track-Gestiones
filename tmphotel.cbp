@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="botellas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="botellas.h" />
 		<Unit filename="const.h" />
 		<Unit filename="linkdepago.c">
 			<Option compilerVar="CC" />
@@ -39,6 +43,10 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="pila.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pila.h" />
 		<Unit filename="reservas.c">
 			<Option compilerVar="CC" />
 		</Unit>
