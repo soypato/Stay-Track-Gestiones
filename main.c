@@ -8,6 +8,7 @@
 #include "linkdepago.h"
 #include "botellas.h"
 #include "empleados.h"
+#include "porLimpiar.h"
 
 void inicioSesion();
 void limpiarPantalla();
@@ -72,6 +73,7 @@ void inicioSesion() {
             break;
         case claveLimpieza:
             printf(colorAmarillo "=== MENU LIMPIEZA ===\n" reiniciarColor);
+            menuLimpiar();
             // Aquí va el código del menú de limpieza
             break;
         case claveAdmin:
