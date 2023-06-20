@@ -8,6 +8,7 @@
 #include "linkdepago.h"
 #include "botellas.h"
 #include "empleados.h"
+#include "preguntarDNI.h"
 
 void inicioSesion();
 void limpiarPantalla();

@@ -5,20 +5,28 @@
 #include "empleados.h"
 #include <time.h>
 #include <unistd.h>
+#include "const.h"
+#include "preguntarDNI.h"
 
 ///ARCHIVOS///
 const char empleadosArchivo[]="arEmpleados.dat";
+
+stEmpleado buscarEnDni(int dniOrigen, const char archivo[]);
+
 
 int menuEmpleados()
 {
     int opcion;
     stEmpleado A[30];
+    stEmpleado temp;
     int validos;
     int DNI;
+    int DNITemporal;
 
-    do {
+    do
+    {
         printf("=============================================\n");
-        printf("|              Menu empleados              |\n");
+        printf(colorAmarillo"|              Menu empleados              |\n"reiniciarColor);
         printf("=============================================\n");
         printf("| Opcion |           Descripcion           |\n");
         printf("=============================================\n");
@@ -36,52 +44,63 @@ int menuEmpleados()
         printf("Su decision: ");
         scanf("%d", &opcion);
 
-        switch (opcion) {
-            case 1:
-                printf("\n=== Alta de empleado ===\n");
-                validos = altaEmpleados(A, 30);
-                break;
-            case 2:
-                printf("\n=== Listar empleados ===\n");
-                mostrarArchivo(empleadosArchivo, validos);
-                break;
-            case 3:
-                printf("\n=== Modificar empleado ===\n");
-                modificarEmpleadoEnArchivo(empleadosArchivo);
-                break;
-            case 4:
-                printf("\n=== Dar de baja empleado ===\n");
-                bajaEmpleado(empleadosArchivo);
-                break;
-            case 5:
-                printf("\n=== Filtrar por DNI ===\n");
-                printf("\nIngrese el DNI a filtrar: ");
-                scanf("%i", &DNI);
-                buscarEmpleadoPorDNI(empleadosArchivo, DNI);
-                break;
-            case 6:
-                printf("\n=== Listar empleados dados de baja ===\n");
-                mostrarEmpleadosDadosDeBaja(empleadosArchivo);
-                break;
-            case 7:
-                printf("\n=== Reactivar un empleado dado de baja ===\n");
-                reactivarEmpleado(empleadosArchivo);
-                break;
-            case 8:
-                printf("\n=== Filtrar empleados por edad, de menor a mayor ===\n");
-                mostrarEmpleadosOrdenadosPorEdad(empleadosArchivo);
-                break;
-            case 9:
-                mostrarEmpleadosOrdenadosPorNombre(empleadosArchivo);
-                break;
-            case 0:
-                printf("\nCerrando programa...\n");
-                break;
-            default:
-                printf("Opción inválida. Por favor, ingrese una opción válida.\n");
-                break;
+        switch (opcion)
+        {
+        case 1:
+            printf("\n=== Alta de empleado ===\n");
+            DNITemporal = preguntarDNI();
+            temp = buscarEnDni(DNITemporal, empleadosArchivo);
+            if (temp.dni == -1)
+            {
+                validos = altaEmpleados(A, 30, DNITemporal);
+            }else
+            {
+                printf("El DNI que ingresaste ya esta cargado en el sistema\n");
+                listar1Empleado(temp);
+            }
+            break;
+        case 2:
+            printf("\n=== Listar empleados ===\n");
+            mostrarArchivo(empleadosArchivo, validos);
+            break;
+        case 3:
+            printf("\n=== Modificar empleado ===\n");
+            modificarEmpleadoEnArchivo(empleadosArchivo);
+            break;
+        case 4:
+            printf("\n=== Dar de baja empleado ===\n");
+            bajaEmpleado(empleadosArchivo);
+            break;
+        case 5:
+            printf("\n=== Filtrar por DNI ===\n");
+            printf("\nIngrese el DNI a filtrar: ");
+            scanf("%i", &DNI);
+            buscarEmpleadoPorDNI(empleadosArchivo, DNI);
+            break;
+        case 6:
+            printf("\n=== Listar empleados dados de baja ===\n");
+            mostrarEmpleadosDadosDeBaja(empleadosArchivo);
+            break;
+        case 7:
+            printf("\n=== Reactivar un empleado dado de baja ===\n");
+            reactivarEmpleado(empleadosArchivo);
+            break;
+        case 8:
+            printf("\n=== Filtrar empleados por edad, de menor a mayor ===\n");
+            mostrarEmpleadosOrdenadosPorEdad(empleadosArchivo);
+            break;
+        case 9:
+            mostrarEmpleadosOrdenadosPorNombre(empleadosArchivo);
+            break;
+        case 0:
+            printf("\nCerrando programa...\n");
+            break;
+        default:
+            printf("Opción inválida. Por favor, ingrese una opción válida.\n");
+            break;
         }
-    } while (opcion != 0);
+    }
+    while (opcion != 0);
 
     return 0;
 }
@@ -89,7 +108,8 @@ int menuEmpleados()
 
 /// FUNCIONES ///
 // [Funcion de alta de empleado] //
-stEmpleado alta1Empleado() {
+stEmpleado alta1Empleado(int DNITemporal)
+{
 
     stEmpleado A;
     printf("\n=== Alta Empleado ===\n");
@@ -107,9 +127,12 @@ stEmpleado alta1Empleado() {
     printf("\nIngrese Numero de telefono: \n");
     scanf("%i", &A.telefono);
 
-    printf("\nIngrese Numero de DNI: \n");
-    scanf("%i", &A.dni);
+    if (DNITemporal == 0)
+    {
+        printf("\nIngrese Numero de DNI: \n");
+        scanf("%i", &A.dni);
 
+    }
     printf("\nIngrese correo electronico: \n");
     fflush(stdin);
     gets(A.correo);
@@ -131,9 +154,11 @@ stEmpleado alta1Empleado() {
 }
 
 // [Carga un empleado en un archivo] //
-void cargar1EmpleadoEnArchivo(stEmpleado A, const char *nombreArchivo) {
+void cargar1EmpleadoEnArchivo(stEmpleado A, const char *nombreArchivo)
+{
     FILE *archivo = fopen(nombreArchivo, "ab");
-    if (archivo == NULL) {
+    if (archivo == NULL)
+    {
         printf("Error al abrir el archivo.\n");
         return;
     }
@@ -143,12 +168,14 @@ void cargar1EmpleadoEnArchivo(stEmpleado A, const char *nombreArchivo) {
 }
 
 //[Carga varios empleados en el archivo]//
-int altaEmpleados(stEmpleado A[], int dimension) {
+int altaEmpleados(stEmpleado A[], int dimension, int DNITemporal)
+{
     int i = 0;
     char control = 's';
 
-    while (control == 's' && i < dimension) {
-        A[i] = alta1Empleado();
+    while (control == 's' && i < dimension)
+    {
+        A[i] = alta1Empleado(DNITemporal);
         i++;
 
         printf("\nEmpleado cargado. ¿Quiere cargar otro empleado al sistema? Presione (s/n)\n");
@@ -165,7 +192,8 @@ int altaEmpleados(stEmpleado A[], int dimension) {
 
 
 // [Funcion que muestra un empleado] //
-void listar1Empleado (stEmpleado A) {
+void listar1Empleado (stEmpleado A)
+{
     printf("\n=== Empleado ===\n");
     printf("Nombre y Apellido: %s\n", A.nombreyApellido);
     printf("Edad: %d\n", A.edad);
@@ -204,7 +232,8 @@ void mostrarArchivo(char nombreArchivo[], int validos)
     {
         while (fread(&aux, sizeof(stEmpleado), 1, buffer) > 0)
         {
-            if (aux.bajaPasiva != 1) {
+            if (aux.bajaPasiva != 1)
+            {
                 listar1Empleado(aux);
             }
         }
@@ -263,7 +292,7 @@ void modificarEmpleadoEnArchivo (char nombreArchivo[])
         printf("Su decision: ");
         scanf("%d", &eleccion);
         switch (eleccion)
-            {
+        {
         case 1:
             printf("Ingrese la nueva edad:\n");
             scanf("%d", &aux.edad);
@@ -307,44 +336,51 @@ void modificarEmpleadoEnArchivo (char nombreArchivo[])
             break;
         }
 
-      fseek(buffer,sizeof(stEmpleado)*(-1), SEEK_CUR);
-      fwrite(&aux,sizeof(stEmpleado),1, buffer);
-      printf("Empleado actualizado\n");
-      rewind(buffer);
-      printf("Quiere modificar otro empleado?\n");
-      printf("1- Si\n");
-      printf("2- No\n");
-      scanf("%d", &decision);
-     fclose(buffer);
+        fseek(buffer,sizeof(stEmpleado)*(-1), SEEK_CUR);
+        fwrite(&aux,sizeof(stEmpleado),1, buffer);
+        printf("Empleado actualizado\n");
+        rewind(buffer);
+        printf("Quiere modificar otro empleado?\n");
+        printf("1- Si\n");
+        printf("2- No\n");
+        scanf("%d", &decision);
+        fclose(buffer);
     }
 }
 
 // [Funcion para dar de baja un empleado] //
-void bajaEmpleado(char nombreArchivo[]) {
+void bajaEmpleado(char nombreArchivo[])
+{
     char nombreBuscado[35];
     int flag = 0;
     int decision = 1;
     stEmpleado aux;
     FILE *buffer;
     buffer = fopen(nombreArchivo, "r+b");
-    if (buffer != NULL) {
-        while (flag == 0 && decision == 1 && fread(&aux, sizeof(stEmpleado), 1, buffer) > 0) {
+    if (buffer != NULL)
+    {
+        while (flag == 0 && decision == 1 && fread(&aux, sizeof(stEmpleado), 1, buffer) > 0)
+        {
             printf("\n\nIngrese nombre y apellido a buscar: ");
             fflush(stdin);
             gets(nombreBuscado);
-            if (strcmp(aux.nombreyApellido, nombreBuscado) == 0) {
+            if (strcmp(aux.nombreyApellido, nombreBuscado) == 0)
+            {
                 flag = 1;
             }
         }
 
-        if (flag == 1) {
+        if (flag == 1)
+        {
             aux.bajaPasiva = 1;
             printf("Ingrese la fecha de baja\n");
             cargaDeFechas(&aux.fechaBaja);
             fseek(buffer, sizeof(stEmpleado) * (-1), SEEK_CUR);
             fwrite(&aux, sizeof(stEmpleado), 1, buffer);
             printf("Empleado dado de baja.\n");
-        } else {
+        }
+        else
+        {
             printf("No se encontró el empleado.\n");
         }
 
@@ -354,7 +390,9 @@ void bajaEmpleado(char nombreArchivo[]) {
         printf("2- No\n");
         scanf("%d", &decision);
         fclose(buffer);
-    } else {
+    }
+    else
+    {
         printf("Error al abrir el archivo.\n");
     }
 }
@@ -393,26 +431,33 @@ void buscarEmpleadoPorDNI(char nombreArchivo[], int dniBuscado)
 }
 
 // [Funcion para mostrar empleados dados de baja] //
-void mostrarEmpleadosDadosDeBaja(const char* nombreArchivo) {
+void mostrarEmpleadosDadosDeBaja(const char* nombreArchivo)
+{
     FILE* buffer;
     buffer = fopen(nombreArchivo, "rb");
     stEmpleado aux;
 
-    if (buffer != NULL) {
-        while (fread(&aux, sizeof(stEmpleado), 1, buffer) > 0) {
-            if (aux.bajaPasiva == 1) {
+    if (buffer != NULL)
+    {
+        while (fread(&aux, sizeof(stEmpleado), 1, buffer) > 0)
+        {
+            if (aux.bajaPasiva == 1)
+            {
                 listar1Empleado(aux);
             }
         }
 
         fclose(buffer);
-    } else {
+    }
+    else
+    {
         printf("Error al abrir el archivo.\n");
     }
 }
 
 // [Funcion para reactivar un exempleado] //
-void reactivarEmpleado(const char* nombreArchivo) {
+void reactivarEmpleado(const char* nombreArchivo)
+{
     mostrarEmpleadosDadosDeBaja(nombreArchivo);
 
     char nombreBuscado[35];
@@ -422,22 +467,28 @@ void reactivarEmpleado(const char* nombreArchivo) {
     FILE* buffer;
     buffer = fopen(nombreArchivo, "r+b");
 
-    if (buffer != NULL) {
-        while (flag == 0 && decision == 1 && fread(&aux, sizeof(stEmpleado), 1, buffer) > 0) {
+    if (buffer != NULL)
+    {
+        while (flag == 0 && decision == 1 && fread(&aux, sizeof(stEmpleado), 1, buffer) > 0)
+        {
             printf("\n\nIngrese nombre y apellido a buscar: ");
             fflush(stdin);
             gets(nombreBuscado);
-            if (strcmp(aux.nombreyApellido, nombreBuscado) == 0) {
+            if (strcmp(aux.nombreyApellido, nombreBuscado) == 0)
+            {
                 flag = 1;
             }
         }
 
-        if (flag == 1) {
+        if (flag == 1)
+        {
             aux.bajaPasiva = 0;
             fseek(buffer, sizeof(stEmpleado) * (-1), SEEK_CUR);
             fwrite(&aux, sizeof(stEmpleado), 1, buffer);
             printf("Empleado reactivado.\n");
-        } else {
+        }
+        else
+        {
             printf("No se encontró el empleado.\n");
         }
 
@@ -447,13 +498,16 @@ void reactivarEmpleado(const char* nombreArchivo) {
         printf("2- No\n");
         scanf("%d", &decision);
         fclose(buffer);
-    } else {
+    }
+    else
+    {
         printf("Error al abrir el archivo.\n");
     }
 }
 
 // [Funcion para mostrar empleados por edad] //
-void mostrarEmpleadosOrdenadosPorEdad(const char* nombreArchivo) {
+void mostrarEmpleadosOrdenadosPorEdad(const char* nombreArchivo)
+{
     FILE* buffer;
     buffer = fopen(nombreArchivo, "rb");
     stEmpleado aux;
@@ -461,9 +515,12 @@ void mostrarEmpleadosOrdenadosPorEdad(const char* nombreArchivo) {
 
     int encontrados = 0;
 
-    if (buffer != NULL) {
-        while (fread(&aux, sizeof(stEmpleado), 1, buffer) > 0) {
-            if (aux.bajaPasiva == 0) {
+    if (buffer != NULL)
+    {
+        while (fread(&aux, sizeof(stEmpleado), 1, buffer) > 0)
+        {
+            if (aux.bajaPasiva == 0)
+            {
                 empleados[encontrados] = aux;
                 encontrados++;
             }
@@ -471,14 +528,19 @@ void mostrarEmpleadosOrdenadosPorEdad(const char* nombreArchivo) {
 
         fclose(buffer);
 
-        if (encontrados == 0) {
+        if (encontrados == 0)
+        {
             printf("No se encontraron empleados.\n");
-        } else {
+        }
+        else
+        {
             // Ordenar los empleados por edad utilizando el método de inserción
-            for (int i = 1; i < encontrados; i++) {
+            for (int i = 1; i < encontrados; i++)
+            {
                 stEmpleado temp = empleados[i];
                 int j = i - 1;
-                while (j >= 0 && empleados[j].edad > temp.edad) {
+                while (j >= 0 && empleados[j].edad > temp.edad)
+                {
                     empleados[j + 1] = empleados[j];
                     j--;
                 }
@@ -487,18 +549,22 @@ void mostrarEmpleadosOrdenadosPorEdad(const char* nombreArchivo) {
 
             // Mostrar los empleados ordenados por edad
             printf("\n=== Empleados Ordenados por Edad ===\n");
-            for (int i = 0; i < encontrados; i++) {
+            for (int i = 0; i < encontrados; i++)
+            {
                 printf("\n------------ %i ------------\n", i + 1);
                 listar1Empleado(empleados[i]);
             }
         }
-    } else {
+    }
+    else
+    {
         printf("Error al abrir el archivo.\n");
     }
 }
 
 // [Funcion para mostrar empleados por N y A] //
-void mostrarEmpleadosOrdenadosPorNombre(const char* nombreArchivo) {
+void mostrarEmpleadosOrdenadosPorNombre(const char* nombreArchivo)
+{
     FILE* buffer;
     buffer = fopen(nombreArchivo, "rb");
     stEmpleado aux;
@@ -506,12 +572,16 @@ void mostrarEmpleadosOrdenadosPorNombre(const char* nombreArchivo) {
 
     int encontrados = 0;
 
-    if (buffer != NULL) {
-        while (fread(&aux, sizeof(stEmpleado), 1, buffer) > 0) {
-            if (aux.bajaPasiva == 0) {
+    if (buffer != NULL)
+    {
+        while (fread(&aux, sizeof(stEmpleado), 1, buffer) > 0)
+        {
+            if (aux.bajaPasiva == 0)
+            {
                 // Utilizar el método de inserción para ordenar por nombre y apellido
                 int i = encontrados - 1;
-                while (i >= 0 && (strcmp(empleados[i].nombreyApellido, aux.nombreyApellido) > 0 )) {
+                while (i >= 0 && (strcmp(empleados[i].nombreyApellido, aux.nombreyApellido) > 0 ))
+                {
                     empleados[i + 1] = empleados[i];
                     i--;
                 }
@@ -523,17 +593,54 @@ void mostrarEmpleadosOrdenadosPorNombre(const char* nombreArchivo) {
 
         fclose(buffer);
 
-        if (encontrados == 0) {
+        if (encontrados == 0)
+        {
             printf("No se encontraron empleados.\n");
-        } else {
+        }
+        else
+        {
             // Mostrar los empleados ordenados por nombre y apellido
             printf("\n=== Empleados Ordenados por Nombre y Apellido ===\n");
-            for (int i = 0; i < encontrados; i++) {
+            for (int i = 0; i < encontrados; i++)
+            {
                 printf("\n------------ %i ------------\n", i + 1);
                 listar1Empleado(empleados[i]);
             }
         }
-    } else {
+    }
+    else
+    {
         printf("Error al abrir el archivo.\n");
     }
+}
+
+
+stEmpleado buscarEnDni(int dniOrigen, const char archivo[])
+{
+    stEmpleado Encontrado;
+    Encontrado.dni = -1; // Valor inicial para indicar que no se encontró ningún huésped
+    int flag = 0;
+    stEmpleado A;
+
+    FILE *buffer = fopen(archivo, "rb");
+
+    if (buffer)
+    {
+        while (fread(&A, sizeof(stEmpleado), 1, buffer) > 0 && flag == 0)
+        {
+            if (A.dni == dniOrigen)
+            {
+                Encontrado = A;
+                flag = 1;
+            }
+        }
+
+        fclose(buffer);
+    }
+    else
+    {
+        printf("Ocurrio un error con la apertura del archivo.\n");
+    }
+
+    return Encontrado;
 }
