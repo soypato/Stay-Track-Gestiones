@@ -36,6 +36,12 @@
 		</Unit>
 		<Unit filename="botellas.h" />
 		<Unit filename="const.h" />
+
+		<Unit filename="empleados.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="empleados.h" />
+
 		<Unit filename="linkdepago.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -47,6 +53,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="pila.h" />
+		<Unit filename="preguntarDNI.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="preguntarDNI.h" />
 		<Unit filename="reservas.c">
 			<Option compilerVar="CC" />
 		</Unit>

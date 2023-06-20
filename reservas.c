@@ -3,6 +3,7 @@
 #include <string.h>
 #include "tiempo.h"
 #include "reservas.h"
+#include "preguntarDNI.h"
 
 const char arHuespedes[] = "datosPersonas.dat";
 
@@ -100,19 +101,6 @@ int menuReservas()
     return 0;
 }
 
-int preguntarDNI()
-{
-    int dniTmp;
-    printf("Introduce el DNI del cliente: ");
-
-    while (scanf("%i", &dniTmp) != 1)
-    {
-        printf("Por favor, introduza números. Intente nuevamente: ");
-        fflush(stdin);
-    }
-
-    return dniTmp;
-}
 
 void reservarCliente()
 {
@@ -522,7 +510,6 @@ void eliminarRestaurarCliente(int nuevoEstadoDeEliminacion, int dniTmp)
     }
 }
 
-
 huesped buscarPorDni(int dniOrigen, const char archivo[])
 {
     huesped Encontrado;
@@ -552,6 +539,7 @@ huesped buscarPorDni(int dniOrigen, const char archivo[])
 
     return Encontrado;
 }
+
 void mostrarTodasLasReservas()
 {
     huesped A;

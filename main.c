@@ -8,7 +8,11 @@
 #include "linkdepago.h"
 #include "botellas.h"
 #include "empleados.h"
+<<<<<<< HEAD
 #include "porLimpiar.h"
+=======
+#include "preguntarDNI.h"
+>>>>>>> 58d32f6160dc9bdee81f4bf67edee4af5402a548
 
 void inicioSesion();
 void limpiarPantalla();
