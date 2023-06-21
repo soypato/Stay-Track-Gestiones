@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include "const.h"
 #include "preguntarDNI.h"
+#include "habitaciones.h"
 
 ///ARCHIVOS///
 const char empleadosArchivo[]="arEmpleados.dat";
@@ -23,22 +24,23 @@ int menuEmpleados()
 
     do
     {
-        printf("=============================================\n");
-        printf(colorAmarillo"|              Menu empleados              |\n"reiniciarColor);
-        printf("=============================================\n");
-        printf("| Opcion |           Descripcion           |\n");
-        printf("=============================================\n");
-        printf("|   1    | Alta empleados                  |\n");
-        printf("|   2    | Listar empleados                |\n");
-        printf("|   3    | Modificar datos                 |\n");
-        printf("|   4    | Dar de baja un empleado         |\n");
-        printf("|   5    | Buscar empleado por DNI         |\n");
-        printf("|   6    | Listar empleados dados de baja  |\n");
-        printf("|   7    | Restaurar empleado dado de baja |\n");
-        printf("|   8    | Mostrar empleados por edad      |\n");
-        printf("|   9    | Mostrar empleados por Nombre    |\n");
-        printf("|   0    | Salir                           |\n");
-        printf("=============================================\n");
+        printf("================================================\n");
+        printf(colorAmarillo"|             Menu administrador              |\n"reiniciarColor);
+        printf("================================================\n");
+        printf("| Opcion |           Descripcion              |\n");
+        printf("================================================\n");
+        printf("|   1    | Alta empleados                     |\n");
+        printf("|   2    | Listar empleados                   |\n");
+        printf("|   3    | Modificar datos                    |\n");
+        printf("|   4    | Dar de baja un empleado            |\n");
+        printf("|   5    | Buscar empleado por DNI            |\n");
+        printf("|   6    | Listar empleados dados de baja     |\n");
+        printf("|   7    | Restaurar empleado dado de baja    |\n");
+        printf("|   8    | Mostrar empleados por edad         |\n");
+        printf("|   9    | Mostrar empleados por Nombre       |\n");
+        printf("|   10   | Abrir menu habitaciones            |\n");
+        printf("|   0    | Cerrar sesion                      |\n");
+        printf("================================================\n");
         printf("Su decision: ");
         scanf("%d", &opcion);
 
@@ -89,6 +91,9 @@ int menuEmpleados()
             break;
         case 9:
             mostrarEmpleadosOrdenadosPorNombre(empleadosArchivo);
+            break;
+        case 10:
+            menuHabitaciones();
             break;
         case 0:
             inicioSesion();

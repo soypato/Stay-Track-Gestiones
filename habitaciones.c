@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "habitaciones.h"
+#include "empleados.h"
 
 ///HARCHIVOS
 const char arcHabitaciones[30] = {"archivoHabitaciones.dat"};
@@ -12,14 +13,21 @@ const int numHabitaciones = 2;
 
 
 
-int main()
+int menuHabitaciones()
 {
-    printf("PUNTO 1 CARGAR UNA HABITACION.\n");
-    printf("PUNTO 2 MOSTRAR UNA HABITACION.\n");
-    printf("PUNTO 3 CARGAR HABITACION ARCHIVO.\n");
-    printf("PUNTO 4 MOSTRAR HABITACION ARCHIVO.\n");
-    printf("PUNTO 5 MOSTRAR UNA HABITACION BUSCADA POR NUMERO.\n");
-    printf("PUNTO 6 MOSTRAR NO OCUPADAS/NO RESERVADAS.\n");
+    printf("================================================\n");
+    printf("|             Menu habitaciones               |\n");
+    printf("================================================\n");
+    printf("| Opcion |          Descripcion               |\n");
+    printf("================================================\n");
+    printf("|   1    |  Cargar una habitacion             |\n");
+    printf("|   2    |  Mostrar una habitacion            |\n");
+    printf("|   3    |  Cargar habitacion archivo         |\n");
+    printf("|   4    |  Mostrar habitacion archivo        |\n");
+    printf("|   5    |  Mostrar habitacion por numero     |\n");
+    printf("|   6    |  Mostrar no ocupadas/no reservadas |\n");
+    printf("|   0    |  Volver al menu administrador      |\n");
+    printf("================================================\n");
 
     menu();
     return 0;
@@ -48,7 +56,7 @@ void menu()//MENU
 
     do
     {
-        printf("Que ejercicio quiere ejecutar? 0 para terminar el programa\n");
+        printf("Su decision: ");
         fflush(stdin);
         scanf("%i", &ejercicio);
         switch(ejercicio)
@@ -113,7 +121,9 @@ void menu()//MENU
             }
             while(subMenuPunto6!=0);
             break;
-
+        case 0:
+            menuEmpleados();
+            break;
         }
     }
     while(ejercicio!=0);
@@ -148,7 +158,7 @@ strHabitacion strCargarHabitacion()//PUNTO 1 CARGAR UNA HABITACION
 
     printf("Tiene frigobar?0=no,1=si.\n");
     fflush(stdin);
-    scanf("%i", &aux.figobar);
+    scanf("%i", &aux.frigobar);
 
     printf("Tiene aire acondicionado?0=no,1=si.\n");
     fflush(stdin);
@@ -211,12 +221,12 @@ void auxReservado(strHabitacion aux)//AUX RESERVADO PARA MOSTRAR HABITACIONES
 
 void auxFrigobar(strHabitacion aux)//AUX FRIGOBAR
 {
-    if(aux.figobar==0)
+    if(aux.frigobar==0)
     {
         printf("La habitacion no tiene frigobar.\n");
 
     }
-    else if(aux.figobar==1)
+    else if(aux.frigobar==1)
     {
         printf("La habitacion tiene frigobar.\n");
     }
@@ -307,21 +317,21 @@ void auxPrecioHabitaciones(strHabitacion aux) // Corrección: agregar asterisco p
 
     int precioHabitacionNoche;
 
-    precioHabitacionNoche = aux->cantBanios precioPorBanio + aux->capacidadDeHuespedes * precioPorPersona; // Corrección: utilizar los campos correctos del struct
+    precioHabitacionNoche = aux.cantBanios * precioPorBanio + aux.capacidadDeHuespedes * precioPorPersona; // Corrección: utilizar los campos correctos del struct
 
-    if (aux->aireAcondicionado == 1)
+    if (aux.aireAcondicionado == 1)
     {
         precioHabitacionNoche += precioAireAcondicionado;
     }
-    if (aux->frigobar == 1)
+    if (aux.frigobar == 1)
     {
         precioHabitacionNoche += precioFrigobar;
     }
 
     printf("Precio por noche: %i\n", precioHabitacionNoche); // Corrección: imprimir el precio calculado
 
-    aux->precio = precioHabitacionNoche;
-    printf("aux.precio: %i\n", aux->precio); // Corrección: imprimir el precio asignado a aux.precio
+    aux.precio = precioHabitacionNoche;
+    printf("aux.precio: %i\n", aux.precio); // Corrección: imprimir el precio asignado a aux.precio
 }
 
 void strMostrarUnaHabitacion(strHabitacion aux)
@@ -340,7 +350,7 @@ void strMostrarUnaHabitacion(strHabitacion aux)
     auxFrigobar(aux);
 
     auxAireAcondicionado(aux);
-    auxPrecioHabitaciones(&aux); // Corrección: pasar la estructura por referencia
+    auxPrecioHabitaciones(aux); // Corrección: pasar la estructura por referencia
 
     printf("El precio de la habitacion por noche es de $%i.\n", aux.precio);
 }

@@ -311,7 +311,7 @@
 1687244091 source:c:\users\juanm\gestion-hotel\pila.c
 	"pila.h"
 
-1687246555 source:c:\users\juanm\gestion-hotel\reservas.c
+1687305648 source:c:\users\juanm\gestion-hotel\reservas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -333,7 +333,7 @@
 	<string.h>
 	"tiempo.h"
 
-1687304024 source:c:\users\juanm\gestion-hotel\empleados.c
+1687306213 source:c:\users\juanm\gestion-hotel\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -343,8 +343,10 @@
 	<unistd.h>
 	"const.h"
 	"preguntarDNI.h"
+	"habitaciones.h"
 
-1687292550 c:\users\juanm\gestion-hotel\empleados.h
+1687305782 c:\users\juanm\gestion-hotel\empleados.h
+	"tiempo.h"
 
 1687245650 source:c:\users\juanm\gestion-hotel\main.c
 	<stdio.h>
@@ -432,4 +434,13 @@
 	<stdlib.h>
 	<string.h>
 	"tiempo.h"
+
+1687305964 c:\users\juanm\gestion-hotel\habitaciones.h
+
+1687306288 source:c:\users\juanm\gestion-hotel\habitaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"habitaciones.h"
+	"empleados.h"
 
