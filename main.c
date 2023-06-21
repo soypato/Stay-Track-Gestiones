@@ -26,7 +26,7 @@ int main()
     while (continuar)
     {
         inicioSesion();
-        printf("¿Desea volver al inicio de sesión? (1: Sí / 0: No): ");
+        printf("¿Desea volver al inicio de sesion? (1: Sí / 0: No): ");
         scanf("%d", &continuar);
         limpiarPantalla();
     }
@@ -71,11 +71,11 @@ void inicioSesion()
 
         for (int j = 0; j < strlen(titulo[i]); j++)
         {
-            // Calcula el valor de azul y violeta en función de la posición j
+            // Calcula el valor de azul y violeta en funcion de la posicion j
             int azul = 255 - j * (255 / strlen(titulo[i]));
             int violeta = j * (255 / strlen(titulo[i]));
 
-            // Establece el color utilizando códigos de escape ANSI
+            // Establece el color utilizando codigos de escape ANSI
             printf("\033[48;2;%d;0;%dm%c\033[0m", violeta, azul, titulo[i][j]);
         }
 
@@ -140,17 +140,17 @@ void controlMozo()
     do
     {
         printf("=====================================\n");
-        printf("|         Menú Mozo                 |\n");
+        printf("|         Menu Mozo                 |\n");
         printf("=====================================\n");
-        printf("| Opción | Descripción              |\n");
+        printf("| Opcion | Descripcion              |\n");
         printf("=====================================\n");
-        printf("|   1    | Menú de Limpieza         |\n");
-        printf("|   2    | Menú de Comida           |\n");
+        printf("|   1    | Menu de Limpieza         |\n");
+        printf("|   2    | Menu de Comida           |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
 
 
-        printf("Su decisión: ");
+        printf("Su decision: ");
         fflush(stdin);
         scanf(" %d", &decision);
 
@@ -165,7 +165,7 @@ void controlMozo()
         case 0:
             return;
         default:
-            printf("La opción es incorrecta.\n");
+            printf("La opcion es incorrecta.\n");
             break;
         }
 
@@ -184,15 +184,15 @@ void controlRecepcionista()
         printf("=====================================\n");
         printf("|    Control recepcionista          |\n");
         printf("=====================================\n");
-        printf("| Opción | Descripción              |\n");
+        printf("| Opcion | Descripcion              |\n");
         printf("=====================================\n");
-        printf("|   1    | Menú de Habitaciones     |\n");
-        printf("|   2    | Menú de Reserva          |\n");
+        printf("|   1    | Menu de Habitaciones     |\n");
+        printf("|   2    | Menu de Reserva          |\n");
         printf("|   3    | Generar pagos            |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
 
-        printf("Su decisión: ");
+        printf("Su decision: ");
         fflush(stdin);
         scanf(" %d", &decision);
 
@@ -210,7 +210,6 @@ void controlRecepcionista()
         case 0:
             return;
         }
-
         printf("Seguir ejecutando? (1: Sí / 0: No): ");
         scanf("%d", &decision);
     }
@@ -223,9 +222,9 @@ void controlLimpieza()
     do
     {
         printf("=====================================\n");
-        printf("|         Menú Limpieza             |\n");
+        printf("|         Menu Limpieza             |\n");
         printf("=====================================\n");
-        printf("| Opción | Descripción              |\n");
+        printf("| Opcion | Descripcion              |\n");
         printf("=====================================\n");
         printf("|   1    | Menu Limpieza            |\n");
         printf("|   2    | Menu Botellas            |\n");
@@ -233,7 +232,7 @@ void controlLimpieza()
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
 
-        printf("Su decisión: ");
+        printf("Su decision: ");
         fflush(stdin);
         scanf(" %d", &decision);
 
@@ -264,20 +263,20 @@ void controlAdmin()
     do
     {
         printf("=====================================\n");
-        printf("|         Menú Administrador        |\n");
+        printf("|         Menu Administrador        |\n");
         printf("=====================================\n");
-        printf("| Opción | Descripción              |\n");
+        printf("| Opcion | Descripcion              |\n");
         printf("=====================================\n");
-        printf("|   1    | Menú de Botellas         |\n");
-        printf("|   2    | Menú de Comidas          |\n");
-        printf("|   2    | Menú de Empleados        |\n");
-        printf("|   2    | Menú de Limpieza         |\n");
-        printf("|   2    | Menú de Reserva          |\n");
+        printf("|   1    | Menu de Botellas         |\n");
+        printf("|   2    | Menu de Comidas          |\n");
+        printf("|   2    | Menu de Empleados        |\n");
+        printf("|   2    | Menu de Limpieza         |\n");
+        printf("|   2    | Menu de Reserva          |\n");
         printf("|   2    | Generar pagos            |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
 
-        printf("Su decisión: ");
+        printf("Su decision: ");
         fflush(stdin);
         scanf(" %d", &decision);
 
