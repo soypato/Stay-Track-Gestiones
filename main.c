@@ -8,13 +8,9 @@
 #include "linkdepago.h"
 #include "botellas.h"
 #include "comidas.h"
-
 #include "empleados.h"
-
 #include "porLimpiar.h"
-
 #include "preguntarDNI.h"
-
 
 void inicioSesion();
 void limpiarPantalla();
@@ -25,7 +21,16 @@ void controlAdmin();
 
 int main()
 {
-    inicioSesion();
+    int continuar = 1;
+
+    while (continuar)
+    {
+        inicioSesion();
+        printf("¿Desea volver al inicio de sesión? (1: Sí / 0: No): ");
+        scanf("%d", &continuar);
+        limpiarPantalla();
+    }
+
     return 0;
 }
 
@@ -81,7 +86,6 @@ void inicioSesion()
     case claveMozo:
         printf(colorAmarillo "=== MENU MOZO ===\n" reiniciarColor);
         controlMozo();
-        // Aquí va el código del menú del mozo
         break;
     case claveRecepcionista:
         printf(colorAmarillo "=== MENU RECEPCIONISTA ===\n" reiniciarColor);
@@ -136,7 +140,7 @@ void controlMozo()
 
         printf("Su decisión: ");
         fflush(stdin);
-        scanf(" %c", &decision);
+        scanf(" %d", &decision);
 
         switch (decision)
         {
@@ -153,11 +157,10 @@ void controlMozo()
             break;
         }
 
-        printf("Seguir ejecutando? (s/n): ");
-        fflush(stdin);
-        scanf(" %c", &decision);
+        printf("Seguir ejecutando? (1: Sí / 0: No): ");
+        scanf("%d", &decision);
     }
-    while (decision == 's' || decision == 'S');
+    while (decision == 1);
 }
 
 
@@ -171,15 +174,15 @@ void controlRecepcionista()
         printf("=====================================\n");
         printf("| Opción | Descripción              |\n");
         printf("=====================================\n");
-        printf("|   1    | Menú de habitaciones     |\n");
-        printf("|   2    | Menú de reserva          |\n");
-        printf("|   3    | Generar link de pago     |\n");
+        printf("|   1    | Menú de Habitaciones     |\n");
+        printf("|   2    | Menú de Reserva          |\n");
+        printf("|   3    | Generar pagos            |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
 
         printf("Su decisión: ");
         fflush(stdin);
-        scanf(" %c", &decision);
+        scanf(" %d", &decision);
 
         switch (decision)
         {
@@ -196,11 +199,10 @@ void controlRecepcionista()
             return;
         }
 
-        printf("Seguir ejecutando? (s/n): ");
-        fflush(stdin);
-        scanf(" %c", &decision);
+        printf("Seguir ejecutando? (1: Sí / 0: No): ");
+        scanf("%d", &decision);
     }
-    while (decision == 's' || decision == 'S');
+    while (decision == 1);
 }
 
 void controlLimpieza()
@@ -208,40 +210,40 @@ void controlLimpieza()
     int decision;
     do
     {
-        printf("========================================\n");
-        printf("|        Control limpieza              |\n");
-        printf("========================================\n");
-        printf("| Opción | Descripción                 |\n");
-        printf("========================================\n");
-        printf("|   1    | Menú de botellas            |\n");
-        printf("|   2    | Menú de habitaciones        |\n");
-        printf("|   0    | Salir                       |\n");
-        printf("========================================\n");
+        printf("=====================================\n");
+        printf("|         Menú Limpieza             |\n");
+        printf("=====================================\n");
+        printf("| Opción | Descripción              |\n");
+        printf("=====================================\n");
+        printf("|   1    | Menu Limpieza            |\n");
+        printf("|   2    | Menu Botellas            |\n");
+        printf("|   3    | Menu Habitaciones        |\n");
+        printf("|   0    | Salir                    |\n");
+        printf("=====================================\n");
 
         printf("Su decisión: ");
         fflush(stdin);
-        scanf(" %c", &decision);
+        scanf(" %d", &decision);
 
         switch (decision)
         {
         case 1:
-            menuBotellas();
+            menuLimpieza();
             break;
         case 2:
-            menuHabitaciones();
+            menuBotellas();
             break;
         case 3:
-            return 0;
-        default:
-            printf("La opción es incorrecta.\n");
+            menuHabitaciones();
             break;
+        case 0:
+            return;
         }
 
-        printf("Seguir ejecutando? (s/n): ");
-        fflush(stdin);
-        scanf(" %c", &decision);
+        printf("Seguir ejecutando? (1: Sí / 0: No): ");
+        scanf("%d", &decision);
     }
-    while (decision == 's' || decision == 'S');
+    while (decision == 1);
 }
 
 void controlAdmin()
@@ -249,42 +251,38 @@ void controlAdmin()
     int decision;
     do
     {
-        printf("=============================================\n");
-        printf("|           Control admin.                  |\n");
-        printf("=============================================\n");
-        printf("| Opción | Descripción                      |\n");
-        printf("=============================================\n");
-        printf("|   1    | Menú de botellas                 |\n");
-        printf("|   2    | Menú de comidas                  |\n");
-        printf("|   3    | Menú de empleados                |\n");
-        printf("|   4    | Menú de limpieza                 |\n");
-        printf("|   5    | Menú de reservas                 |\n");
-        printf("|   6    | Generar link de pago             |\n");
-        printf("|   0    | Salir                            |\n");
-        printf("=============================================\n");
+        printf("=====================================\n");
+        printf("|         Menú Administrador        |\n");
+        printf("=====================================\n");
+        printf("| Opción | Descripción              |\n");
+        printf("=====================================\n");
+        printf("|   1    | Menú de Botellas         |\n");
+        printf("|   2    | Menú de Comidas          |\n");
+        printf("|   2    | Menú de Empleados        |\n");
+        printf("|   2    | Menú de Limpieza         |\n");
+        printf("|   2    | Menú de Reserva          |\n");
+        printf("|   2    | Generar pagos            |\n");
+        printf("|   0    | Salir                    |\n");
+        printf("=====================================\n");
 
         printf("Su decisión: ");
         fflush(stdin);
-        scanf(" %c", &decision);
+        scanf(" %d", &decision);
 
         switch (decision)
         {
         case 1:
-            menuBotellas();
+            menuEmpleados();
             break;
         case 2:
-            menuHabitaciones();
+            menuBotellas();
             break;
-        case 3:
-            return 0;
-        default:
-            printf("La opción es incorrecta.\n");
-            break;
+        case 0:
+            return;
         }
 
-        printf("Seguir ejecutando? (s/n): ");
-        fflush(stdin);
-        scanf(" %c", &decision);
+        printf("Seguir ejecutando? (1: Sí / 0: No): ");
+        scanf("%d", &decision);
     }
-    while (decision == 's' || decision == 'S');
+    while (decision == 1);
 }
