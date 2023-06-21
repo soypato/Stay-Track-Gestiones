@@ -71,11 +71,19 @@ void inicioSesion()
 
         for (int j = 0; j < strlen(titulo[i]); j++)
         {
+<<<<<<< HEAD
             // Calcula el valor de azul y violeta en funcion de la posicion j
             int azul = 255 - j * (255 / strlen(titulo[i]));
             int violeta = j * (255 / strlen(titulo[i]));
 
             // Establece el color utilizando codigos de escape ANSI
+=======
+            // Calcula el valor de azul y violeta en función de la posición j
+            int azul = 255 - j * (255 / strlen(titulo[i]));
+            int violeta = j * (255 / strlen(titulo[i]));
+
+            // Establece el color utilizando códigos de escape ANSI
+>>>>>>> 0d5249ac126c105145a55d02a824d5edd1ac057f
             printf("\033[48;2;%d;0;%dm%c\033[0m", violeta, azul, titulo[i][j]);
         }
 
