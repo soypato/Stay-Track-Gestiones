@@ -8,11 +8,8 @@
 #include "linkdepago.h"
 #include "botellas.h"
 #include "comidas.h"
-
 #include "empleados.h"
-
 #include "porLimpiar.h"
-
 #include "preguntarDNI.h"
 
 
