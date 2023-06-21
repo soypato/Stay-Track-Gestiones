@@ -441,7 +441,11 @@
 	<stdlib.h>
 	<stdio.h>
 
-1687297936 source:d:\codeblock\codigos\reserva-hotel\botellas.c
+1687322838 source:d:\codeblock\codigos\reserva-hotel\botellas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"botellas.h"
 
 1687300783 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\comidas.c
 	<stdio.h>
@@ -450,7 +454,7 @@
 
 1687302510 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\comidas.h
 
-1687297936 d:\codeblock\codigos\reserva-hotel\botellas.h
+1687322838 d:\codeblock\codigos\reserva-hotel\botellas.h
 	"pila.h"
 
 1687297936 d:\codeblock\codigos\reserva-hotel\pila.h
@@ -466,7 +470,7 @@
 
 1687297936 d:\codeblock\codigos\reserva-hotel\const.h
 
-1687297936 source:d:\codeblock\codigos\reserva-hotel\main.c
+1687322838 source:d:\codeblock\codigos\reserva-hotel\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tiempo.h"
@@ -476,7 +480,9 @@
 	<unistd.h>
 	"linkdepago.h"
 	"botellas.h"
+	"comidas.h"
 	"empleados.h"
+	"porLimpiar.h"
 	"preguntarDNI.h"
 
 1687297936 d:\codeblock\codigos\reserva-hotel\tiempo.h
@@ -487,14 +493,23 @@
 
 1687297936 d:\codeblock\codigos\reserva-hotel\linkdepago.h
 
-1687297936 d:\codeblock\codigos\reserva-hotel\empleados.h
+1687322838 d:\codeblock\codigos\reserva-hotel\empleados.h
+	"tiempo.h"
 
-1687297936 d:\codeblock\codigos\reserva-hotel\preguntardni.h
+1687299463 d:\codeblock\codigos\reserva-hotel\preguntardni.h
 
 1687297936 source:d:\codeblock\codigos\reserva-hotel\pila.c
 	"pila.h"
 
-1687297936 source:d:\codeblock\codigos\reserva-hotel\reservas.c
+1687322838 source:d:\codeblock\codigos\reserva-hotel\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"reservas.h"
+	"preguntarDNI.h"
+	<stdio.h>
+	<string.h>
 
 1687297936 32f6160dc9bdee81f4bf67edee4af5402a548
 	<stdio.h>
@@ -543,4 +558,44 @@
 	<stdio.h>
 	"pila.h"
 	"porLimpiar.h"
+
+1687322838 source:d:\codeblock\codigos\reserva-hotel\comidas.c
+	<stdio.h>
+	<stdlib.h>
+	"comidas.h"
+
+1687322838 d:\codeblock\codigos\reserva-hotel\comidas.h
+
+1687322838 source:d:\codeblock\codigos\reserva-hotel\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"empleados.h"
+	<time.h>
+	<unistd.h>
+	"const.h"
+	"preguntarDNI.h"
+	"habitaciones.h"
+
+1687322838 d:\codeblock\codigos\reserva-hotel\habitaciones.h
+
+1687322838 d:\codeblock\codigos\reserva-hotel\porlimpiar.h
+
+1687322838 source:d:\codeblock\codigos\reserva-hotel\porlimpiar.c
+	<stdlib.h>
+	<stdio.h>
+	"pila.h"
+	"porLimpiar.h"
+
+1687299463 source:d:\codeblock\codigos\reserva-hotel\preguntardni.c
+	<stdlib.h>
+	<stdio.h>
+
+1687325480 source:d:\codeblock\codigos\reserva-hotel\habitaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"habitaciones.h"
+	"empleados.h"
 

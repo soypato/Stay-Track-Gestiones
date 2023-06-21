@@ -26,6 +26,7 @@ int menuHabitaciones()
     printf("|   4    |  Mostrar habitacion archivo        |\n");
     printf("|   5    |  Mostrar habitacion por numero     |\n");
     printf("|   6    |  Mostrar no ocupadas/no reservadas |\n");
+    printf("|   7    |  Modificar un campo a eleccion     |\n");
     printf("|   0    |  Volver al menu administrador      |\n");
     printf("================================================\n");
 
@@ -50,6 +51,8 @@ void menu()//MENU
     int opcPunto6;
     int validosPunto6;
     int valorPunto6;
+    int subMenuPunto7;
+    int opcPunto7;
 
 
 
@@ -120,6 +123,44 @@ void menu()//MENU
 
             }
             while(subMenuPunto6!=0);
+            break;
+        case 7:
+
+            do
+            {
+                printf("Que campo desea modificar?\n 1 = ocupadas.\n 2 = reservadas.\n 3 = habilitadas.\n 4 = cantidad de huespedes.\n 5 = numero de habitacion. \n 6 = cantidad de baños. 7 = aire acondicionado. 0 = volver para atras.\n");
+                fflush(stdin);
+                scanf("%i", &subMenuPunto7);
+                switch(subMenuPunto6)
+                {
+                case 1:
+                    opcPunto7=1;
+                    break;
+                case 2:
+                    opcPunto7=2;
+                    break;
+                case 3:
+                    opcPunto7=3;
+                    break;
+                case 4:
+                    opcPunto7=4;
+                    break;
+                case 5:
+                    opcPunto7=5;
+                    break;
+                case 6:
+                    opcPunto7=6;
+                    break;
+                case 7:
+                    opcPunto7=7;
+                    break;
+
+                }
+            }
+            while(subMenuPunto7!=0);
+
+
+
             break;
         case 0:
             menuEmpleados();
