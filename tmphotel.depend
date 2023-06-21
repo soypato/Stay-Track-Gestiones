@@ -288,7 +288,11 @@
 1679999162 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\pila.c
 	"pila.h"
 
+<<<<<<< HEAD
 1687320225 D
+=======
+1687320192 D
+>>>>>>> 81d299c9b2cab70cebc30e7d991807a081cd1ae0
 	"comidas.h"
 	"empleados.h"
 	<time.h>
@@ -680,7 +684,22 @@
 	<string.h>
 	"tiempo.h"
 
-1687324821 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\main.c
+1687326489 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tiempo.h"
+	"reservas.h"
+	"const.h"
+	<time.h>
+	<unistd.h>
+	"linkdepago.h"
+	"botellas.h"
+	"comidas.h"
+	"empleados.h"
+	"porLimpiar.h"
+	"preguntarDNI.h"
+
+1687324821 249ac126c105145a55d02a824d5edd1ac057f
 	<stdio.h>
 	<stdlib.h>
 	"tiempo.h"
