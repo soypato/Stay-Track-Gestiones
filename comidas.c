@@ -43,7 +43,7 @@ int menuComidas()
             break;
 
         case 0:
-            printf("Opción inválida. Por favor, ingrese nuevamente.\n");
+            inicioSesion();
             break;
 
         }

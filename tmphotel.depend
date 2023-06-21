@@ -288,16 +288,21 @@
 1679999162 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\pila.c
 	"pila.h"
 
-<<<<<<< HEAD
+1687297936 D
+	"comidas.h"
+	"empleados.h"
+	<time.h>
+	<unistd.h>
+
 1687231550 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\linkdepago.c
-=======
-1687244091 source:c:\users\juanm\gestion-hotel\botellas.c
+
+1687306670 source:c:\users\juanm\gestion-hotel\botellas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"botellas.h"
 
-1687244091 c:\users\juanm\gestion-hotel\botellas.h
+1687306670 c:\users\juanm\gestion-hotel\botellas.h
 	"pila.h"
 
 1687244091 c:\users\juanm\gestion-hotel\pila.h
@@ -305,18 +310,31 @@
 	<malloc.h>
 
 1687244091 source:c:\users\juanm\gestion-hotel\linkdepago.c
->>>>>>> 970716e684cb5c50e4ac4eefaf7f02c2d71f30ec
+
+1687297936 716e684cb5c50e4ac4eefaf7f02c2d71f30ec
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<time.h>
 	"const.h"
+	<stdio.h>
+	<stdlib.h>
+	"tiempo.h"
+	"reservas.h"
+	"const.h"
+	<time.h>
+	<unistd.h>
+	"linkdepago.h"
+	"botellas.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"botellas.h"
 
-<<<<<<< HEAD
 1687231550 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\const.h
 
 1687301535 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\main.c
-=======
+
 1687244091 c:\users\juanm\gestion-hotel\const.h
 
 1687244091 source:c:\users\juanm\gestion-hotel\pila.c
@@ -359,8 +377,7 @@
 1687305782 c:\users\juanm\gestion-hotel\empleados.h
 	"tiempo.h"
 
-1687245650 source:c:\users\juanm\gestion-hotel\main.c
->>>>>>> 970716e684cb5c50e4ac4eefaf7f02c2d71f30ec
+1687307050 source:c:\users\juanm\gestion-hotel\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tiempo.h"
@@ -370,8 +387,10 @@
 	<unistd.h>
 	"linkdepago.h"
 	"botellas.h"
-<<<<<<< HEAD
 	"comidas.h"
+	"empleados.h"
+	"porLimpiar.h"
+	"preguntarDNI.h"
 
 1687231550 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\tiempo.h
 	<stdio.h>
@@ -407,17 +426,15 @@
 	"tiempo.h"
 
 1687244132 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\botellas.c
-=======
 	"empleados.h"
 	"preguntarDNI.h"
 
 1687244091 c:\users\juanm\gestion-hotel\linkdepago.h
 
-<<<<<<< HEAD
 1687287911 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\empleados.h
 
 1687287911 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\empleados.c
-=======
+
 1687245650 c:\users\juanm\gestion-hotel\preguntardni.h
 
 1687246555 source:c:\users\juanm\gestion-hotel\preguntardni.c
@@ -425,20 +442,14 @@
 	<stdio.h>
 
 1687297936 source:d:\codeblock\codigos\reserva-hotel\botellas.c
->>>>>>> 970716e684cb5c50e4ac4eefaf7f02c2d71f30ec
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"botellas.h"
 
-<<<<<<< HEAD
 1687300783 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\comidas.c
 	<stdio.h>
 	<stdlib.h>
 	"comidas.h"
 
 1687302510 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\comidas.h
-=======
+
 1687297936 d:\codeblock\codigos\reserva-hotel\botellas.h
 	"pila.h"
 
@@ -484,15 +495,12 @@
 	"pila.h"
 
 1687297936 source:d:\codeblock\codigos\reserva-hotel\reservas.c
->>>>>>> 58d32f6160dc9bdee81f4bf67edee4af5402a548
+
+1687297936 32f6160dc9bdee81f4bf67edee4af5402a548
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"tiempo.h"
-<<<<<<< HEAD
-	"empleados.h"
-	<time.h>
-	<unistd.h>
 
 1687304454 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\porlimpiar.c
 	<stdlib.h>
@@ -501,7 +509,6 @@
 	"porLimpiar.h"
 
 1687304526 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\porlimpiar.h
-=======
 	"reservas.h"
 	"preguntarDNI.h"
 	<stdio.h>
@@ -512,15 +519,28 @@
 	<stdlib.h>
 	<string.h>
 	"tiempo.h"
->>>>>>> 58d32f6160dc9bdee81f4bf67edee4af5402a548
->>>>>>> 970716e684cb5c50e4ac4eefaf7f02c2d71f30ec
 
 1687305964 c:\users\juanm\gestion-hotel\habitaciones.h
 
-1687306288 source:c:\users\juanm\gestion-hotel\habitaciones.c
+1687306319 source:c:\users\juanm\gestion-hotel\habitaciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"habitaciones.h"
 	"empleados.h"
+
+1687306670 c:\users\juanm\gestion-hotel\comidas.h
+
+1687306670 c:\users\juanm\gestion-hotel\porlimpiar.h
+
+1687306670 source:c:\users\juanm\gestion-hotel\comidas.c
+	<stdio.h>
+	<stdlib.h>
+	"comidas.h"
+
+1687306670 source:c:\users\juanm\gestion-hotel\porlimpiar.c
+	<stdlib.h>
+	<stdio.h>
+	"pila.h"
+	"porLimpiar.h"
 
