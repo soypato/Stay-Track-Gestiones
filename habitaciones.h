@@ -13,7 +13,7 @@ typedef struct
     int reservado;
     int numeroDeHabitacion;
     int capacidadDeHuespedes;
-    int figobar;
+    int frigobar;
     int cantBanios;
     int aireAcondicionado;
     int precio;

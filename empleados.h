@@ -1,5 +1,6 @@
 #ifndef EMPLEADOS_H_INCLUDED
 #define EMPLEADOS_H_INCLUDED
+#include "tiempo.h"
 
 typedef struct {
     char nombreyApellido[35];

@@ -36,7 +36,7 @@ int menuReservas()
         printf("|   12   | Modificar cliente               |\n");
         printf("|   13   | Filtrar por nombre              |\n"); // INSERCION
         printf("|   14   | Filtrar por edad                |\n"); // SELECCION
-        printf("|   0    | Salir                           |\n");
+        printf("|   0    | Cerrar sesion                   |\n");
         printf("==========================================\n");
         printf("Su decision: ");
         scanf("%i", &op);
@@ -88,7 +88,8 @@ int menuReservas()
             printf("Ordenado por edad correctamente. Marque 5 en el menu para verlo.\n");
             break;
         case 0:
-            return;
+            inicioSesion();
+            break;
         }
 
         printf("Seguir ejecutando? (s/n): ");
@@ -278,7 +279,7 @@ huesped cargaDeHuesped(int dniTmp)
     printf("Introduzca el genero (0 para masculino / 1 para femenino / 2 no especifica): ");
     while (scanf("%i", &A.genero) != 1 || A.genero < 0 || A.genero > 2)
     {
-        printf("Opción incorrecta, intente de nuevo: ");
+        printf("Opcion incorrecta, intente de nuevo: ");
         while (getchar() != '\n');  // Limpiar el buffer de entrada
     }
 
@@ -293,7 +294,7 @@ huesped cargaDeHuesped(int dniTmp)
     {
         A.dni = dniTmp;
     }
-    printf("Introduzca el número de habitación: ");
+    printf("Introduzca el numero de habitacion: ");
     scanf("%i", &A.numeroDeHabitacion);
 
     printf("-- Ahora, cuando va a ingresar al hotel? --\n");
