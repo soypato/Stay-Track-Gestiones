@@ -43,7 +43,7 @@ int menuComidas()
             break;
 
         case 0:
-            printf("Opción inválida. Por favor, ingrese nuevamente.\n");
+            inicioSesion();
             break;
 
         }
@@ -68,15 +68,15 @@ int CargarAlimentos(Alimento Alimentos[][MATRIZ_S], int dimF)
     {
         printf("Ingrese la comida: ");
         fflush(stdin);
-        gets(Alimentos.comida[]);
+        //gets(Alimentos.comida[]);
 
         printf("Ingrese el postre: ");
         fflush(stdin);
-        gets(Alimentos.postre[f]);
+        //gets(Alimentos.postre[f]);
 
         printf("Ingrese la fruta: ");
         fflush(stdin);
-        gets(Alimentos.fruta[f]);
+        //gets(Alimentos.fruta[f]);
 
         printf("Deseas seguir cargando alimentos (s/n)? ");
         fflush(stdin);

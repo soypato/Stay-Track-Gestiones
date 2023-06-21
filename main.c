@@ -7,16 +7,14 @@
 #include <unistd.h> // Libreria  para usleep (retraso en microsegundos)
 #include "linkdepago.h"
 #include "botellas.h"
-<<<<<<< HEAD
 #include "comidas.h"
-=======
+
 #include "empleados.h"
-<<<<<<< HEAD
+
 #include "porLimpiar.h"
-=======
+
 #include "preguntarDNI.h"
->>>>>>> 58d32f6160dc9bdee81f4bf67edee4af5402a548
->>>>>>> 970716e684cb5c50e4ac4eefaf7f02c2d71f30ec
+
 
 void inicioSesion();
 void limpiarPantalla();
