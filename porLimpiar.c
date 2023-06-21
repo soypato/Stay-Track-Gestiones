@@ -3,7 +3,7 @@
 #include "pila.h"
 #include "porLimpiar.h"
 
-void menuLimpiar()
+void menuLimpieza()
 {
     int numAeliminar;
     Pila habitacionesPorLimpiar;
