@@ -544,3 +544,112 @@
 	"pila.h"
 	"porLimpiar.h"
 
+1687320225 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\botellas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"botellas.h"
+
+1687320225 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\botellas.h
+	"pila.h"
+
+1687320192 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1687320225 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\comidas.c
+	<stdio.h>
+	<stdlib.h>
+	"comidas.h"
+
+1687320225 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\comidas.h
+
+1687320225 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"empleados.h"
+	<time.h>
+	<unistd.h>
+	"const.h"
+	"preguntarDNI.h"
+	"habitaciones.h"
+
+1687320192 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\tiempo.h
+	<stdio.h>
+	<stdlib.h>
+
+1687320225 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\empleados.h
+	"tiempo.h"
+
+1687320192 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\const.h
+
+1687320192 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\preguntardni.h
+
+1687320225 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\habitaciones.h
+
+1687320225 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\habitaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"habitaciones.h"
+	"empleados.h"
+
+1687320532 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\linkdepago.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"const.h"
+
+1687320192 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\pila.c
+	"pila.h"
+
+1687320474 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\porlimpiar.c
+	<stdlib.h>
+	<stdio.h>
+	"pila.h"
+	"porLimpiar.h"
+
+1687320192 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\porlimpiar.h
+
+1687320192 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\preguntardni.c
+	<stdlib.h>
+	<stdio.h>
+
+1687320225 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"reservas.h"
+	"preguntarDNI.h"
+	<stdio.h>
+	<string.h>
+
+1687320192 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\reservas.h
+
+1687320192 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\tiempo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+
+1687322338 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tiempo.h"
+	"reservas.h"
+	"const.h"
+	<time.h>
+	<unistd.h>
+	"linkdepago.h"
+	"botellas.h"
+	"comidas.h"
+	"empleados.h"
+	"porLimpiar.h"
+	"preguntarDNI.h"
+
+1687320192 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\linkdepago.h
+
