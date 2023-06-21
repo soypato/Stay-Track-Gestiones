@@ -7,6 +7,7 @@
 #include <unistd.h> // Libreria  para usleep (retraso en microsegundos)
 #include "linkdepago.h"
 #include "botellas.h"
+#include "comidas.h"
 
 void inicioSesion();
 void limpiarPantalla();
@@ -67,7 +68,7 @@ void inicioSesion() {
             break;
         case claveRecepcionista:
             printf(colorAmarillo "=== MENU RECEPCIONISTA ===\n" reiniciarColor);
-            menuBotellas();
+            menuComidas();
             break;
         case claveLimpieza:
             printf(colorAmarillo "=== MENU LIMPIEZA ===\n" reiniciarColor);

@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="botellas.h" />
+		<Unit filename="comidas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="comidas.h" />
 		<Unit filename="const.h" />
 		<Unit filename="linkdepago.c">
 			<Option compilerVar="CC" />
