@@ -18,20 +18,26 @@ void mostrarSeparador();
 void controlMozo();
 void controlReservas();
 void controlAdmin();
+void controlInicio();
 
 int main()
 {
-    int continuar = 1;
+    controlInicio();
+    return 0;
+}
+
+void controlInicio()
+{
+    char continuar = 1;
 
     while (continuar)
     {
         inicioSesion();
-        printf("¿Desea volver al inicio de sesion? (1: Sí / 0: No): ");
+        printf("Que desea hacer? 1: Ir a inicio de sesion / 0: Cerrar programa): ");
         scanf("%d", &continuar);
         limpiarPantalla();
     }
 
-    return 0;
 }
 
 void inicioSesion()
@@ -71,19 +77,12 @@ void inicioSesion()
 
         for (int j = 0; j < strlen(titulo[i]); j++)
         {
-<<<<<<< HEAD
-            // Calcula el valor de azul y violeta en funcion de la posicion j
-            int azul = 255 - j * (255 / strlen(titulo[i]));
-            int violeta = j * (255 / strlen(titulo[i]));
 
-            // Establece el color utilizando codigos de escape ANSI
-=======
             // Calcula el valor de azul y violeta en función de la posición j
             int azul = 255 - j * (255 / strlen(titulo[i]));
             int violeta = j * (255 / strlen(titulo[i]));
 
             // Establece el color utilizando códigos de escape ANSI
->>>>>>> 0d5249ac126c105145a55d02a824d5edd1ac057f
             printf("\033[48;2;%d;0;%dm%c\033[0m", violeta, azul, titulo[i][j]);
         }
 
@@ -152,8 +151,8 @@ void controlMozo()
         printf("=====================================\n");
         printf("| Opcion | Descripcion              |\n");
         printf("=====================================\n");
-        printf("|   1    | Menu de Limpieza         |\n");
-        printf("|   2    | Menu de Comida           |\n");
+        printf("|   1    | Menu de Comida           |\n");
+        printf("|   2    | Menu de Botellas         |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
 
@@ -165,10 +164,10 @@ void controlMozo()
         switch (decision)
         {
         case 1:
-            menuLimpieza();
+            menuComidas();
             break;
         case 2:
-            menuComidas();
+            menuBotellas();
             break;
         case 0:
             return;
