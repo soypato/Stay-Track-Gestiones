@@ -43,15 +43,18 @@ void inicioSesion()
 
     const char *titulo[] =
     {
-        " _______  _______  _______  _______  ___   _______  __    _  __   __  _______  _______  _______  ___     ",
-        "|       ||       ||       ||       ||   | |       | |  |  | ||  | |  ||       ||       ||       ||   |    ",
-        "|    ___||    ___||  _____||_     _||   | |   _   | |   |_| ||  |_|  ||   _   ||_     _||    ___||   |    ",
-        "|   | __ |   |___ | |_____   |   |  |   | |  | |  | |       ||       ||  | |  |  |   |  |   |___ |   |    ",
-        "|   ||  ||    ___||_____  |  |   |  |   | |  |_|  | |  _    ||       ||  |_|  |  |   |  |    ___||   |___ ",
-        "|   |_| ||   |___  _____| |  |   |  |   | |       | | | |   ||   _   ||       |  |   |  |   |___ |       |",
-        "|_______||_______||_______|  |___|  |___| |_______| |_|  |__||__| |__||_______|  |___|  |_______||_______|",
-        "__________________________________________________________________________________________________________"
+        "   ____ _____ ____ _____ ___ ___  _   _               ",
+        "  / ___| ____/ ___|_   _|_ _/ _ \\| \\ | |              ",
+        " | |  _|  _| \\___ \\ | |  | | | | |  \\| |              ",
+        " | |_| | |___ ___) || |  | | |_| | |\\  |              ",
+        "  \\____|_____|____/ |_| |___\\___/|_| \\_|_ _____ _     ",
+        "                        | | | |/ _ \\_   _| ____| |    ",
+        "                        | |_| | | | || | |  _| | |    ",
+        "                        |  _  | |_| || | | |___| |___ ",
+        "                        |_| |_|\\___/ |_| |_____|_____|",
+        "                                                      "
     };
+
     int numLineas = sizeof(titulo) / sizeof(titulo[0]);
     int longitudMaxima = strlen(titulo[0]);
 
@@ -66,14 +69,22 @@ void inicioSesion()
             printf(" ");
         }
 
-        printf("%s%s", colorCeleste, titulo[i]);
+        for (int j = 0; j < strlen(titulo[i]); j++)
+        {
+            // Calcula el valor de azul y violeta en función de la posición j
+            int azul = 255 - j * (255 / strlen(titulo[i]));
+            int violeta = j * (255 / strlen(titulo[i]));
+
+            // Establece el color utilizando códigos de escape ANSI
+            printf("\033[48;2;%d;0;%dm%c\033[0m", violeta, azul, titulo[i][j]);
+        }
 
         for (int j = 0; j < espaciosFin; j++)
         {
             printf(" ");
         }
 
-        printf("%s\n", reiniciarColor);
+        printf("\n");
         usleep(80000);
     }
 
@@ -107,6 +118,7 @@ void inicioSesion()
         break;
     }
 }
+
 
 void limpiarPantalla()
 {
