@@ -1,4 +1,4 @@
-# # StayTrack Gestiones
+# StayTrack Gestiones
 ![StayTrack Gestiones LOGO
 ](https://github.com/soypato/Stay-Track-Gestiones/blob/main/OFFCODE%20ASSETS/branding/cover.png?raw=true)
 # ¿Qué es StayTrack?
