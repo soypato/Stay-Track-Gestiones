@@ -6,7 +6,7 @@
 
 ///HARCHIVOS
 const char arcHabitaciones[30] = {"archivoHabitaciones.dat"};
-const int numHabitaciones = 2;
+const int numHabitaciones = 15;
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -15,20 +15,19 @@ const int numHabitaciones = 2;
 
 int menuHabitaciones()
 {
-    printf("================================================\n");
-    printf("|             Menu habitaciones               |\n");
-    printf("================================================\n");
-    printf("| Opcion |          Descripcion               |\n");
-    printf("================================================\n");
-    printf("|   1    |  Cargar una habitacion             |\n");
-    printf("|   2    |  Mostrar una habitacion            |\n");
-    printf("|   3    |  Cargar habitacion archivo         |\n");
-    printf("|   4    |  Mostrar habitacion archivo        |\n");
-    printf("|   5    |  Mostrar habitacion por numero     |\n");
-    printf("|   6    |  Mostrar no ocupadas/no reservadas |\n");
-    printf("|   7    |  Modificar un campo a eleccion     |\n");
-    printf("|   0    |  Volver al menu de recepcionista   |\n");
-    printf("================================================\n");
+    printf("=======================================================\n");
+    printf("|             Menu habitaciones                      |\n");
+    printf("=======================================================\n");
+    printf("| Opcion |          Descripcion                      |\n");
+    printf("=======================================================\n");
+    printf("|   1    |  Cargar habitacion archivo                |\n");
+    printf("|   2    |  Mostrar habitacion archivo               |\n");
+    printf("|   3    |  Mostrar habitacion por numero            |\n");
+    printf("|   4    |  Mostrar por criterio de ocupacion/reserva|\n");
+    printf("|   5    |  Modificar un campo a eleccion            |\n");
+    printf("|   6    |  Mostrar habitaciones deshabilitadas      |\n");
+    printf("|   0    |  Volver al menu de recepcionista          |\n");
+    printf("=======================================================\n");
 
     menu();
     return 0;
@@ -46,16 +45,16 @@ void menu()//MENU
     strHabitacion habitacionesOcupadas[20];
     strHabitacion habitacionesReservadas[20];
     char opcion[3];
-    int numPunto5;
+    int numPunto3;
+    int auxPunto3;
+    int subMenuPunto4;
+    int opcPunto4;
+    int validosPunto4;
+    int valorPunto4;
+    int subMenuPunto5;
+    int opcPunto5;
+    int habBuscarPunto5;
     int auxPunto5;
-    int subMenuPunto6;
-    int opcPunto6;
-    int validosPunto6;
-    int valorPunto6;
-    int subMenuPunto7;
-    int opcPunto7;
-    int habBuscarPunto7;
-    int auxPunto7;
 
 
 
@@ -68,23 +67,16 @@ void menu()//MENU
         switch(ejercicio)
         {
         case 1:
-            hab=strCargarHabitacion();
-            break;
-        case 2:
-            strMostrarUnaHabitacion(hab);//PUNTO 2
-            break;
-        case 3:
             arcCargarHabitaciones(arcHabitaciones, opcion);
             break;
-        case 4:
+        case 2:
             arcMostrarHabitaciones(arcHabitaciones);//PUNTO 4
             break;
-        case 5:
-            numPunto5=auxBuscarConEntero();
-            auxPunto5=arcBuscarHabitacionPorNumero(arcHabitaciones, numPunto5);
+        case 3:
+            numPunto3=auxBuscarConEntero();
+            auxPunto3=arcBuscarHabitacionPorNumero(arcHabitaciones, numPunto3);
             break;
-        case 6:
-
+        case 4:
             do
             {
                 printf("================================================\n");
@@ -99,49 +91,48 @@ void menu()//MENU
                 printf("|   0    |  Volver al menu de habitaciones    |\n");
                 printf("================================================\n");
                 fflush(stdin);
-                scanf("%i", &subMenuPunto6);
-                switch(subMenuPunto6)
+                scanf("%i", &subMenuPunto4);
+                switch(subMenuPunto4)
                 {
                 case 1:
-                    opcPunto6=1;
-                    valorPunto6=0;
-                    validosPunto6=arcBuscarHabitacionesNoOcupadasONoReservadas(arcHabitaciones, habitacionesSinOcupar, opcPunto6, valorPunto6);
+                    opcPunto4=1;
+                    valorPunto4=0;
+                    validosPunto4=arcBuscarHabitacionesNoOcupadasONoReservadas(arcHabitaciones, habitacionesSinOcupar, opcPunto4, valorPunto4);
                     printf("Las habitaciones sin ocupar son:\n");
-                    mostrarArregloDeStructs(habitacionesSinOcupar, validosPunto6);
+                    mostrarArregloDeStructs(habitacionesSinOcupar, validosPunto4);
                     break;
                 case 2:
-                    opcPunto6=2;
-                    valorPunto6=0;
-                    validosPunto6=arcBuscarHabitacionesNoOcupadasONoReservadas(arcHabitaciones, habitacionesSinReservas, opcPunto6, valorPunto6);
+                    opcPunto4=2;
+                    valorPunto4=0;
+                    validosPunto4=arcBuscarHabitacionesNoOcupadasONoReservadas(arcHabitaciones, habitacionesSinReservas, opcPunto4, valorPunto4);
                     printf("Las habitaciones sin reservar son:\n");
-                    mostrarArregloDeStructs(habitacionesSinReservas, validosPunto6);
+                    mostrarArregloDeStructs(habitacionesSinReservas, validosPunto4);
                     break;
                 case 3:
-                    opcPunto6=1;
-                    valorPunto6=1;
-                    validosPunto6=arcBuscarHabitacionesNoOcupadasONoReservadas(arcHabitaciones, habitacionesOcupadas, opcPunto6, valorPunto6);
+                    opcPunto4=1;
+                    valorPunto4=1;
+                    validosPunto4=arcBuscarHabitacionesNoOcupadasONoReservadas(arcHabitaciones, habitacionesOcupadas, opcPunto4, valorPunto4);
                     printf("Las habitaciones ocupadas son:\n");
-                    mostrarArregloDeStructs(habitacionesOcupadas, validosPunto6);
+                    mostrarArregloDeStructs(habitacionesOcupadas, validosPunto4);
                     break;
                 case 4:
-                    opcPunto6=2;
-                    valorPunto6=1;
-                    validosPunto6=arcBuscarHabitacionesNoOcupadasONoReservadas(arcHabitaciones, habitacionesReservadas, opcPunto6, valorPunto6);
+                    opcPunto4=2;
+                    valorPunto4=1;
+                    validosPunto4=arcBuscarHabitacionesNoOcupadasONoReservadas(arcHabitaciones, habitacionesReservadas, opcPunto4, valorPunto4);
                     printf("Las habitaciones reservadas son:\n");
-                    mostrarArregloDeStructs(habitacionesReservadas, validosPunto6);
+                    mostrarArregloDeStructs(habitacionesReservadas, validosPunto4);
                     break;
 
                 }
 
 
             }
-            while(subMenuPunto6!=0);
+            while(subMenuPunto4!=0);
             break;
-        case 7:
-
-            habBuscarPunto7=auxBuscarConEntero();
-            auxPunto7=arcBuscarHabitacionPorNumero(arcHabitaciones, habBuscarPunto7);
-            if(auxPunto7==1)
+        case 5:
+            habBuscarPunto5=auxBuscarConEntero();
+            auxPunto5=arcBuscarHabitacionPorNumero(arcHabitaciones, habBuscarPunto5);
+            if(auxPunto5==1)
             {
                 do
                 {
@@ -161,37 +152,45 @@ void menu()//MENU
                     printf("|   0    |  Volver al menu de habitaciones    |\n");
                     printf("================================================\n");
                     fflush(stdin);
-                    scanf("%i", &subMenuPunto7);
-                    switch(subMenuPunto7)
+                    scanf("%i", &subMenuPunto5);
+                    switch(subMenuPunto5)
                     {
                     case 1:
-                        opcPunto7=1;
+                        opcPunto5=1;
+                        arcModificarUnCampoDeUnaHabitacion(habBuscarPunto5, arcHabitaciones, opcPunto5);
                         break;
                     case 2:
-                        opcPunto7=2;
+                        opcPunto5=2;
+                        arcModificarUnCampoDeUnaHabitacion(habBuscarPunto5, arcHabitaciones, opcPunto5);
                         break;
                     case 3:
-                        opcPunto7=3;
+                        opcPunto5=3;
+                        arcModificarUnCampoDeUnaHabitacion(habBuscarPunto5, arcHabitaciones, opcPunto5);
                         break;
                     case 4:
-                        opcPunto7=4;
+                        opcPunto5=4;
+                        arcModificarUnCampoDeUnaHabitacion(habBuscarPunto5, arcHabitaciones, opcPunto5);
                         break;
                     case 5:
-                        opcPunto7=5;
+                        opcPunto5=5;
+                        arcModificarUnCampoDeUnaHabitacion(habBuscarPunto5, arcHabitaciones, opcPunto5);
                         break;
                     case 6:
-                        opcPunto7=6;
+                        opcPunto5=6;
+                        arcModificarUnCampoDeUnaHabitacion(habBuscarPunto5, arcHabitaciones, opcPunto5);
                         break;
                     case 7:
-                        opcPunto7=7;
+                        opcPunto5=7;
+                        arcModificarUnCampoDeUnaHabitacion(habBuscarPunto5, arcHabitaciones, opcPunto5);
                         break;
                     case 8:
-                        opcPunto7=8;
+                        opcPunto5=8;
+                        arcModificarUnCampoDeUnaHabitacion(habBuscarPunto5, arcHabitaciones, opcPunto5);
                         break;
 
                     }
                 }
-                while(subMenuPunto7!=0);
+                while(subMenuPunto5!=0);
             }
             break;
 
@@ -328,59 +327,7 @@ void auxAireAcondicionado(strHabitacion aux)//AUX AIRE ACONDICIONADO PARA MOSTRA
     }
 }
 
-/*void auxPrecioHabitaciones(strHabitacion aux)//AUX PRECIO HABITACIONES PARA CALCULAR EL PRECIO DE LAS HABITACIONES
-{
 
-    int precioPorPersona= 2500;
-    int precioFrigobar=2000;
-    int precioPorBanio=700;
-    int precioAireAcondicionado=1500;
-
-    int precioHabitacionNoche;
-
-    precioHabitacionNoche=aux.cantBanios*precioPorBanio+aux.capacidadDeHuespedes*precioPorPersona;
-
-    if(aux.aireAcondicionado==1)
-    {
-        precioHabitacionNoche+=precioAireAcondicionado;
-    }
-    if(aux.figobar==1)
-    {
-        precioHabitacionNoche+=precioFrigobar;
-    }
-printf("precio por noche%i\n", precioHabitacionNoche);
-    aux.precio=precioHabitacionNoche;
-    printf("aux.precio %i\n",aux.precio);
-
-}
-
-
-
-void strMostrarUnaHabitacion(strHabitacion aux)//PUNTO 2 MOSTRAR UNA HABITACION
-{
-
-
-    printf("---------\n");
-    printf("La habitacion numero %i\n", aux.numeroDeHabitacion);
-
-    auxOcupado(aux);
-    auxReservado(aux);
-    auxHabilitada(aux);
-
-    printf("La capacidad de huespedes es: %i\n", aux.capacidadDeHuespedes);
-
-    printf("La cantidad de baños es: %i\n", aux.cantBanios);
-
-    auxFrigobar(aux);
-
-    auxAireAcondicionado(aux);
-    auxPrecioHabitaciones(aux);
-    printf("El precio de la habitacion por noche es de $%i.\n", aux.precio);
-
-
-
-
-}*/
 
 
 void auxPrecioHabitaciones(strHabitacion aux) // Corrección: agregar asterisco para pasar por referencia
@@ -553,7 +500,7 @@ void arcMostrarHabitaciones(char nombreArchivo[])//PUNTO 4 MOSTRAR LAS HABITACIO
         {
             printf("Entra\n");
             fseek(buffer, 0, SEEK_SET);
-            while(fread(&aux, sizeof(strHabitacion), 1, buffer)>0)
+            while((fread(&aux, sizeof(strHabitacion), 1, buffer)>0)&&(aux.habilitada==1))
 
 
             {
@@ -598,7 +545,7 @@ int arcBuscarHabitacionPorNumero(char nombreArchi[], int num)//MOSTRAR UNA HABIT
 
         while((fread(&aux, sizeof(strHabitacion), 1, buffer))>0)
         {
-            if(aux.numeroDeHabitacion==num)
+            if(aux.numeroDeHabitacion==num && aux.habilitada==1)
             {
                 strMostrarUnaHabitacion(aux);
                 i=1;
@@ -607,7 +554,7 @@ int arcBuscarHabitacionPorNumero(char nombreArchi[], int num)//MOSTRAR UNA HABIT
         }
         if(feof(buffer)!=0)
         {
-            printf("No se encontro la habitacion.\n");
+            printf("No se encontro la habitacion o no esta habilitada.\n");
         }
 
 
@@ -638,12 +585,12 @@ strHabitacion auxBuscarHabitacionesNoOcupadasONoReservadas(strHabitacion aux, in
     if(num==1)
     {
         resultado = aux;
-        resultado.opcionPunto6=aux.ocupado;
+        resultado.opcionPunto4=aux.ocupado;
     }
     else if(num==2)
     {
         resultado = aux;
-        resultado.opcionPunto6=aux.reservado;
+        resultado.opcionPunto4=aux.reservado;
     }
 
     return resultado;
@@ -665,7 +612,7 @@ int arcBuscarHabitacionesNoOcupadasONoReservadas(char nombreArchi[], strHabitaci
         while((fread(&aux, sizeof(strHabitacion), 1, buffer))>0)
         {
             strHabitacion resultado = auxBuscarHabitacionesNoOcupadasONoReservadas(aux, num);
-            if(resultado.opcionPunto6==numero)
+            if(resultado.opcionPunto4==numero && resultado.habilitada==1)
             {
                 A[i]=resultado;
                 i++;
@@ -771,7 +718,7 @@ void arcModificarUnCampoDeUnaHabitacion(int num, char nombreArchi[], int opc)//F
         }
         else
         {
-        printf("Error alumno no encontrado.\n");
+            printf("Error alumno no encontrado.\n");
         }
         fclose(buffer);
     }
@@ -779,7 +726,28 @@ void arcModificarUnCampoDeUnaHabitacion(int num, char nombreArchi[], int opc)//F
 }
 
 
+void arcMostrarHabitacionesNoHabilitadas(char nombreArchi[])
+{
+    FILE* buffer = fopen(nombreArchi, "rb");
 
+    strHabitacion aux;
+
+    if(buffer)
+    {
+        printf("Abierto\n");
+
+        while(((fread(&aux, sizeof(strHabitacion), 1, buffer))>0) && (aux.habilitada==0))
+        {
+            strMostrarUnaHabitacion(aux);
+        }
+
+        fclose(buffer);
+    }
+    else
+    {
+        printf("Error\n");
+    }
+}
 
 
 

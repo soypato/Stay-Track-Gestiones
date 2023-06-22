@@ -288,11 +288,9 @@
 1679999162 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\pila.c
 	"pila.h"
 
-<<<<<<< HEAD
-1687320225 D
-=======
 1687320192 D
->>>>>>> 81d299c9b2cab70cebc30e7d991807a081cd1ae0
+
+1687320192 299c9b2cab70cebc30e7d991807a081cd1ae0
 	"comidas.h"
 	"empleados.h"
 	<time.h>
@@ -474,7 +472,7 @@
 
 1687297936 d:\codeblock\codigos\reserva-hotel\const.h
 
-1687325729 source:d:\codeblock\codigos\reserva-hotel\main.c
+1687384899 source:d:\codeblock\codigos\reserva-hotel\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tiempo.h"

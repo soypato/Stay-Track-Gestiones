@@ -17,7 +17,7 @@ typedef struct
     int cantBanios;
     int aireAcondicionado;
     int precio;
-    int opcionPunto6;
+    int opcionPunto4;
     int habilitada;
 
 
