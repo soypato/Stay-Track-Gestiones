@@ -40,10 +40,10 @@ int otroAuxDeCargarHabitaciones(int opc, char opcion[]);//OTRO AUX PARA CARGAR H
 void arcCargarHabitaciones(char nombreArchi[], char opcion[]);//PUNTO 3
 void arcMostrarHabitaciones(char nombreArchivo[]);//PUNTO 4
 int auxBuscarConEntero();//AUX CARGAR UN ENTERO PARA USAR COMO PARAMETRO
-void arcBuscarHabitacionPorNumero(char nombreArchi[], int num);//MOSTRAR UNA HABITACION BUSCADA POR NUMERO DE HABITACION
-int arcBuscarHabitacionesNoOcupadasONoReservadas(char nombreArchi[], strHabitacion A[], int num, int numero);//PASAR LAS HABITACIONES QUE SE SOLICITEN A UN ARREGLO
+int arcBuscarHabitacionPorNumero(const char nombreArchi[], int num); //PASAR LAS HABITACIONES QUE SE SOLICITEN A UN ARREGLO
 void mostrarArregloDeStructs(strHabitacion A[], int validos);//MOSTRAR ARREGLO DE STRUCTS
-strHabitacion auxBuscarHabitacionesNoOcupadasONoReservadas(strHabitacion aux, int num);
+strHabitacion auxBuscarHabitacionesNoOcupadasONoReservadas(strHabitacion aux, int num);//PASAR LAS HABITACIONES QUE SE SOLICITEN A UN ARREGLO
+void arcModificarUnCampoDeUnaHabitacion(int num, char nombreArchi[], int opc);//FUNCION MODIFICAR UN CAMPO DENTRO DE LA HABITACION
 
 
 
