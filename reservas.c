@@ -36,7 +36,7 @@ int menuReservas()
         printf("|   12   | Modificar cliente               |\n");
         printf("|   13   | Filtrar por nombre              |\n"); // INSERCION
         printf("|   14   | Filtrar por edad                |\n"); // SELECCION
-        printf("|   0    | Cerrar sesion                   |\n");
+        printf("|   0    | Volver                          |\n");
         printf("==========================================\n");
         printf("Su decision: ");
         scanf("%i", &op);
