@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "tipoUsuario.h"
 
 #define MAX_COMIDAS 10
 #define MAX_LONGITUD 50
@@ -13,7 +14,7 @@ void imprimirMatriz(char menu[][MAX_LONGITUD], char descripcion[][MAX_DESCRIPCIO
     for (int i = 0; i < numComidas; i++)
     {
         printf("Comida: %s\n", menu[i]);
-        printf("Descripción: %s\n", descripcion[i]);
+        printf("Descripcion: %s\n", descripcion[i]);
         printf("\n");
     }
 }
@@ -52,7 +53,12 @@ void copiarComidas()
 
 int menuComidas()
 {
+    int flag;
     copiarComidas();
-
+    printf("Presione 0 para volver al menu");
+    scanf("%i", &flag);
+    if (flag == 0) {
+    volverDependiendoTipoUsuario(tipoUsuario);
+    }
     return 0;
 }

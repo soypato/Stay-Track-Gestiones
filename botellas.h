@@ -21,7 +21,7 @@ void ordenarBotellasPorID(char nombre[]);
 void buscarBotellasPorMarca(char nombre[], const char* marcaBuscada);
 int verificarIDExistente(char nombre[], int id);
 void ModificarSegunUsuario(char[], int);
-void ReciclarBotellas(char[]);
+
 
 
 

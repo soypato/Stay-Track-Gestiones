@@ -82,8 +82,8 @@ void inicioSesion()
         {
 
             // Calcula el valor de azul y violeta en función de la posición j
-            int azul = 255 - j * (255 / strlen(titulo[i]));
-            int violeta = j * (255 / strlen(titulo[i]));
+            int azul = 255 - j * (255 / (strlen(titulo[i]) - 1));
+            int violeta = j * (255 / (strlen(titulo[i]) - 1));
 
             // Establece el color utilizando códigos de escape ANSI
             printf("\033[48;2;%d;0;%dm%c\033[0m", violeta, azul, titulo[i][j]);
@@ -134,6 +134,7 @@ void inicioSesion()
 }
 
 
+
 void limpiarPantalla()
 {
 #ifdef _WIN32
@@ -158,7 +159,7 @@ void controlMozo()
         printf("=====================================\n");
         printf("| Opcion | Descripcion              |\n");
         printf("=====================================\n");
-        printf("|   1    | Menu de Comida           |\n");
+        printf("|   1    | Mostrar comidas          |\n");
         printf("|   2    | Menu de Botellas         |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
@@ -177,16 +178,14 @@ void controlMozo()
             menuBotellas();
             break;
         case 0:
-            return;
+            controlInicio();
+            break;
         default:
             printf("La opcion es incorrecta.\n");
             break;
         }
-
-        printf("Seguir ejecutando? (1: Si / 0: No): ");
-        scanf("%d", &decision);
     }
-    while (decision == 1);
+    while (decision != 0);
 }
 
 
@@ -222,12 +221,14 @@ void controlRecepcionista()
             linkDePago();
             break;
         case 0:
-            return;
+            controlInicio();
+            break;
+        default:
+            printf("La opcion es incorrecta.\n");
+            break;
         }
-        printf("Seguir ejecutando? (1: Si / 0: No): ");
-        scanf("%d", &decision);
     }
-    while (decision == 1);
+    while (decision != 0);
 }
 
 void controlLimpieza()
@@ -262,13 +263,14 @@ void controlLimpieza()
             menuHabitaciones();
             break;
         case 0:
-            return;
+            controlInicio();
+            break;
+        default:
+            printf("La opcion es incorrecta.\n");
+            break;
         }
-
-        printf("Seguir ejecutando? (1: Si / 0: No): ");
-        scanf("%d", &decision);
     }
-    while (decision == 1);
+    while (decision != 0);
 }
 
 void controlAdmin()
@@ -286,7 +288,8 @@ void controlAdmin()
         printf("|   3    | Menu de Empleados        |\n");
         printf("|   4    | Menu de Limpieza         |\n");
         printf("|   5    | Menu de Reserva          |\n");
-        printf("|   6    | Generar pagos            |\n");
+        printf("|   6    | Menu de Habitaciones     |\n");
+        printf("|   7    | Generar pagos            |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
 
@@ -307,16 +310,23 @@ void controlAdmin()
             break;
         case 4:
             menuLimpieza();
+            break;
         case 5:
             menuReservas();
+            break;
         case 6:
+            menuHabitaciones();
+            break;
+        case 7:
             linkDePago();
+            break;
         case 0:
-            return;
+            controlInicio();
+            break;
+        default:
+            printf("La opcion es incorrecta.\n");
+            break;
         }
-
-        printf("Seguir ejecutando? (1: Si / 0: No): ");
-        scanf("%d", &decision);
     }
-    while (decision == 1);
+    while (decision != 0);
 }

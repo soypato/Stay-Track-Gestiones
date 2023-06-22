@@ -33,7 +33,6 @@ int menuBotellas()
         printf("|   4    | Ordenar botellas por ID         |\n"); // SELECCION
         printf("|   5    | Buscar  Marca                   |\n");
         printf("|   6    | Modificar Segun usuario         |\n");
-        printf("|   7    | Reciclar botellas retornables   |\n");
         printf("|   0    | Volver                          |\n");
         printf("==========================================\n");
         printf("Su decision: ");
@@ -59,16 +58,10 @@ int menuBotellas()
             gets(marcaTemporal);
             buscarBotellasPorMarca(Arch, marcaTemporal);
             break;
-
-
         case 6:
             printf("Ingrese la id para modificar\n");
             scanf("%d", &idTemporal);
             ModificarSegunUsuario(Arch, idTemporal);
-            break;
-
-        case 7:
-            ReciclarBotellas(Arch);
             break;
         case 0:
             volverDependiendoTipoUsuario(tipoUsuario);
@@ -398,32 +391,4 @@ void ModificarSegunUsuario(char nombre[], int id)
         fclose(Archi);
     }
 }
-
-void ReciclarBotellas(char nombre[]) {
-  FILE* Archi;
-  Archi = fopen(nombre, "r+b");
-  int idRetorn;
-  botellita Temp;
-  Pila Recicable;
-  inicpila(&Recicable);
-
-  if (Archi != NULL) {
-    while (fread(&Temp, sizeof(botellita), 1, Archi) > 0) {
-      printf("Ingrese el id de la botella que desea retornar (0 para salir):\n");
-      scanf("%d", &idRetorn);
-
-      if (idRetorn == 0) {
-        break;  // Salir del bucle si se ingresa 0
-      }
-
-      if (Temp.id == idRetorn && Temp.retornable == 0) {
-        apilar(&Recicable, Temp.id);
-      }
-    }
-
-    mostrar(&Recicable);
-    fclose(Archi);
-  }
-}
-
 
