@@ -7,14 +7,29 @@
 ///HARCHIVOS
 const char arcHabitaciones[30] = {"archivoHabitaciones.dat"};
 const int numHabitaciones = 2;
-//////////////////////////////////////////////////////////////////////////////////
 
+//////////////////////////////////////////////////////////////////////////////
 
+///FUNCIONES
 
-
-
-int menuHabitaciones()
+void menuHabitaciones()//MENU
 {
+    int ejercicio;
+    strHabitacion hab;
+    strHabitacion habitacionesSinOcupar[20];
+    strHabitacion habitacionesSinReservas[20];
+    strHabitacion habitacionesOcupadas[20];
+    strHabitacion habitacionesReservadas[20];
+    char opcion[3];
+    int numPunto5;
+    int subMenuPunto6;
+    int opcPunto6;
+    int validosPunto6;
+    int valorPunto6;
+    char decision = 's';
+
+    do
+    {
     printf("================================================\n");
     printf("|             Menu habitaciones               |\n");
     printf("================================================\n");
@@ -29,33 +44,6 @@ int menuHabitaciones()
     printf("|   0    |  Volver al menu administrador      |\n");
     printf("================================================\n");
 
-    menu();
-    return 0;
-}
-//////////////////////////////////////////////////////////////////////////////
-
-///FUNCIONES
-
-void menu()//MENU
-{
-    int ejercicio;
-    strHabitacion hab;
-    strHabitacion habitacionesSinOcupar[20];
-    strHabitacion habitacionesSinReservas[20];
-    strHabitacion habitacionesOcupadas[20];
-    strHabitacion habitacionesReservadas[20];
-    char opcion[3];
-    int numPunto5;
-    int subMenuPunto6;
-    int opcPunto6;
-    int validosPunto6;
-    int valorPunto6;
-
-
-
-
-    do
-    {
         printf("Su decision: ");
         fflush(stdin);
         scanf("%i", &ejercicio);
@@ -125,6 +113,9 @@ void menu()//MENU
             menuEmpleados();
             break;
         }
+    printf("Seguir ejecutando? (s/n): ");
+    fflush(stdin);
+    scanf("%c", &decision);
     }
     while(ejercicio!=0);
 }
