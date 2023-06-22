@@ -10,7 +10,7 @@ char *generarCadenaAleatoria(int longitud);
 char *randomMercadoPago();
 char *randomPayPal();
 
-int linkdepago()
+int linkDePago()
 {
     char *mercadoLink = randomMercadoPago();
     char *payLink = randomPayPal();

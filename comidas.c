@@ -1,52 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "comidas.h"
+#include <string.h>
 
-const char ArchC[]="MenuComidas.dat";
+const char ArchC[]="NombresAdmins";
 
 
 int menuComidas()
 {
     int op=0;
     char decision;
-    char Alimentoss[5][MATRIZ_C];
+    char Admins[5][MATRIZ_C];
 
   do
     {
-        printf("==========================================\n");
-        printf("|              Menu comidas                |\n");
-        printf("==========================================\n");
+        printf("|==========================================|\n");
+        printf("|              Menu Admins                 |\n");
+        printf("|==========================================|\n");
         printf("| Opcion |           Descripcion           |\n");
-        printf("===========================================\n");
-        printf("|   1    | Agregar comidas                 |\n");
-        printf("|   2    | Mostrar comidas                 |\n");
-        printf("|   3    | Elegir comidas                  |\n");
-        printf("|   4    | Cambiar menu                    |\n");
-        printf("|   5    | Buscar comida                   |\n");
+        printf("|==========================================|\n");
+        printf("|   1    | Agregar Nombres                 |\n");
+        printf("|   2    | Mostrar Nombres                 |\n");
+        printf("|   3    | Verificar Si existe Admin       |\n");
         printf("|   0    | Salir                           |\n");
-        printf("==========================================\n");
+        printf("|==========================================|\n");
         printf("Su decision: ");
         scanf("%i", &op);
 
         switch (op)
         {
         case 1:
-
+       CargarAdminsArchivo(ArchC, Admins, 5);
             break;
         case 2:
-
+           mostrarAdminsArchivo(ArchC, Admins);
             break;
         case 3:
-
+            VerificarSiExisteAdmin(ArchC,Admins);
             break;
-        case 4:
-
-            break;
-
         case 0:
             inicioSesion();
             break;
-
         }
 
         printf("Seguir ejecutando? (s/n): ");
@@ -55,77 +49,113 @@ int menuComidas()
     }
     while (decision == 's');
 
-
     return 0;
 }
 
-int CargarAlimentos(char Alimentos[][MATRIZ_C], int dimF)
+int CargarAdmins(char Admins[][MATRIZ_C], int dimF)
 {
   int f=0;
   char control='s';
   for(f=0;f<dimF && control == 's';f++)
   {
-    printf("Ingresar los alimentos\n");
+    printf("Ingresar los nombres y Apellido de los ADMINS\n");
     fflush(stdin);
-    gets(Alimentos[f]);
+    gets(Admins[f]);
 
-    printf("Desea seguir cargando más alimentos?\n");
+    printf("Desea seguir cargando mas Admins?\n");
     fflush(stdin);
     scanf(" %c", &control);
   }
   return f;
 }
 
-void mostrarAlimentos(char Alimentos[][MATRIZ_C], int validos)
+void mostrarAdmins(char Admins[][MATRIZ_C], int validos)
 {
   int f =0;
 
+   puts("|------------------------|");
   for(f=0;f<validos;f++)
   {
-    printf("Alimentos: %s", Alimentos[f]);
-  }
 
+    printf("Admins: %s\n", Admins[f]);
+  }
+   puts("|------------------------|");
 }
 
-void CargarAlimentosArchivo(char nombre[], char Alimentos[][MATRIZ_C], int dimF)
+void CargarAdminsArchivo(char nombre[], char Admins[][MATRIZ_C], int dimF)
 {
-  FILE* Archi;
 
-  Archi = fopen(nombre, "ab");
+  FILE* Archi;
+  Archi = fopen(nombre, "wb");
   int validos=0;
 
   if(Archi!=NULL)
   {
-    validos  =  CargarAlimentos(Alimentos, dimF);
+     validos = CargarAdmins(Admins, dimF);
     fwrite(&validos, sizeof(int), 1, Archi);
-    fwrite(Alimentos, sizeof(Alimentos[0]), validos, Archi);
+    fwrite(Admins, sizeof(char), validos * MATRIZ_C, Archi);
     fclose(Archi);
   }
 }
 
-void mostrarAlimentosArchivo(char nombre[], char Alimentos[][MATRIZ_C], int dimF)
+void mostrarAdminsArchivo(char nombre[], char Admins[][MATRIZ_C])
 {
-  FILE Archi;
+  FILE* Archi;
 
   Archi = fopen(nombre, "rb");
-  int validos;
+
+  int validos=0;
+
   if(Archi!=NULL)
   {
-   while(fread(&validos, sizeof(int), 1, Archi))
-   {
-    mostrarAlimentos(Alimentos, validos);
-   }
+    fread(&validos, sizeof(int), 1, Archi);
+    fread(Admins, sizeof(char), validos * MATRIZ_C, Archi);
+    fclose(Archi);
 
-   fclose(Archi);
+    mostrarAdmins(Admins, validos);
   }
-
-
-
-
 
 }
 
+void VerificarSiExisteAdmin(char nombre[],char Admins[][MATRIZ_C])
+{
+  FILE* Archi;
 
+  Archi = fopen(nombre, "rb");
+
+  int flag = 0;
+  char NombreBuscar[30];
+
+  printf("Ingrese el nombre que desea buscar\n");
+  fflush(stdin);
+  gets(NombreBuscar);
+
+  if(Archi!=NULL)
+  {
+     int validos=0;
+     fread(&validos, sizeof(int), 1, Archi);
+
+    for(int i = 0;i < validos && flag == 0; i++)
+    {
+     fread(Admins[i], sizeof(char), MATRIZ_C, Archi);
+       if(strcmp(Admins[i], NombreBuscar) == 0)
+       {
+         flag=1;
+       }
+    }
+  }
+     fclose(Archi);
+
+
+  if(flag==1)
+  {
+    printf("El nombre de Administrador %s existe.\n", NombreBuscar);
+  }else
+  {
+    printf("El nombre de Administrador %s NO existe.\n", NombreBuscar);
+  }
+
+}
 
 
 

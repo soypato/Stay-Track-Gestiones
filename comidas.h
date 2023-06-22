@@ -1,14 +1,13 @@
 #ifndef COMIDAS_H_INCLUDED
 #define COMIDAS_H_INCLUDED
 
-const int MATRIZ_C = 30;
+#define MATRIZ_C 70
 
-
-
-int CargarAlimentos(char[][MATRIZ_C], int);
-void mostrarAlimentos(char[][MATRIZ_C], int);
-void CargarAlimentosArchivo(char[], char[][MATRIZ_C], int );
-void mostrarAlimentosArchivo(char[], char[][MATRIZ_C], int);
+int CargarAdmins(char[][MATRIZ_C], int);
+void mostrarAdmins(char[][MATRIZ_C], int);
+void CargarAdminsArchivo(char[], char[][MATRIZ_C], int );
+void mostrarAdminsArchivo(char[], char[][MATRIZ_C]);
+void VerificarSiExisteAdmin(char[], char[][MATRIZ_C]);
 
 
 
