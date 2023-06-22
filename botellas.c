@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "botellas.h"
-
+#include "tipoUsuario.h"
 
 ///Nombre del archivo
 const char Arch[]="BotellasFrigo.dat";
@@ -33,7 +33,7 @@ int menuBotellas()
         printf("|   4    | Ordenar botellas por ID         |\n"); // SELECCION
         printf("|   5    | Buscar  Marca                   |\n");
         printf("|   6    | Modificar Segun usuario         |\n");
-        printf("|   0    | Salir                           |\n");
+        printf("|   0    | Volver                          |\n");
         printf("==========================================\n");
         printf("Su decision: ");
         scanf("%i", &op);
@@ -58,15 +58,13 @@ int menuBotellas()
             gets(marcaTemporal);
             buscarBotellasPorMarca(Arch, marcaTemporal);
             break;
-
-
         case 6:
             printf("Ingrese la id para modificar\n");
             scanf("%d", &idTemporal);
             ModificarSegunUsuario(Arch, idTemporal);
             break;
         case 0:
-            printf("Opción inválida. Por favor, ingrese nuevamente.\n");
+            volverDependiendoTipoUsuario(tipoUsuario);
             break;
         }
 

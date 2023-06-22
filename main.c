@@ -11,6 +11,7 @@
 #include "empleados.h"
 #include "porLimpiar.h"
 #include "preguntarDNI.h"
+#include "tipoUsuario.h"
 
 void inicioSesion();
 void limpiarPantalla();
@@ -40,10 +41,12 @@ void controlInicio()
 
 }
 
+
 void inicioSesion()
 {
     int tmpClave = 0;
     int loginExitoso = 0;
+
 
     limpiarPantalla();
 
@@ -103,18 +106,22 @@ void inicioSesion()
     {
     case claveMozo:
         printf(colorAmarillo "=== MENU MOZO ===\n" reiniciarColor);
+        tipoUsuario = 1;  // Mozo
         controlMozo();
         break;
     case claveRecepcionista:
         printf(colorAmarillo "=== MENU RECEPCIONISTA ===\n" reiniciarColor);
+        tipoUsuario = 2;  // Recepcionista
         controlRecepcionista();
         break;
     case claveLimpieza:
         printf(colorAmarillo "=== MENU LIMPIEZA ===\n" reiniciarColor);
+        tipoUsuario = 3;  // Limpieza
         controlLimpieza();
         break;
     case claveAdmin:
         printf(colorAmarillo "=== MENU ADMINISTRADOR ===\n" reiniciarColor);
+        tipoUsuario = 4;  // Administrador
         controlAdmin();
         break;
     default:
@@ -171,16 +178,14 @@ void controlMozo()
             menuBotellas();
             break;
         case 0:
-            return;
+            controlInicio();
+            break;
         default:
             printf("La opcion es incorrecta.\n");
             break;
         }
-
-        printf("Seguir ejecutando? (1: Sí / 0: No): ");
-        scanf("%d", &decision);
     }
-    while (decision == 1);
+    while (decision != 0);
 }
 
 
@@ -216,12 +221,14 @@ void controlRecepcionista()
             linkDePago();
             break;
         case 0:
-            return;
+            controlInicio();
+            break;
+        default:
+            printf("La opcion es incorrecta.\n");
+            break;
         }
-        printf("Seguir ejecutando? (1: Sí / 0: No): ");
-        scanf("%d", &decision);
     }
-    while (decision == 1);
+    while (decision != 0);
 }
 
 void controlLimpieza()
@@ -256,13 +263,14 @@ void controlLimpieza()
             menuHabitaciones();
             break;
         case 0:
-            return;
+            controlInicio();
+            break;
+        default:
+            printf("La opcion es incorrecta.\n");
+            break;
         }
-
-        printf("Seguir ejecutando? (1: Sí / 0: No): ");
-        scanf("%d", &decision);
     }
-    while (decision == 1);
+    while (decision != 0);
 }
 
 void controlAdmin()
@@ -277,10 +285,11 @@ void controlAdmin()
         printf("=====================================\n");
         printf("|   1    | Menu de Botellas         |\n");
         printf("|   2    | Menu de Comidas          |\n");
-        printf("|   2    | Menu de Empleados        |\n");
-        printf("|   2    | Menu de Limpieza         |\n");
-        printf("|   2    | Menu de Reserva          |\n");
-        printf("|   2    | Generar pagos            |\n");
+        printf("|   3    | Menu de Empleados        |\n");
+        printf("|   4    | Menu de Limpieza         |\n");
+        printf("|   5    | Menu de Reserva          |\n");
+        printf("|   6    | Menu de Habitaciones     |\n");
+        printf("|   7    | Generar pagos            |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
 
@@ -291,17 +300,33 @@ void controlAdmin()
         switch (decision)
         {
         case 1:
-            menuEmpleados();
-            break;
-        case 2:
             menuBotellas();
             break;
+        case 2:
+            menuComidas();
+            break;
+        case 3:
+            menuEmpleados();
+            break;
+        case 4:
+            menuLimpieza();
+            break;
+        case 5:
+            menuReservas();
+            break;
+        case 6:
+            menuHabitaciones();
+            break;
+        case 7:
+            linkDePago();
+            break;
         case 0:
-            return;
+            controlInicio();
+            break;
+        default:
+            printf("La opcion es incorrecta.\n");
+            break;
         }
-
-        printf("Seguir ejecutando? (1: Sí / 0: No): ");
-        scanf("%d", &decision);
     }
-    while (decision == 1);
+    while (decision != 0);
 }

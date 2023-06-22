@@ -3,6 +3,8 @@
 #include <string.h>
 #include "habitaciones.h"
 #include "empleados.h"
+#include "tipoUsuario.h"
+
 
 ///HARCHIVOS
 const char arcHabitaciones[30] = {"archivoHabitaciones.dat"};
@@ -44,7 +46,8 @@ void menuHabitaciones()//MENU
         printf("|   4    |  Mostrar habitacion archivo        |\n");
         printf("|   5    |  Mostrar habitacion por numero     |\n");
         printf("|   6    |  Mostrar no ocupadas/no reservadas |\n");
-        printf("|   0    |  Volver al menu administrador      |\n");
+        printf("|   7    |  Modificacion                      |\n");
+        printf("|   0    |  Volver                            |\n");
         printf("================================================\n");
 
         printf("Su decision: ");
@@ -181,7 +184,7 @@ void menuHabitaciones()//MENU
             break;
 
         case 0:
-            menuEmpleados();
+            volverDependiendoTipoUsuario(tipoUsuario);
             break;
         }
         printf("Seguir ejecutando? (s/n): ");
