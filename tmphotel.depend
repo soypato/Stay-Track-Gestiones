@@ -813,3 +813,124 @@
 
 1687413384 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\tipousuario.h
 
+1687414033 source:c:\users\juanm\stay-track-gestiones\botellas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"botellas.h"
+	"tipoUsuario.h"
+
+1687414033 c:\users\juanm\stay-track-gestiones\botellas.h
+	"pila.h"
+
+1687414033 c:\users\juanm\stay-track-gestiones\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1687414033 c:\users\juanm\stay-track-gestiones\tipousuario.h
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\comidas.c
+	<stdio.h>
+	<string.h>
+	"tipoUsuario.h"
+
+1687475890 source:c:\users\juanm\stay-track-gestiones\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"empleados.h"
+	<time.h>
+	<unistd.h>
+	"const.h"
+	"preguntarDNI.h"
+	"habitaciones.h"
+	"tipoUsuario.h"
+
+1687414033 c:\users\juanm\stay-track-gestiones\tiempo.h
+	<stdio.h>
+	<stdlib.h>
+
+1687476121 c:\users\juanm\stay-track-gestiones\empleados.h
+	"tiempo.h"
+
+1687414033 c:\users\juanm\stay-track-gestiones\const.h
+
+1687414033 c:\users\juanm\stay-track-gestiones\preguntardni.h
+
+1687414033 c:\users\juanm\stay-track-gestiones\habitaciones.h
+
+1687414985 source:c:\users\juanm\stay-track-gestiones\habitaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"habitaciones.h"
+	"empleados.h"
+	"tipoUsuario.h"
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\linkdepago.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"const.h"
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tiempo.h"
+	"reservas.h"
+	"const.h"
+	<time.h>
+	<unistd.h>
+	"linkdepago.h"
+	"botellas.h"
+	"comidas.h"
+	"empleados.h"
+	"porLimpiar.h"
+	"preguntarDNI.h"
+	"tipoUsuario.h"
+
+1687414033 c:\users\juanm\stay-track-gestiones\reservas.h
+
+1687414033 c:\users\juanm\stay-track-gestiones\linkdepago.h
+
+1687414033 c:\users\juanm\stay-track-gestiones\comidas.h
+
+1687414033 c:\users\juanm\stay-track-gestiones\porlimpiar.h
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\pila.c
+	"pila.h"
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\porlimpiar.c
+	<stdlib.h>
+	<stdio.h>
+	"pila.h"
+	"porLimpiar.h"
+	"tipoUsuario.h"
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\preguntardni.c
+	<stdlib.h>
+	<stdio.h>
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"reservas.h"
+	"preguntarDNI.h"
+	"tipoUsuario.h"
+	<stdio.h>
+	<string.h>
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\tiempo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\tipousuario.c
+	<stdlib.h>
+	<stdio.h>
+

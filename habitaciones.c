@@ -198,19 +198,19 @@ strHabitacion strCargarHabitacion() // PUNTO 1: CARGAR UNA HABITACION
 {
     strHabitacion aux;
 
-    printf("¿La habitacion está ocupada? (0 = No, 1 = Si): ");
+    printf("¿La habitacion esta ocupada? (0 = No, 1 = Si): ");
     fflush(stdin);
     scanf("%i", &aux.ocupado);
 
-    printf("¿La habitacion está reservada? (0 = No, 1 = Si): ");
+    printf("¿La habitacion esta reservada? (0 = No, 1 = Si): ");
     fflush(stdin);
     scanf("%i", &aux.reservado);
 
-    printf("Ingrese el número de la habitacion: ");
+    printf("Ingrese el numero de la habitacion: ");
     fflush(stdin);
     scanf("%i", &aux.numeroDeHabitacion);
 
-    printf("Ingrese la capacidad de huéspedes: ");
+    printf("Ingrese la capacidad de huespedes: ");
     fflush(stdin);
     scanf("%i", &aux.capacidadDeHuespedes);
 

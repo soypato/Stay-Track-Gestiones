@@ -75,6 +75,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="tiempo.h" />
+		<Unit filename="tipoUsuario.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tipoUsuario.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
