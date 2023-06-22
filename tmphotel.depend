@@ -298,20 +298,26 @@
 
 1687231550 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\linkdepago.c
 
-1687306670 source:c:\users\juanm\gestion-hotel\botellas.c
+1687405281 source:c:\users\juanm\gestion-hotel\botellas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"botellas.h"
+	"tipoUsuario.h"
 
-1687306670 c:\users\juanm\gestion-hotel\botellas.h
+1687400724 c:\users\juanm\gestion-hotel\botellas.h
 	"pila.h"
 
-1687244091 c:\users\juanm\gestion-hotel\pila.h
+1687400724 c:\users\juanm\gestion-hotel\pila.h
 	<stdio.h>
 	<malloc.h>
 
-1687244091 source:c:\users\juanm\gestion-hotel\linkdepago.c
+1687400724 source:c:\users\juanm\gestion-hotel\linkdepago.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"const.h"
 
 1687297936 716e684cb5c50e4ac4eefaf7f02c2d71f30ec
 	<stdio.h>
@@ -337,34 +343,35 @@
 
 1687301535 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\main.c
 
-1687244091 c:\users\juanm\gestion-hotel\const.h
+1687400724 c:\users\juanm\gestion-hotel\const.h
 
-1687244091 source:c:\users\juanm\gestion-hotel\pila.c
+1687400724 source:c:\users\juanm\gestion-hotel\pila.c
 	"pila.h"
 
-1687305648 source:c:\users\juanm\gestion-hotel\reservas.c
+1687405965 source:c:\users\juanm\gestion-hotel\reservas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"tiempo.h"
 	"reservas.h"
 	"preguntarDNI.h"
+	"tipoUsuario.h"
 	<stdio.h>
 	<string.h>
 
-1687244091 c:\users\juanm\gestion-hotel\tiempo.h
+1687400724 c:\users\juanm\gestion-hotel\tiempo.h
 	<stdio.h>
 	<stdlib.h>
 
-1687247002 c:\users\juanm\gestion-hotel\reservas.h
+1687400724 c:\users\juanm\gestion-hotel\reservas.h
 
-1687244091 source:c:\users\juanm\gestion-hotel\tiempo.c
+1687400724 source:c:\users\juanm\gestion-hotel\tiempo.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"tiempo.h"
 
-1687306213 source:c:\users\juanm\gestion-hotel\empleados.c
+1687405661 source:c:\users\juanm\gestion-hotel\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -375,11 +382,12 @@
 	"const.h"
 	"preguntarDNI.h"
 	"habitaciones.h"
+	"tipoUsuario.h"
 
-1687305782 c:\users\juanm\gestion-hotel\empleados.h
+1687400724 c:\users\juanm\gestion-hotel\empleados.h
 	"tiempo.h"
 
-1687307050 source:c:\users\juanm\gestion-hotel\main.c
+1687405269 source:c:\users\juanm\gestion-hotel\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tiempo.h"
@@ -393,6 +401,7 @@
 	"empleados.h"
 	"porLimpiar.h"
 	"preguntarDNI.h"
+	"tipoUsuario.h"
 
 1687231550 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\tiempo.h
 	<stdio.h>
@@ -431,15 +440,15 @@
 	"empleados.h"
 	"preguntarDNI.h"
 
-1687244091 c:\users\juanm\gestion-hotel\linkdepago.h
+1687400724 c:\users\juanm\gestion-hotel\linkdepago.h
 
 1687287911 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\empleados.h
 
 1687287911 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\empleados.c
 
-1687245650 c:\users\juanm\gestion-hotel\preguntardni.h
+1687400724 c:\users\juanm\gestion-hotel\preguntardni.h
 
-1687246555 source:c:\users\juanm\gestion-hotel\preguntardni.c
+1687400724 source:c:\users\juanm\gestion-hotel\preguntardni.c
 	<stdlib.h>
 	<stdio.h>
 
@@ -537,29 +546,30 @@
 	<string.h>
 	"tiempo.h"
 
-1687305964 c:\users\juanm\gestion-hotel\habitaciones.h
+1687400724 c:\users\juanm\gestion-hotel\habitaciones.h
 
-1687306319 source:c:\users\juanm\gestion-hotel\habitaciones.c
+1687405661 source:c:\users\juanm\gestion-hotel\habitaciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"habitaciones.h"
 	"empleados.h"
+	"tipoUsuario.h"
 
-1687306670 c:\users\juanm\gestion-hotel\comidas.h
+1687409849 c:\users\juanm\gestion-hotel\comidas.h
 
-1687306670 c:\users\juanm\gestion-hotel\porlimpiar.h
+1687400724 c:\users\juanm\gestion-hotel\porlimpiar.h
 
-1687309225 source:c:\users\juanm\gestion-hotel\comidas.c
+1687409896 source:c:\users\juanm\gestion-hotel\comidas.c
 	<stdio.h>
-	<stdlib.h>
-	"comidas.h"
+	<string.h>
 
-1687306670 source:c:\users\juanm\gestion-hotel\porlimpiar.c
+1687405661 source:c:\users\juanm\gestion-hotel\porlimpiar.c
 	<stdlib.h>
 	<stdio.h>
 	"pila.h"
 	"porLimpiar.h"
+	"tipoUsuario.h"
 
 1687322838 source:d:\codeblock\codigos\reserva-hotel\comidas.c
 
@@ -720,4 +730,10 @@
 	"preguntarDNI.h"
 
 1687320192 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\linkdepago.h
+
+1687405661 source:c:\users\juanm\gestion-hotel\tipousuario.c
+	<stdlib.h>
+	<stdio.h>
+
+1687405313 c:\users\juanm\gestion-hotel\tipousuario.h
 

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "pila.h"
 #include "porLimpiar.h"
+#include "tipoUsuario.h"
 
 void menuLimpieza()
 {
@@ -24,12 +25,13 @@ void menuLimpieza()
         printf("|   2    | Eliminar habitacion                         |\n");
         printf("|   3    | Mostrar habitaciones (menos a mas reciente) |\n");
         printf("|   4    | Mostrar habitaciones (mas a menos reciente) |\n");
-        printf("|   5    | Ordenar habitaciones numéricamente          |\n");
-        printf("|   6    | Completar el día borrando todas las hab.    |\n");
+        printf("|   5    | Ordenar habitaciones numericamente          |\n");
+        printf("|   6    | Completar el dia borrando todas las hab.    |\n");
         printf("|   7    | Ver todas las completadas.                  |\n");
+        printf("|   0    | Volver                                      |\n");
         printf("=======================================================|\n");
 
-        printf("Su decisión: ");
+        printf("Su decision: ");
         scanf("%i", &eleccion);
         switch (eleccion)
         {
@@ -60,7 +62,8 @@ void menuLimpieza()
             mostrar(&completadas);
             break;
         case 0:
-            return;
+            volverDependiendoTipoUsuario(tipoUsuario);
+            break;
         default:
             printf("La opción es incorrecta.\n");
             break;

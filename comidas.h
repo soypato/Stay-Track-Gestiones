@@ -1,29 +1,11 @@
-#ifndef COMIDAS_H_INCLUDED
-#define COMIDAS_H_INCLUDED
+#ifndef COMIDAS_H
+#define COMIDAS_H
 
-#define MATRIZ_S 30
-#define MATRIZ_F 3
+#define MAX_COMIDAS 20
+#define MAX_LONGITUD 50
+#define MAX_DESCRIPCION 100
 
+void imprimirMatriz(char menu[][MAX_LONGITUD], char descripcion[][MAX_DESCRIPCION], int numComidas);
+void copiarComidas();
 
-
-typedef struct ///Arreglo de palabras/strings
-{
-    char comida[MATRIZ_F][MATRIZ_S];
-    char postre[MATRIZ_F][MATRIZ_S];
-    char fruta[MATRIZ_F][MATRIZ_S];
-
-} Alimento;
-
-
-
-
-int CargarAlimentos(Alimento[][MATRIZ_S], int);
-void mostrarAlimentos(Alimento, int);
-void CargarAlimentosArchivo(char[], int );
-void mostrarAlimentosArchivo(char[]);
-
-
-
-
-
-#endif // COMIDAS_H_INCLUDED
+#endif

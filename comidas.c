@@ -1,147 +1,58 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include "comidas.h"
+#include <string.h>
 
-const char ArchC[]="MenuComidas.dat";
+#define MAX_COMIDAS 10
+#define MAX_LONGITUD 50
+#define MAX_DESCRIPCION 200
 
+void imprimirMatriz(char menu[][MAX_LONGITUD], char descripcion[][MAX_DESCRIPCION], int numComidas)
+{
+    printf("MENU DE COMIDAS\n");
+    printf("---------------\n");
+
+    for (int i = 0; i < numComidas; i++)
+    {
+        printf("Comida: %s\n", menu[i]);
+        printf("Descripción: %s\n", descripcion[i]);
+        printf("\n");
+    }
+}
+
+void copiarComidas()
+{
+    char menu[MAX_COMIDAS][MAX_LONGITUD] = {""};
+    char descripcion[MAX_COMIDAS][MAX_DESCRIPCION] = {""};
+
+
+    strcpy(menu[0], "Pizza");
+    strcpy(descripcion[0], "Deliciosa pizza recién horneada con una variedad de ingredientes.");
+    strcpy(menu[1], "Hamburguesa");
+    strcpy(descripcion[1], "Sabrosa hamburguesa jugosa con carne a la parrilla y acompañamientos.");
+    strcpy(menu[2], "Ensalada");
+    strcpy(descripcion[2], "Ensalada fresca y saludable con una mezcla de vegetales y aderezo.");
+    strcpy(menu[3], "Sushi");
+    strcpy(descripcion[3], "Rollos de sushi elaborados con pescado fresco y arroz aderezado.");
+    strcpy(menu[4], "Pasta");
+    strcpy(descripcion[4], "Plato de pasta al dente con salsa de tomate o crema, acompañado de queso.");
+    strcpy(menu[5], "Tacos");
+    strcpy(descripcion[5], "Tortillas de maíz rellenas de carne, pollo, o vegetales, con salsa y guarniciones.");
+    strcpy(menu[6], "Pollo asado");
+    strcpy(descripcion[6], "Pollo jugoso asado con especias y acompañado de papas o ensalada.");
+    strcpy(menu[7], "Sopa");
+    strcpy(descripcion[7], "Sopa caliente y reconfortante con una mezcla de ingredientes y caldo.");
+    strcpy(menu[8], "Sandwich");
+    strcpy(descripcion[8], "Sándwich hecho con pan fresco y relleno de ingredientes variados.");
+    strcpy(menu[9], "Ramen");
+    strcpy(descripcion[9], "Plato de fideos japoneses en caldo sabroso con carne, huevo y vegetales.");
+    strcpy(menu[9], "Huevo");
+    strcpy(descripcion[9], "Desayuna con huevo!!.");
+
+    imprimirMatriz(menu, descripcion, MAX_COMIDAS);
+}
 
 int menuComidas()
 {
-    int op=0;
-    char decision;
-
-  do
-    {
-        printf("==========================================\n");
-        printf("|              Menu comidas                |\n");
-        printf("==========================================\n");
-        printf("| Opcion |           Descripcion           |\n");
-        printf("===========================================\n");
-        printf("|   1    | Agregar comidas                 |\n");
-        printf("|   2    | Mostrar comidas                 |\n");
-        printf("|   3    | Elegir comidas                  |\n");
-        printf("|   4    | Cambiar menu                    |\n");
-        printf("|   5    | Buscar comida                   |\n");
-        printf("|   0    | Salir                           |\n");
-        printf("==========================================\n");
-        printf("Su decision: ");
-        scanf("%i", &op);
-
-        switch (op)
-        {
-        case 1:
-             CargarAlimentosArchivo(ArchC, MATRIZ_F );
-            break;
-        case 2:
-
-            break;
-        case 3:
-
-            break;
-        case 4:
-
-            break;
-
-        case 0:
-            inicioSesion();
-            break;
-
-        }
-
-        printf("Seguir ejecutando? (s/n): ");
-        fflush(stdin);
-        scanf(" %c", &decision);
-    }
-    while (decision == 's');
-
+    copiarComidas();
 
     return 0;
 }
-
-
-int CargarAlimentos(Alimento Alimentos[][MATRIZ_S], int dimF)
-{
-   int f=0;
-   char op='s';
-
-    while (f < dimF && op == 's')
-    {
-        printf("Ingrese la comida: ");
-        fflush(stdin);
-        //gets(Alimentos.comida[]);
-
-        printf("Ingrese el postre: ");
-        fflush(stdin);
-        //gets(Alimentos.postre[f]);
-
-        printf("Ingrese la fruta: ");
-        fflush(stdin);
-        //gets(Alimentos.fruta[f]);
-
-        printf("Deseas seguir cargando alimentos (s/n)? ");
-        fflush(stdin);
-        scanf(" %c", &op);
-
-        f++;
-    }
-
-    return f;
-}
-
-void mostrarAlimentos(Alimento Alimentos, int validos)
-{
-  int f=0;
-
-  for(f=0;f<validos;f++)
-  {
-    puts("|-------------------------------|");
-    printf("Comida: %s\n", Alimentos.comida[f]);
-    printf("Postre: %s\n", Alimentos.postre[f]);
-    printf("Fruta:  %s\n", Alimentos.fruta[f]);
-    puts("|-------------------------------|");
-  }
-}
-
-void CargarAlimentosArchivo(char nombre[], int dimF)
-{
-  FILE* Archi;
-
-  Archi = fopen(nombre, "ab");
-  Alimento Temp;
-  int validos = 0;
-
-  if(Archi!=NULL)
-  {
-  /*
-   validos = CargarAlimentos(Temp, dimF);
-   fwrite(&Temp, sizeof(Alimento), 1, Archi);
-   fclose(Archi);
-   printf("Se cargo correctamente\n");
-   */
-  }
-}
-
-void mostrarAlimentosArchivo(char nombre[])
-{
- FILE* Archi;
-
- Archi = fopen(nombre, "rb");
- Alimento Temp;
- if(Archi!=NULL)
- {
-   fread(&Temp, sizeof(Alimento), 1, Archi);
-   {
-
-   }
-
-   fclose(Archi);
- }
-
-
-
-
-
-}
-
-
-

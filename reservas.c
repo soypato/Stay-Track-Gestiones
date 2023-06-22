@@ -4,6 +4,7 @@
 #include "tiempo.h"
 #include "reservas.h"
 #include "preguntarDNI.h"
+#include "tipoUsuario.h"
 
 const char arHuespedes[] = "datosPersonas.dat";
 
@@ -36,7 +37,7 @@ int menuReservas()
         printf("|   12   | Modificar cliente               |\n");
         printf("|   13   | Filtrar por nombre              |\n"); // INSERCION
         printf("|   14   | Filtrar por edad                |\n"); // SELECCION
-        printf("|   0    | Cerrar sesion                   |\n");
+        printf("|   0    | Volver                          |\n");
         printf("==========================================\n");
         printf("Su decision: ");
         scanf("%i", &op);
@@ -88,7 +89,7 @@ int menuReservas()
             printf("Ordenado por edad correctamente. Marque 5 en el menu para verlo.\n");
             break;
         case 0:
-            inicioSesion();
+            volverDependiendoTipoUsuario(tipoUsuario);
             break;
         }
 

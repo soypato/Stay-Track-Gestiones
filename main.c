@@ -11,6 +11,7 @@
 #include "empleados.h"
 #include "porLimpiar.h"
 #include "preguntarDNI.h"
+#include "tipoUsuario.h"
 
 void inicioSesion();
 void limpiarPantalla();
@@ -40,25 +41,27 @@ void controlInicio()
 
 }
 
+
 void inicioSesion()
 {
     int tmpClave = 0;
     int loginExitoso = 0;
 
+
     limpiarPantalla();
 
     const char *titulo[] =
     {
-        "   ____ _____ ____ _____ ___ ___  _   _               ",
-        "  / ___| ____/ ___|_   _|_ _/ _ \\| \\ | |              ",
-        " | |  _|  _| \\___ \\ | |  | | | | |  \\| |              ",
-        " | |_| | |___ ___) || |  | | |_| | |\\  |              ",
-        "  \\____|_____|____/ |_| |___\\___/|_| \\_|_ _____ _     ",
-        "                        | | | |/ _ \\_   _| ____| |    ",
-        "                        | |_| | | | || | |  _| | |    ",
-        "                        |  _  | |_| || | | |___| |___ ",
-        "                        |_| |_|\\___/ |_| |_____|_____|",
-        "                                                      "
+        "  ____ _____  _ __   __ ______________________      ",
+        " / ___|_   _|/ \\ \\ / // / / / / / / / / / /        ",
+        " \\___ \\ | | / _ \\\\ V // / / / / / / / / / /         ",
+        "  ___) || |/ ___ \\| |/ / / / / / / / / / /          ",
+        "  |____/_|_/_/___\\_\\_/_/_/_/_/_/_/_/_/_/_/___ _  __",
+        "    / / / / / / / / /_   _|  _ \\    / \\  / ___| |/ /",
+        "   / / / / / / / / /  | | | |_) |  / _ \\| |   | ' / ",
+        "  / / / / / / / / /   | | |  _ <  / ___ \\ |___| . \\ ",
+        " /_/_/_/_/_/_/_/_/    |_| |_| \\_\\/_/   \\_\\____|_|\\_\\",
+        "                                                    "
     };
 
     int numLineas = sizeof(titulo) / sizeof(titulo[0]);
@@ -103,18 +106,22 @@ void inicioSesion()
     {
     case claveMozo:
         printf(colorAmarillo "=== MENU MOZO ===\n" reiniciarColor);
+        tipoUsuario = 1;  // Mozo
         controlMozo();
         break;
     case claveRecepcionista:
         printf(colorAmarillo "=== MENU RECEPCIONISTA ===\n" reiniciarColor);
+        tipoUsuario = 2;  // Recepcionista
         controlRecepcionista();
         break;
     case claveLimpieza:
         printf(colorAmarillo "=== MENU LIMPIEZA ===\n" reiniciarColor);
+        tipoUsuario = 3;  // Limpieza
         controlLimpieza();
         break;
     case claveAdmin:
         printf(colorAmarillo "=== MENU ADMINISTRADOR ===\n" reiniciarColor);
+        tipoUsuario = 4;  // Administrador
         controlAdmin();
         break;
     default:
@@ -176,7 +183,7 @@ void controlMozo()
             break;
         }
 
-        printf("Seguir ejecutando? (1: Sí / 0: No): ");
+        printf("Seguir ejecutando? (1: Si / 0: No): ");
         scanf("%d", &decision);
     }
     while (decision == 1);
@@ -217,7 +224,7 @@ void controlRecepcionista()
         case 0:
             return;
         }
-        printf("Seguir ejecutando? (1: Sí / 0: No): ");
+        printf("Seguir ejecutando? (1: Si / 0: No): ");
         scanf("%d", &decision);
     }
     while (decision == 1);
@@ -258,7 +265,7 @@ void controlLimpieza()
             return;
         }
 
-        printf("Seguir ejecutando? (1: Sí / 0: No): ");
+        printf("Seguir ejecutando? (1: Si / 0: No): ");
         scanf("%d", &decision);
     }
     while (decision == 1);
@@ -276,10 +283,10 @@ void controlAdmin()
         printf("=====================================\n");
         printf("|   1    | Menu de Botellas         |\n");
         printf("|   2    | Menu de Comidas          |\n");
-        printf("|   2    | Menu de Empleados        |\n");
-        printf("|   2    | Menu de Limpieza         |\n");
-        printf("|   2    | Menu de Reserva          |\n");
-        printf("|   2    | Generar pagos            |\n");
+        printf("|   3    | Menu de Empleados        |\n");
+        printf("|   4    | Menu de Limpieza         |\n");
+        printf("|   5    | Menu de Reserva          |\n");
+        printf("|   6    | Generar pagos            |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
 
@@ -290,16 +297,25 @@ void controlAdmin()
         switch (decision)
         {
         case 1:
-            menuEmpleados();
-            break;
-        case 2:
             menuBotellas();
             break;
+        case 2:
+            menuComidas();
+            break;
+        case 3:
+            menuEmpleados();
+            break;
+        case 4:
+            menuLimpieza();
+        case 5:
+            menuReservas();
+        case 6:
+            linkDePago();
         case 0:
             return;
         }
 
-        printf("Seguir ejecutando? (1: Sí / 0: No): ");
+        printf("Seguir ejecutando? (1: Si / 0: No): ");
         scanf("%d", &decision);
     }
     while (decision == 1);

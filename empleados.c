@@ -8,6 +8,8 @@
 #include "const.h"
 #include "preguntarDNI.h"
 #include "habitaciones.h"
+#include "tipoUsuario.h"
+
 
 ///ARCHIVOS///
 const char empleadosArchivo[]="arEmpleados.dat";
@@ -25,7 +27,7 @@ int menuEmpleados()
     do
     {
         printf("================================================\n");
-        printf(colorAmarillo"|             Menu administrador              |\n"reiniciarColor);
+        printf("|             Menu empleados                  |\n");
         printf("================================================\n");
         printf("| Opcion |           Descripcion              |\n");
         printf("================================================\n");
@@ -38,8 +40,7 @@ int menuEmpleados()
         printf("|   7    | Restaurar empleado dado de baja    |\n");
         printf("|   8    | Mostrar empleados por edad         |\n");
         printf("|   9    | Mostrar empleados por Nombre       |\n");
-        printf("|   10   | Abrir menu habitaciones            |\n");
-        printf("|   0    | Cerrar sesion                      |\n");
+        printf("|   0    | Volver                             |\n");
         printf("================================================\n");
         printf("Su decision: ");
         scanf("%d", &opcion);
@@ -92,11 +93,8 @@ int menuEmpleados()
         case 9:
             mostrarEmpleadosOrdenadosPorNombre(empleadosArchivo);
             break;
-        case 10:
-            menuHabitaciones();
-            break;
         case 0:
-            inicioSesion();
+            volverDependiendoTipoUsuario(tipoUsuario);
             break;
         default:
             printf("Opción inválida. Por favor, ingrese una opción válida.\n");
