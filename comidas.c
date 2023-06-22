@@ -9,6 +9,7 @@ int menuComidas()
 {
     int op=0;
     char decision;
+    char Alimentoss[5][MATRIZ_C];
 
   do
     {
@@ -30,7 +31,7 @@ int menuComidas()
         switch (op)
         {
         case 1:
-             CargarAlimentosArchivo(ArchC, MATRIZ_F );
+
             break;
         case 2:
 
@@ -58,90 +59,73 @@ int menuComidas()
     return 0;
 }
 
-
-int CargarAlimentos(Alimento Alimentos[][MATRIZ_S], int dimF)
-{
-   int f=0;
-   char op='s';
-
-    while (f < dimF && op == 's')
-    {
-        printf("Ingrese la comida: ");
-        fflush(stdin);
-        //gets(Alimentos.comida[]);
-
-        printf("Ingrese el postre: ");
-        fflush(stdin);
-        //gets(Alimentos.postre[f]);
-
-        printf("Ingrese la fruta: ");
-        fflush(stdin);
-        //gets(Alimentos.fruta[f]);
-
-        printf("Deseas seguir cargando alimentos (s/n)? ");
-        fflush(stdin);
-        scanf(" %c", &op);
-
-        f++;
-    }
-
-    return f;
-}
-
-void mostrarAlimentos(Alimento Alimentos, int validos)
+int CargarAlimentos(char Alimentos[][MATRIZ_C], int dimF)
 {
   int f=0;
+  char control='s';
+  for(f=0;f<dimF && control == 's';f++)
+  {
+    printf("Ingresar los alimentos\n");
+    fflush(stdin);
+    gets(Alimentos[f]);
+
+    printf("Desea seguir cargando más alimentos?\n");
+    fflush(stdin);
+    scanf(" %c", &control);
+  }
+  return f;
+}
+
+void mostrarAlimentos(char Alimentos[][MATRIZ_C], int validos)
+{
+  int f =0;
 
   for(f=0;f<validos;f++)
   {
-    puts("|-------------------------------|");
-    printf("Comida: %s\n", Alimentos.comida[f]);
-    printf("Postre: %s\n", Alimentos.postre[f]);
-    printf("Fruta:  %s\n", Alimentos.fruta[f]);
-    puts("|-------------------------------|");
+    printf("Alimentos: %s", Alimentos[f]);
   }
+
 }
 
-void CargarAlimentosArchivo(char nombre[], int dimF)
+void CargarAlimentosArchivo(char nombre[], char Alimentos[][MATRIZ_C], int dimF)
 {
   FILE* Archi;
 
   Archi = fopen(nombre, "ab");
-  Alimento Temp;
-  int validos = 0;
+  int validos=0;
 
   if(Archi!=NULL)
   {
-  /*
-   validos = CargarAlimentos(Temp, dimF);
-   fwrite(&Temp, sizeof(Alimento), 1, Archi);
-   fclose(Archi);
-   printf("Se cargo correctamente\n");
-   */
+    validos  =  CargarAlimentos(Alimentos, dimF);
+    fwrite(&validos, sizeof(int), 1, Archi);
+    fwrite(Alimentos, sizeof(Alimentos[0]), validos, Archi);
+    fclose(Archi);
   }
 }
 
-void mostrarAlimentosArchivo(char nombre[])
+void mostrarAlimentosArchivo(char nombre[], char Alimentos[][MATRIZ_C], int dimF)
 {
- FILE* Archi;
+  FILE Archi;
 
- Archi = fopen(nombre, "rb");
- Alimento Temp;
- if(Archi!=NULL)
- {
-   fread(&Temp, sizeof(Alimento), 1, Archi);
+  Archi = fopen(nombre, "rb");
+  int validos;
+  if(Archi!=NULL)
+  {
+   while(fread(&validos, sizeof(int), 1, Archi))
    {
-
+    mostrarAlimentos(Alimentos, validos);
    }
 
    fclose(Archi);
- }
+  }
 
 
 
 
 
 }
+
+
 
 
 
