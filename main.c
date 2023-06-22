@@ -49,16 +49,16 @@ void inicioSesion()
 
     const char *titulo[] =
     {
-        "   ____ _____ ____ _____ ___ ___  _   _               ",
-        "  / ___| ____/ ___|_   _|_ _/ _ \\| \\ | |              ",
-        " | |  _|  _| \\___ \\ | |  | | | | |  \\| |              ",
-        " | |_| | |___ ___) || |  | | |_| | |\\  |              ",
-        "  \\____|_____|____/ |_| |___\\___/|_| \\_|_ _____ _     ",
-        "                        | | | |/ _ \\_   _| ____| |    ",
-        "                        | |_| | | | || | |  _| | |    ",
-        "                        |  _  | |_| || | | |___| |___ ",
-        "                        |_| |_|\\___/ |_| |_____|_____|",
-        "                                                      "
+        "  ____ _____  _ __   __ ______________________      ",
+        " / ___|_   _|/ \\ \\ / // / / / / / / / / / /        ",
+        " \\___ \\ | | / _ \\\\ V // / / / / / / / / / /         ",
+        "  ___) || |/ ___ \\| |/ / / / / / / / / / /          ",
+        "  |____/_|_/_/___\\_\\_/_/_/_/_/_/_/_/_/_/_/___ _  __",
+        "    / / / / / / / / /_   _|  _ \\    / \\  / ___| |/ /",
+        "   / / / / / / / / /  | | | |_) |  / _ \\| |   | ' / ",
+        "  / / / / / / / / /   | | |  _ <  / ___ \\ |___| . \\ ",
+        " /_/_/_/_/_/_/_/_/    |_| |_| \\_\\/_/   \\_\\____|_|\\_\\",
+        "                                                    "
     };
 
     int numLineas = sizeof(titulo) / sizeof(titulo[0]);
@@ -79,8 +79,8 @@ void inicioSesion()
         {
 
             // Calcula el valor de azul y violeta en función de la posición j
-            int azul = 255 - j * (255 / strlen(titulo[i]));
-            int violeta = j * (255 / strlen(titulo[i]));
+            int azul = 255 - j * (255 / (strlen(titulo[i]) - 1));
+            int violeta = j * (255 / (strlen(titulo[i]) - 1));
 
             // Establece el color utilizando códigos de escape ANSI
             printf("\033[48;2;%d;0;%dm%c\033[0m", violeta, azul, titulo[i][j]);
@@ -127,6 +127,7 @@ void inicioSesion()
 }
 
 
+
 void limpiarPantalla()
 {
 #ifdef _WIN32
@@ -151,7 +152,7 @@ void controlMozo()
         printf("=====================================\n");
         printf("| Opcion | Descripcion              |\n");
         printf("=====================================\n");
-        printf("|   1    | Menu de Comida           |\n");
+        printf("|   1    | Mostrar comidas          |\n");
         printf("|   2    | Menu de Botellas         |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
