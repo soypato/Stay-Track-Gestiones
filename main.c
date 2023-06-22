@@ -151,7 +151,7 @@ void controlMozo()
         printf("=====================================\n");
         printf("| Opcion | Descripcion              |\n");
         printf("=====================================\n");
-        printf("|   1    | Menu de Comida           |\n");
+        printf("|   1    | Mostrar comidas          |\n");
         printf("|   2    | Menu de Botellas         |\n");
         printf("|   0    | Salir                    |\n");
         printf("=====================================\n");
