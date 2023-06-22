@@ -7,37 +7,10 @@
 ///HARCHIVOS
 const char arcHabitaciones[30] = {"archivoHabitaciones.dat"};
 const int numHabitaciones = 2;
-//////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-int menuHabitaciones()
-{
-    printf("================================================\n");
-    printf("|             Menu habitaciones               |\n");
-    printf("================================================\n");
-    printf("| Opcion |          Descripcion               |\n");
-    printf("================================================\n");
-    printf("|   1    |  Cargar una habitacion             |\n");
-    printf("|   2    |  Mostrar una habitacion            |\n");
-    printf("|   3    |  Cargar habitacion archivo         |\n");
-    printf("|   4    |  Mostrar habitacion archivo        |\n");
-    printf("|   5    |  Mostrar habitacion por numero     |\n");
-    printf("|   6    |  Mostrar no ocupadas/no reservadas |\n");
-    printf("|   7    |  Modificar un campo a eleccion     |\n");
-    printf("|   0    |  Volver al menu de recepcionista   |\n");
-    printf("================================================\n");
-
-    menu();
-    return 0;
-}
-//////////////////////////////////////////////////////////////////////////////
 
 ///FUNCIONES
 
-void menu()//MENU
+void menuHabitaciones()//MENU
 {
     int ejercicio;
     strHabitacion hab;
@@ -56,12 +29,24 @@ void menu()//MENU
     int opcPunto7;
     int habBuscarPunto7;
     int auxPunto7;
-
-
-
+    char decision = 's';
 
     do
     {
+        printf("================================================\n");
+        printf("|             Menu habitaciones               |\n");
+        printf("================================================\n");
+        printf("| Opcion |          Descripcion               |\n");
+        printf("================================================\n");
+        printf("|   1    |  Cargar una habitacion             |\n");
+        printf("|   2    |  Mostrar una habitacion            |\n");
+        printf("|   3    |  Cargar habitacion archivo         |\n");
+        printf("|   4    |  Mostrar habitacion archivo        |\n");
+        printf("|   5    |  Mostrar habitacion por numero     |\n");
+        printf("|   6    |  Mostrar no ocupadas/no reservadas |\n");
+        printf("|   0    |  Volver al menu administrador      |\n");
+        printf("================================================\n");
+
         printf("Su decision: ");
         fflush(stdin);
         scanf("%i", &ejercicio);
@@ -199,51 +184,53 @@ void menu()//MENU
             menuEmpleados();
             break;
         }
+        printf("Seguir ejecutando? (s/n): ");
+        fflush(stdin);
+        scanf("%c", &decision);
     }
     while(ejercicio!=0);
 }
 
-
-
-strHabitacion strCargarHabitacion()//PUNTO 1 CARGAR UNA HABITACION
+strHabitacion strCargarHabitacion() // PUNTO 1: CARGAR UNA HABITACION
 {
     strHabitacion aux;
 
-    printf("La habitacion esta ocupada?0=no,1=si.\n");
+    printf("¿La habitacion está ocupada? (0 = No, 1 = Si): ");
     fflush(stdin);
     scanf("%i", &aux.ocupado);
 
-    printf("La habitacion esta reservada?0=no,1=si.\n");
+    printf("¿La habitacion está reservada? (0 = No, 1 = Si): ");
     fflush(stdin);
     scanf("%i", &aux.reservado);
 
-
-    printf("Ingrese el numero de la habitacion.\n");
+    printf("Ingrese el número de la habitacion: ");
     fflush(stdin);
     scanf("%i", &aux.numeroDeHabitacion);
 
-    printf("Ingrese la capacidad de huespedes.\n");
+    printf("Ingrese la capacidad de huéspedes: ");
     fflush(stdin);
     scanf("%i", &aux.capacidadDeHuespedes);
 
-    printf("Ingrese la cantidad de baños de la habitacion.\n");
+    printf("Ingrese la cantidad de banios de la habitacion: ");
     fflush(stdin);
     scanf("%i", &aux.cantBanios);
 
-
-    printf("Tiene frigobar?0=no,1=si.\n");
+    printf("¿Tiene frigobar? (0 = No, 1 = Si) ");
     fflush(stdin);
     scanf("%i", &aux.frigobar);
 
-    printf("Tiene aire acondicionado?0=no,1=si.\n");
+    printf("¿Tiene aire acondicionado? (0 = No, 1 = Si) ");
     fflush(stdin);
     scanf("%i", &aux.aireAcondicionado);
 
-    aux.habilitada=1;
+    aux.habilitada = 1;
+
+    printf("La habitacion fue cargada satisfactoriamente. ");
 
     return aux;
-
 }
+
+
 void auxOcupado(strHabitacion aux)//AUX OCUPADO PARA MOSTRAR HABITACIONES
 {
     if(aux.ocupado==0)
@@ -533,19 +520,17 @@ void arcCargarHabitaciones(char nombreArchi[], char opcion[])//PUNTO 3 CARGAR HA
 
 }
 
-void arcMostrarHabitaciones(char nombreArchivo[])//PUNTO 4 MOSTRAR LAS HABITACIONES DE UN ARCHIVO
+void arcMostrarHabitaciones(char nombreArchivo[])
 {
     strHabitacion aux;
-    FILE* buffer = fopen(nombreArchivo,"rb");
+    FILE* buffer = fopen(nombreArchivo, "rb");
 
-    if(buffer)
+    if (buffer)
     {
-
-
         printf("Abierto\n");
         fseek(buffer, 0, SEEK_END); // Mover el puntero de archivo al final
         long fileSize = ftell(buffer); // Obtener el tamaño del archivo
-        if(fileSize == 0)
+        if (fileSize == 0)
         {
             printf("El archivo no tiene datos cargados\n");
         }
@@ -553,25 +538,16 @@ void arcMostrarHabitaciones(char nombreArchivo[])//PUNTO 4 MOSTRAR LAS HABITACIO
         {
             printf("Entra\n");
             fseek(buffer, 0, SEEK_SET);
-            while(fread(&aux, sizeof(strHabitacion), 1, buffer)>0)
-
-
+            while (fread(&aux, sizeof(strHabitacion), 1, buffer) == 1)
             {
                 strMostrarUnaHabitacion(aux);
             }
-
-
         }
-
-
-
-
         fclose(buffer);
-
     }
     else
     {
-        printf("Error\n");
+        printf("Error al abrir el archivo\n");
     }
 }
 
@@ -585,42 +561,33 @@ int auxBuscarConEntero()//AUX CARGAR UN ENTERO PARA USAR COMO PARAMETRO
     return num;
 }
 
-int arcBuscarHabitacionPorNumero(char nombreArchi[], int num)//MOSTRAR UNA HABITACION BUSCADA POR NUMERO DE HABITACION
-{
+int arcBuscarHabitacionPorNumero(const char nombreArchi[], int num) {
     strHabitacion aux;
     FILE* buffer = fopen(nombreArchi, "rb");
-    int i=0;
-    if (buffer)
-    {
+    int i = 0;
 
-        printf("Abierto\n");
-
-
-        while((fread(&aux, sizeof(strHabitacion), 1, buffer))>0)
-        {
-            if(aux.numeroDeHabitacion==num)
-            {
+    if (buffer != NULL) {
+        printf("Archivo abierto.\n");
+        int habitacionEncontrada = 0; // Variable para indicar si se encontró la habitación
+        while (fread(&aux, sizeof(strHabitacion), 1, buffer) == 1) {
+            if (aux.numeroDeHabitacion == num) {
                 strMostrarUnaHabitacion(aux);
                 i=1;
-
+                habitacionEncontrada = 1;
+                break; // Se encontró la habitación, no es necesario seguir buscando
             }
         }
-        if(feof(buffer)!=0)
-        {
-            printf("No se encontro la habitacion.\n");
+
+        if (habitacionEncontrada == 0) {
+            printf("No se encontró la habitación.\n");
         }
 
-
-
         fclose(buffer);
-    }
-    else
-    {
-        printf("Error\n");
+    } else {
+        printf("Error al abrir el archivo.\n");
     }
     return i;
 }
-
 
 void mostrarArregloDeStructs(strHabitacion A[], int validos)//MOSTRAR ARREGLO DE STRUCTS
 {
@@ -649,38 +616,26 @@ strHabitacion auxBuscarHabitacionesNoOcupadasONoReservadas(strHabitacion aux, in
     return resultado;
 }
 
-
-int arcBuscarHabitacionesNoOcupadasONoReservadas(char nombreArchi[], strHabitacion A[], int num, int numero)//PASAR LAS HABITACIONES QUE SE SOLICITEN A UN ARREGLO
-{
-    int i=0;
+int arcBuscarHabitacionesNoOcupadasONoReservadas(char nombreArchi[], strHabitacion A[], int num, int numero) {
+    int i = 0;
     strHabitacion aux;
     FILE* buffer = fopen(nombreArchi, "rb");
-    if(buffer)
-    {
 
+    if (buffer) {
         printf("Abierto\n");
 
-
-
-        while((fread(&aux, sizeof(strHabitacion), 1, buffer))>0)
-        {
+        while (fread(&aux, sizeof(strHabitacion), 1, buffer) > 0) {
             strHabitacion resultado = auxBuscarHabitacionesNoOcupadasONoReservadas(aux, num);
-            if(resultado.opcionPunto6==numero)
-            {
-                A[i]=resultado;
+            if (resultado.opcionPunto6 == numero) {
+                A[i] = resultado;
                 i++;
-
             }
         }
 
         fclose(buffer);
-    }
-    else
-    {
+    } else {
         printf("Error\n");
     }
-
-
 
     return i;
 }

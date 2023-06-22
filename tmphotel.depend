@@ -288,11 +288,9 @@
 1679999162 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\pila.c
 	"pila.h"
 
-<<<<<<< HEAD
-1687320225 D
-=======
-1687320192 D
->>>>>>> 81d299c9b2cab70cebc30e7d991807a081cd1ae0
+1687394227 D
+
+1687320192 299c9b2cab70cebc30e7d991807a081cd1ae0
 	"comidas.h"
 	"empleados.h"
 	<time.h>
@@ -640,9 +638,16 @@
 
 1687320192 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\preguntardni.h
 
-1687320225 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\habitaciones.h
+1687397958 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\habitaciones.h
 
-1687320225 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\habitaciones.c
+1687397966 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\habitaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"habitaciones.h"
+	"empleados.h"
+
+1687394526 arrolloPato
 
 1687320532 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\linkdepago.c
 	<stdio.h>
@@ -684,7 +689,7 @@
 	<string.h>
 	"tiempo.h"
 
-1687326489 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\main.c
+1687373055 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\main.c
 	<stdio.h>
 	<stdlib.h>
 	"tiempo.h"
