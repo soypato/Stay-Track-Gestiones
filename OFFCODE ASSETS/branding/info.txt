@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+font name: Comfortaa-Bold
+font link: https://fonts.google.com/specimen/Comfortaa
+font author: Johan Aakerlund
+font author site: https://aajohan.deviantart.com/
+Slogan Font: Questrial-Regular.otf
+
+icon designer: Alfredo @ IconsAlfredo.us
+icon designer link: /AlfredoCreates
+        
+{"bg-gradient-0":"#913C00","bg-gradient-1":"#D9AD76","icon":"#ffffff","font":"#ffffff","slogan":"#ffffff"}
+      
