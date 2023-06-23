@@ -1,7 +1,9 @@
-#define claveMozo 1
-#define claveRecepcionista 2
-#define claveLimpieza 3
-#define claveAdmin 4
+// CLAVES DE USUARIOS Y CODIGOS DE COLOR
+
+#define claveMozo 9234
+#define claveRecepcionista 2389
+#define claveLimpieza 3290
+#define claveAdmin 2349
 
 #define reiniciarColor   "\x1b[0m"
 #define colorCeleste    "\x1b[36m"

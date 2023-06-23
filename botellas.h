@@ -3,7 +3,7 @@
 #include "pila.h"
 
 
-
+// struct de botellas
 typedef struct {
     char marca[50];
     int retornable; // 0 para retornables, 1 para no retornables
@@ -11,7 +11,7 @@ typedef struct {
 } botellita;
 
 #define MAX_BOTELLAS 10
-
+// PROTOTIPADO
 botellita cargarBotellas(botellita);
 void cargarBotellasArchivo(char nombre[]);
 void mostrarBotella(botellita deMuestra);

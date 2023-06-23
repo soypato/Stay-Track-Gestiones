@@ -1,6 +1,6 @@
 #ifndef PORLIMPIAR_H_INCLUDED
 #define PORLIMPIAR_H_INCLUDED
-
+// PROTOTIPADO
 void menuLimpiar();
 void agregarDatosALaPila(Pila *habitacionesPorLimpiar);
 void mostrarHabitacionesEnFormatoFIFO(Pila habitacionesPorLimpiar);

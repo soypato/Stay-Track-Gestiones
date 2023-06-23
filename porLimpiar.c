@@ -3,7 +3,7 @@
 #include "pila.h"
 #include "porLimpiar.h"
 #include "tipoUsuario.h"
-
+// MENU DE LIMPIEZA
 void menuLimpieza()
 {
     int numAeliminar;
@@ -76,13 +76,17 @@ void menuLimpieza()
     while (decision == 's');
 }
 
+// AGREGAMOS DATOS A LA PILA
 void agregarDatosALaPila(Pila *habitacionesPorLimpiar)
 {
     printf("Vamos a cargar una nueva habitación.\n");
     leer(habitacionesPorLimpiar);
     printf("La habitación se ha cargado correctamente.\n");
 }
-
+/* función de mostrar habitaciones en first in first out, invertimos los datos pasando a una pila
+dada vuelta */
+/* no usamos punteros porque no interesa que los datos de invertida se
+pierdan si solo son para muestreo */
 void mostrarHabitacionesEnFormatoFIFO(Pila habitacionesPorLimpiar)
 {
     Pila pilaInvertida;
@@ -96,13 +100,13 @@ void mostrarHabitacionesEnFormatoFIFO(Pila habitacionesPorLimpiar)
     printf("Mas recientes - Menos recientes");
     mostrar(&pilaInvertida);
 }
-
+// mostramos en formato predeterminado de pila.h la pila
 void mostrarHabitacionesEnFormatoLIFO(Pila habitacionesPorLimpiar)
 {
     printf("Menos recientes - Mas recientes");
     mostrar(&habitacionesPorLimpiar);
 }
-
+// buscamos y eliminamos alguna habitación, función basada en la teoría de la unidad 1
 void busquedaYEliminacion(Pila *habitacionesPorLimpiar, int numAeliminar, Pila *completadas)
 {
     Pila aux, descarte;
@@ -132,7 +136,7 @@ void busquedaYEliminacion(Pila *habitacionesPorLimpiar, int numAeliminar, Pila *
     mostrar(&descarte);
     apilar(completadas, desapilar(&descarte));
 }
-
+// ordenamiento de pilas numéricamente
 void ordenarHabitacionesNumericamente(Pila *habitacionesPorLimpiar)
 {
     Pila pilaAux;
@@ -174,7 +178,8 @@ void ordenarHabitacionesNumericamente(Pila *habitacionesPorLimpiar)
     printf("\nPila ordenada numéricamente:");
     mostrar(habitacionesPorLimpiar);
 }
-
+// borramos todas desapilandolas
+// no hace falta mandarla a una pila diferente
 void borrarTodasLasHabitaciones(Pila *origen, Pila *destino)
 {
     while (!pilavacia(origen))

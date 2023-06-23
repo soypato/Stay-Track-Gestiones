@@ -9,7 +9,7 @@ const char Arch[]="BotellasFrigo.dat";
 
 
 
-
+// Arrancamos el menu de botellas que se invoca desde el main
 int menuBotellas()
 {
     int op = 0;
@@ -74,7 +74,12 @@ int menuBotellas()
 
     return 0;
 }
+
 ///Funcion que carga una botella
+
+
+// Carga de botellas
+
 botellita cargarBotellas(botellita botellaTemporal)
 {
     printf("Ingrese la marca de la botella: ");
@@ -88,7 +93,12 @@ botellita cargarBotellas(botellita botellaTemporal)
 
     return botellaTemporal;
 }
+
 ///Función que verifica si ya existe el ID de una botella
+
+
+// Comprobación de ID existente
+
 int verificarIDExistente(char nombre[], int id)
 {
     FILE* archivo = fopen(nombre, "rb");
@@ -111,7 +121,11 @@ int verificarIDExistente(char nombre[], int id)
     return idExistente; // 0 si el ID no existe, 1 si existe
 }
 
+
 ///Funcion que carga en el archivo y verifica al momento de cargar si ya existe un ID
+
+// Carga de botellas de archivo
+
 void cargarBotellasArchivo(char nombre[])
 {
     FILE* Archi = fopen(nombre, "wb");
@@ -148,7 +162,12 @@ void cargarBotellasArchivo(char nombre[])
         printf("Error en la carga del archivo.\n");
     }
 }
+
 ///Función que muestra la botella
+
+
+// Impresión de una botellas
+
 void mostrarBotella(botellita deMuestra)
 {
     char textoRetornable[50];
@@ -172,7 +191,12 @@ void mostrarBotella(botellita deMuestra)
     printf("-----------\n");
 
 }
+
 ///Función que muestra las botellas en un archivo
+
+
+// Muestreo de todo el archivo de todas las botellas
+
 void mostrarTodoElArchivoDeBotellas(char nombre[])
 {
     FILE* buffer = fopen(nombre, "rb");
@@ -190,7 +214,12 @@ void mostrarTodoElArchivoDeBotellas(char nombre[])
     }
 
 }
+
 ///Ordena por inserccion La marca de las botellas
+
+
+// Ordenamiento por inserción
+
 void ordenarBotellasPorMarca(char nombre[])
 {
     FILE* archivo = fopen(nombre, "rb+");
@@ -234,7 +263,12 @@ void ordenarBotellasPorMarca(char nombre[])
         printf("Error: no se pudo abrir el archivo.\n");
     }
 }
+
 ///Función que ordena por selección el ID de las botellas
+
+
+// Ordenamiento por selección
+
 void ordenarBotellasPorID(char nombre[])
 {
     FILE* archivo = fopen(nombre, "rb+");
@@ -285,7 +319,11 @@ void ordenarBotellasPorID(char nombre[])
     }
 }
 
+
 ///Función que busca una botella según la marca
+
+// Búsqueda de las botellas por marca
+
 void buscarBotellasPorMarca(char nombre[], const char* marcaBuscada)
 {
     FILE* archivo = fopen(nombre, "rb");
@@ -315,7 +353,12 @@ void buscarBotellasPorMarca(char nombre[], const char* marcaBuscada)
         printf("Error: no se pudo abrir el archivo.\n");
     }
 }
+
 ///Función que permite modificar Algún campo de la botella
+
+
+// Modificación según el usuario, modifica pidiendo el ID
+
 void ModificarSegunUsuario(char nombre[], int id)
 {
     FILE* Archi;
@@ -333,6 +376,7 @@ void ModificarSegunUsuario(char nombre[], int id)
 
         do
         {
+            // Dependiendo el case modifica uno u otro
             printf("¿Qué desea modificar de la botella?\n");
             printf("==========================================\n");
             printf("|              Cambios               |\n");
@@ -377,7 +421,7 @@ void ModificarSegunUsuario(char nombre[], int id)
                 fclose(Archi);
                 return;
             }
-
+            // Lo guardamos en el archivo
             fseek(Archi, sizeof(botellita) * (id - 1), SEEK_SET);
             fwrite(&temp, sizeof(botellita), 1, Archi);
             fflush(Archi);

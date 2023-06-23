@@ -5,7 +5,7 @@
 
 
 
-///ESTRUCTURAS
+//ESTRUCTURAS DE HABITACIONES
 typedef struct
 {
 

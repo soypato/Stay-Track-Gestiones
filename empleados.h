@@ -2,6 +2,7 @@
 #define EMPLEADOS_H_INCLUDED
 #include "tiempo.h"
 
+// ESTRUCTURA DE EMPLEADOS
 typedef struct {
     char nombreyApellido[35];
     int edad;
