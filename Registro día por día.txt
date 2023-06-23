@@ -17,14 +17,17 @@
     Se realizaron modificaciones en el archivo comidas.c para obtener una versión estable. Se hicieron ajustes en el archivo comidas.c para mejorar su estabilidad y rendimiento, corrigiendo errores y realizando optimizaciones necesarias.
     Se implementó la matriz en el archivo comidas.c. Se agregó una implementación de matriz en el archivo comidas.c para manejar y manipular datos relacionados con las comidas ofrecidas en el hotel.
     Se actualizaron los manuales y la documentación oficial del proyecto. Se realizaron cambios y actualizaciones en los manuales y la documentación oficial del proyecto para reflejar las modificaciones recientes y proporcionar información precisa y completa.
+Mejora de comida.h y algunas liberías.
 
 21/06/2023:
     Se resolvieron conflictos en la rama. Durante el proceso de desarrollo y fusión de cambios, se encontraron conflictos en la rama en la que se estaba trabajando. Estos conflictos se resolvieron para asegurar la coherencia y consistencia del código.
-Comenzamos a probar datos.
+Comenzamos a probar datos. Terminado reservas y botellas.
 
-17 a 22: Codificación menor, organización del proyecto y continuación desde el 16.
+Semana del 17 a 22: Codificación. Organización del proyecto y continuación desde el 16.
+DESARROLLO INTENSIVO DE:
+HABITACIONES, RESERVA, BOTELLAS, COMIDA, EMPLEADO, PORLIMPIAR, Y LAS 12 LIBERÍAS QUE CONFORMAN EL PROYECTO.
 
-16/06/2023: Retomamos con el proyecto; empezamos con tiempo.h y asignación de tareas de habitaciones, reservas y botellas.
+Semana del 16/06/2023: Retomamos con el proyecto; empezamos con tiempo.h y asignación de tareas de habitaciones, reservas y botellas.
 
 31 a 14: Investigación off-code de gestión de hoteles.
 
