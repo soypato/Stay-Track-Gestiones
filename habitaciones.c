@@ -318,59 +318,6 @@ void auxAireAcondicionado(strHabitacion aux)//AUX AIRE ACONDICIONADO PARA MOSTRA
     }
 }
 
-/*void auxPrecioHabitaciones(strHabitacion aux)//AUX PRECIO HABITACIONES PARA CALCULAR EL PRECIO DE LAS HABITACIONES
-{
-
-    int precioPorPersona= 2500;
-    int precioFrigobar=2000;
-    int precioPorBanio=700;
-    int precioAireAcondicionado=1500;
-
-    int precioHabitacionNoche;
-
-    precioHabitacionNoche=aux.cantBanios*precioPorBanio+aux.capacidadDeHuespedes*precioPorPersona;
-
-    if(aux.aireAcondicionado==1)
-    {
-        precioHabitacionNoche+=precioAireAcondicionado;
-    }
-    if(aux.figobar==1)
-    {
-        precioHabitacionNoche+=precioFrigobar;
-    }
-printf("precio por noche%i\n", precioHabitacionNoche);
-    aux.precio=precioHabitacionNoche;
-    printf("aux.precio %i\n",aux.precio);
-
-}
-
-
-
-void strMostrarUnaHabitacion(strHabitacion aux)//PUNTO 2 MOSTRAR UNA HABITACION
-{
-
-
-    printf("---------\n");
-    printf("La habitacion numero %i\n", aux.numeroDeHabitacion);
-
-    auxOcupado(aux);
-    auxReservado(aux);
-    auxHabilitada(aux);
-
-    printf("La capacidad de huespedes es: %i\n", aux.capacidadDeHuespedes);
-
-    printf("La cantidad de baños es: %i\n", aux.cantBanios);
-
-    auxFrigobar(aux);
-
-    auxAireAcondicionado(aux);
-    auxPrecioHabitaciones(aux);
-    printf("El precio de la habitacion por noche es de $%i.\n", aux.precio);
-
-
-
-
-}*/
 
 
 void auxPrecioHabitaciones(strHabitacion aux) // Corrección: agregar asterisco para pasar por referencia

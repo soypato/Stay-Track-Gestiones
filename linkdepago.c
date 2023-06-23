@@ -10,6 +10,8 @@ char *generarCadenaAleatoria(int longitud);
 char *randomMercadoPago();
 char *randomPayPal();
 
+// Llama a generar los respectivos generadores aleatorios y lo imprime
+
 int linkDePago()
 {
     char *mercadoLink = randomMercadoPago();
@@ -25,6 +27,10 @@ int linkDePago()
 
     return 0;
 }
+
+// Esta cadena genera datos aleatorios, a partir de los caractéres válidos
+/* Esto se hace para asegurarse de asignar la cantidad correcta de memoria para la cadena,
+independientemente del tamaño del tipo de datos char de MP en la función anterior */
 
 char *generarCadenaAleatoria(int longitud)
 {
@@ -42,6 +48,7 @@ char *generarCadenaAleatoria(int longitud)
     return cadena;
 }
 
+// Las funciones donde se copian y concatenan las cadenas de caractéres
 char *randomMercadoPago()
 {
     srand(time(NULL));

@@ -103,7 +103,7 @@ int menuReservas()
     return 0;
 }
 
-
+// Función  reserva de cliente
 void reservarCliente()
 {
     char decision = 's';
@@ -140,7 +140,7 @@ void reservarCliente()
 }
 
 
-
+//
 void cambiarReservaCliente(int nuevoEstadoReserva)
 {
     if(nuevoEstadoReserva == 0)
@@ -155,6 +155,7 @@ void cambiarReservaCliente(int nuevoEstadoReserva)
     cambiarReserva(nuevoEstadoReserva, dniTmp);
 }
 
+// Busca el cliente
 void buscarCliente()
 {
     printf("\n- BUSCAR CLIENTE -\n");
@@ -164,6 +165,8 @@ void buscarCliente()
     {
         mostrarHuesped(temporalDeDNI);
         printf("---\n");
+        // Nos pareció intereseante que hagamos un menú dentro de la búsqueda: no solo printee, sino que de opciones
+        // de utilizar
         printf("1- Check-in | 2- Check-out | 3- Eliminar | 4- Restaurar | 0- Atras\n");
         printf("Su decisión: \n");
         int decisionDeBusqueda;
@@ -178,7 +181,7 @@ void buscarCliente()
         printf("No hemos encontrado personas registradas con dicho DNI.\n");
     }
 }
-
+// Funciones de modificación de "booleano" (es un int con bin) de baja pasiva  y modificación cliente:
 void eliminarCliente()
 {
     printf("\n- ELIMINAR CLIENTE -\n");
@@ -229,7 +232,7 @@ void modificarCliente()
     }
 }
 
-
+// Función de mostrado, decidimos modularizar dos veces para que quede más prolijo en el código
 void mostrarReservasSegunEliminacion(int tipoAMostrar)
 {
     mostrarSegunEliminacion(tipoAMostrar);
@@ -314,7 +317,7 @@ huesped cargaDeHuesped(int dniTmp)
 
     return A;
 }
-
+// Mandamos al archivo la carga de huésped
 void huespedArchi(int dniTmp)
 {
     FILE *buffer = fopen(arHuespedes, "ab");
@@ -332,14 +335,14 @@ void huespedArchi(int dniTmp)
         printf("Ocurrio un error con la apertura del archivo.\n");
     }
 }
-
+// Mostramos UN huésped
 void mostrarHuesped(huesped A)
 {
     char impresionGenero[30];
     char impresionBaja[100];
     char impresionReserva[100];
 
-    // Comprobación del género
+    // Comprobación del género: lo hacemos para no mostrar "0","1","2", sino algo más UX friendly
     if (A.genero == 0)
     {
         strcpy(impresionGenero, "masculino");
@@ -386,7 +389,7 @@ void mostrarHuesped(huesped A)
         printf("Dato de reserva invalido\n");
         return; // Salir de la función si el dato de reserva es inválido
     }
-
+    // Resto de printf
     printf("------------------\n");
     printf("Nombre y apellido: %s\n", A.nombreApellido);
     printf("- Genero: %s\n", impresionGenero);
@@ -401,22 +404,21 @@ void mostrarHuesped(huesped A)
     printf("- Estado de los datos: %s\n", impresionBaja);
     printf("- Estado de reserva: %s\n", impresionReserva);
 }
-
+// Para check-in y check-out
+// 0 para inactivo, 1 para activo
 void cambiarReserva(int nuevoEstadoDeReserva, int dniTmp)
 {
-    // 0 para inactivo, 1 para activo
     FILE *archivo;
     huesped Persona;
     char decision = 's';
     int encontrado = 0;
-
+    // Por convención, podemos usar R+B = RB+
     archivo = fopen(arHuespedes, "rb+");
 
     if (archivo)
     {
         while (fread(&Persona, sizeof(huesped), 1, archivo) > 0 && encontrado == 0)
         {
-
             if (!encontrado)
             {
                 printf("No hemos encontrado a la persona.\n");
@@ -432,6 +434,8 @@ void cambiarReserva(int nuevoEstadoDeReserva, int dniTmp)
                 if (decision == 's')
                 {
                     Persona.estadoReserva = nuevoEstadoDeReserva;
+                    /* Por convención interna, en el caso de que hayan mandado 0 en los
+                    param. actuales, se modifica el check-out */
                     // Cuando hagamos check-out, se borran los datos de fechas
                     if(nuevoEstadoDeReserva == 0)
                     {
@@ -465,10 +469,10 @@ void cambiarReserva(int nuevoEstadoDeReserva, int dniTmp)
         printf("Error al abrir el archivo.\n");
     }
 }
-
+// Eliminación y restauración: modificación del campo de baja pasiva
+// 0 para inactivo, 1 para activo
 void eliminarRestaurarCliente(int nuevoEstadoDeEliminacion, int dniTmp)
 {
-    // 0 para inactivo, 1 para activo
     FILE *archivo;
     huesped Persona;
     char decision = 's';
@@ -511,7 +515,7 @@ void eliminarRestaurarCliente(int nuevoEstadoDeEliminacion, int dniTmp)
         printf("No hemos encontrado a la persona.\n");
     }
 }
-
+// Filtro normal de DNI recorriendo el archivo y un campo en específico
 huesped buscarPorDni(int dniOrigen, const char archivo[])
 {
     huesped Encontrado;
@@ -541,7 +545,7 @@ huesped buscarPorDni(int dniOrigen, const char archivo[])
 
     return Encontrado;
 }
-
+// Muestreo de todas las reservas
 void mostrarTodasLasReservas()
 {
     huesped A;
@@ -559,7 +563,7 @@ void mostrarTodasLasReservas()
         printf("(%i elemento/s)\n", contador);
     }
 }
-
+// Muestreo a partir de lo que hayamos pasado en param. actuales
 void mostrarSegunEliminacion(int tipoAMostrar)
 {
     huesped A;
@@ -581,7 +585,7 @@ void mostrarSegunEliminacion(int tipoAMostrar)
         printf("(%i elemento/s)\n", contador);
     }
 }
-
+// Filtro normal de tipoAMostrar y estadoReserva recorriendo el archivo y un campo en específico
 void presenciaHotel(int tipoAMostrar)
 {
     huesped A;
@@ -592,6 +596,7 @@ void presenciaHotel(int tipoAMostrar)
         printf("Se muestran todas las reservas:\n");
         while (fread(&A, sizeof(huesped), 1, buffer) > 0)
         {
+            // la única forma que esté es que hayamos dado de alta y también en simult. check-in
             if ((tipoAMostrar == 0 && A.estadoReserva == 0) ||
                     (tipoAMostrar == 1 && A.estadoReserva == 1))
             {
@@ -607,10 +612,9 @@ void presenciaHotel(int tipoAMostrar)
         printf("Error al abrir el archivo.\n");
     }
 }
-
-#include <stdio.h>
-#include <string.h>
-
+// modificación de campos de la struct huesped
+// parte dos de la modularización del campo anterior
+// se maneja con un case que se manda en la parte uno de este servicio, en los param. actuales
 void modificacionDeDatos(huesped huespedAModificar, int eleccionDeCampoAModificar, int dniTmp)
 {
     FILE* archivo;
@@ -703,6 +707,8 @@ void modificacionDeDatos(huesped huespedAModificar, int eleccionDeCampoAModifica
 
 void intercambio(huesped *a, huesped *b)
 {
+    // a tendra la posicion de b y b la de a
+    // usamos tmp para no perder un dato
     huesped temp = *a;
     *a = *b;
     *b = temp;
@@ -711,7 +717,7 @@ void intercambio(huesped *a, huesped *b)
 /* Es mucho más óptimo usar con malloc(), realloc() y free() por un tema de que estamos moviendo
 estructuras individuales */
 
-void ordenarPorNombreAlfabetico(FILE *archivo)
+void ordenarPorNombreAlfabetico(FILE *archivo)//insercion
 {
     huesped *huespedes = NULL;
     int numHuespedes = 0;
@@ -723,6 +729,10 @@ void ordenarPorNombreAlfabetico(FILE *archivo)
         huespedes = realloc(huespedes, numHuespedes * sizeof(huesped));
         huespedes[numHuespedes - 1] = registro;
     }
+    /* se multiplica numHuespedes por sizeof(huesped) para
+    obtener el tamaño adecuado del arreglo después de agregar un nuevo elemento.
+    El resultado de realloc se asigna nuevamente a huespedes, actualizando
+    así su dirección de memoria en caso de que se haya movido durante la redimensión. */
 
     for (int i = 1; i < numHuespedes; i++)
     {
@@ -733,18 +743,26 @@ void ordenarPorNombreAlfabetico(FILE *archivo)
             j--;
         }
     }
+    /* Aseguran que el índice j esté dentro de los límites del arreglo y
+    que el elemento en la posición j sea menor que el elemento en la
+    posición j - 1 en función de su campo nombreApellido.
+    La función strcmp compara las cadenas de caracteres y
+    devuelve un valor negativo si la
+    primera cadena es menor que la segunda. */
 
-    fseek(archivo, 0, SEEK_SET);
+    fseek(archivo, 0, SEEK_SET); // posiciono en el inicio
     for (int i = 0; i < numHuespedes; i++)
     {
         fwrite(&huespedes[i], sizeof(huesped), 1, archivo);
     }
 
-    free(huespedes);
+    free(huespedes); // libero memoria
 }
 
 void ordenarPorEdad(FILE *archivo)
 {
+    // Inicializo huésped en null por una cuestión de que cuando no declaraba sin null, presentaba errores
+    // Esto es un paso de seguridad de que sé que no tiene nada, ni basura
     huesped *huespedes = NULL;
     int numHuespedes = 0;
 
@@ -753,8 +771,16 @@ void ordenarPorEdad(FILE *archivo)
     {
         numHuespedes++;
         huespedes = realloc(huespedes, numHuespedes * sizeof(huesped));
+        /* utiliza realloc para redimensionar el tamaño del puntero huespedes,
+        asegurando que haya suficiente espacio para almacenar el nuevo huésped.
+        Luego, se guarda el registro leído en la posición
+        correspondiente dentro del arreglo */
         huespedes[numHuespedes - 1] = registro;
     }
+    /*  Se utiliza fseek para establecer el puntero de posición del archivo archivo al inicio.
+    - se realiza un bucle for para escribir los huéspedes ordenados en el archivo.
+    Se utiliza la función fwrite para escribir cada huésped en el archivo en
+    función del tamaño de sizeof(huesped) y se repite para cada huésped en huespedes.*/
 
     for (int i = 0; i < numHuespedes - 1; i++)
     {
@@ -803,6 +829,7 @@ int obtenerNumeroHuespedes(FILE* archivo)
     numHuespedes = fileSize / sizeof(huesped);
     return numHuespedes;
 }
+// Filtro normal de edad recorriendo el archivo y un campo en específico
 
 void filtrarPorEdad()
 {
@@ -818,6 +845,11 @@ void filtrarPorEdad()
 
         for (int j = i + 1; j < numHuespedes; j++)
         {
+            /* Búsqueda mín. edad
+            * Iterar desde i+1
+            * Leer reg. actual
+            * Comparar edades
+            * Actualizar mínima */
             huesped huespedActual;
             fseek(archivo, sizeof(huesped) * j, SEEK_SET);
             fread(&huespedActual, sizeof(huesped), 1, archivo);
@@ -828,7 +860,7 @@ void filtrarPorEdad()
                 huespedMin = huespedActual;
             }
         }
-
+        // movimientos del puntero para ir guardando lo anteriorrmente dado
         if (minIndex != i)
         {
             huesped huespedActual;
@@ -839,6 +871,15 @@ void filtrarPorEdad()
             fwrite(&huespedActual, sizeof(huesped), 1, archivo);
             fseek(archivo, sizeof(huesped) * i, SEEK_SET);
             fwrite(&huespedMin, sizeof(huesped), 1, archivo);
+
+            /* Intercambio de registros
+
+            Leer reg. actual
+            Mover el puntero a posición i
+            Escribir reg. actual en posición i
+            Mover el puntero a posición minIndex
+            Escribir reg. actual en posición minIndex
+            */
         }
     }
 

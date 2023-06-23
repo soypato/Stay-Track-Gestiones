@@ -52,7 +52,7 @@ void cargaDeFechas(tiempo *A)
         maxDias = 31;
     }
 
-    while (A->dia < 1 || A->dia > maxDias)
+    while (A->dia < 1 || A->dia > maxDias) // calcula los días según el mes
     {
         printf("Dia incorrecto, intente de nuevo (1-%d): ", maxDias);
         scanf("%i", &(A->dia));

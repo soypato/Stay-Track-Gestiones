@@ -13,6 +13,7 @@
 #include "preguntarDNI.h"
 #include "tipoUsuario.h"
 
+// Prototipado
 void inicioSesion();
 void limpiarPantalla();
 void mostrarSeparador();
@@ -21,12 +22,14 @@ void controlReservas();
 void controlAdmin();
 void controlInicio();
 
+// Llamamos al control de inicio para la login page
 int main()
 {
     controlInicio();
     return 0;
 }
 
+// Control inicio nos ayuda a cerrar el programa para ir al login
 void controlInicio()
 {
     char continuar = 1;
@@ -41,7 +44,7 @@ void controlInicio()
 
 }
 
-
+// Esto representa la login page,
 void inicioSesion()
 {
     int tmpClave = 0;
@@ -49,7 +52,7 @@ void inicioSesion()
 
 
     limpiarPantalla();
-
+    // Estos son cálculos específicos para el ASCII ART
     const char *titulo[] =
     {
         "  ____ _____  _ __   __ ______________________      ",
@@ -102,6 +105,7 @@ void inicioSesion()
     scanf("%d", &tmpClave);
     limpiarPantalla();
 
+    // Dependiendo lo que pusimos en la clave, nos mostrará un menú u otro
     switch (tmpClave)
     {
     case claveMozo:
@@ -135,6 +139,7 @@ void inicioSesion()
 
 
 
+// Esta es una función que permite limpiar toda la pantalla
 void limpiarPantalla()
 {
 #ifdef _WIN32
@@ -149,6 +154,7 @@ void mostrarSeparador()
     printf("==============================================\n");
 }
 
+// Esta es la tabla del mozo, donde tiene sus servicios, como en todas, se invoca desde las liberías
 void controlMozo()
 {
     int decision;
@@ -188,7 +194,7 @@ void controlMozo()
     while (decision != 0);
 }
 
-
+// Lo mismo para las siguientes...
 void controlRecepcionista()
 {
     int decision;

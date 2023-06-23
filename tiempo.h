@@ -3,7 +3,7 @@
 
 #ifndef TIEMPO_H_INCLUDED
 #define TIEMPO_H_INCLUDED
-
+// ESTRUCTURA DEL TIEMPO
 typedef struct
 {
     int anio;
