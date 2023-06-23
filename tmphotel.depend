@@ -1086,3 +1086,124 @@
 	<stdlib.h>
 	<stdio.h>
 
+1687492607 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\botellas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"botellas.h"
+	"tipoUsuario.h"
+
+1687492162 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\botellas.h
+	"pila.h"
+
+1687232900 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1687492162 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\tipousuario.h
+
+1687488257 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\comidas.c
+	<stdio.h>
+	<string.h>
+	"tipoUsuario.h"
+	"comidas.h"
+	<ctype.h>
+
+1687492162 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\comidas.h
+
+1687483416 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"empleados.h"
+	<time.h>
+	<unistd.h>
+	"const.h"
+	"preguntarDNI.h"
+	"habitaciones.h"
+	"tipoUsuario.h"
+
+1687492162 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\tiempo.h
+	<stdio.h>
+	<stdlib.h>
+
+1687492162 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\empleados.h
+	"tiempo.h"
+
+1687492162 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\const.h
+
+1687492162 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\preguntardni.h
+
+1687492162 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\habitaciones.h
+
+1687492162 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\habitaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"habitaciones.h"
+	"empleados.h"
+	"tipoUsuario.h"
+
+1687492162 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\linkdepago.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"const.h"
+
+1687492162 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tiempo.h"
+	"reservas.h"
+	"const.h"
+	<time.h>
+	<unistd.h>
+	"linkdepago.h"
+	"botellas.h"
+	"comidas.h"
+	"empleados.h"
+	"porLimpiar.h"
+	"preguntarDNI.h"
+	"tipoUsuario.h"
+
+1687231550 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\reservas.h
+
+1687492162 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\linkdepago.h
+
+1687492162 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\porlimpiar.h
+
+1687232900 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\pila.c
+	"pila.h"
+
+1687492162 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\porlimpiar.c
+	<stdlib.h>
+	<stdio.h>
+	"pila.h"
+	"porLimpiar.h"
+	"tipoUsuario.h"
+
+1687492162 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\preguntardni.c
+	<stdlib.h>
+	<stdio.h>
+
+1687492162 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"reservas.h"
+	"preguntarDNI.h"
+	"tipoUsuario.h"
+
+1687492162 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\tiempo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+
+1687492162 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\tp final nacho\reserva-hotel\tipousuario.c
+	<stdlib.h>
+	<stdio.h>
+

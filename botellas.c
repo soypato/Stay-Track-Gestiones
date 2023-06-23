@@ -14,11 +14,8 @@ int menuBotellas()
 {
     int op = 0;
     char decision = 's';
-    int dniTmp = 0;
-    int decisionDeBusqueda = 0;
-    char marcaTemporal[50];
-    int retornableTemporal;
-    int idTemporal;
+    char marcaTemporal[50]; ///Case 5. String  temporal que busca el nombre de la botella
+    int idTemporal; ///Case 6. Variable temporal para buscar el ID de la botella y luego modificarlo
 
     do
     {
@@ -78,12 +75,16 @@ int menuBotellas()
     return 0;
 }
 
+///Funcion que carga una botella
+
+
 // Carga de botellas
+
 botellita cargarBotellas(botellita botellaTemporal)
 {
     printf("Ingrese la marca de la botella: ");
     fflush(stdin);
-    gets(&botellaTemporal.marca);
+    gets(botellaTemporal.marca);
 
     printf("Es retornable? (0 para si / 1 para no): ");
     scanf("%i", &botellaTemporal.retornable);
@@ -93,7 +94,11 @@ botellita cargarBotellas(botellita botellaTemporal)
     return botellaTemporal;
 }
 
+///Función que verifica si ya existe el ID de una botella
+
+
 // Comprobación de ID existente
+
 int verificarIDExistente(char nombre[], int id)
 {
     FILE* archivo = fopen(nombre, "rb");
@@ -116,10 +121,14 @@ int verificarIDExistente(char nombre[], int id)
     return idExistente; // 0 si el ID no existe, 1 si existe
 }
 
+
+///Funcion que carga en el archivo y verifica al momento de cargar si ya existe un ID
+
 // Carga de botellas de archivo
+
 void cargarBotellasArchivo(char nombre[])
 {
-    FILE* Archi = fopen(nombre, "ab");
+    FILE* Archi = fopen(nombre, "wb");
     char decision = 's';
     int idExistente = 0;
     botellita temp;
@@ -133,11 +142,11 @@ void cargarBotellasArchivo(char nombre[])
             // Verificar si el ID ya existe en el archivo
             idExistente = verificarIDExistente(nombre, temp.id);
 
-            if (idExistente)
+            if (idExistente) ///Si retorna 1, existe el ID
             {
                 printf("El ID de botella ya existe. No se puede agregar.\n");
             }
-            else
+            else ///Sino, carga normalmente
             {
                 temp = cargarBotellas(temp);
                 fwrite(&temp, sizeof(botellita), 1, Archi);
@@ -154,10 +163,15 @@ void cargarBotellasArchivo(char nombre[])
     }
 }
 
+///Función que muestra la botella
+
+
 // Impresión de una botellas
+
 void mostrarBotella(botellita deMuestra)
 {
     char textoRetornable[50];
+
     if(deMuestra.retornable == 0)
     {
         strcpy(textoRetornable, "si, es retornable");
@@ -178,7 +192,11 @@ void mostrarBotella(botellita deMuestra)
 
 }
 
+///Función que muestra las botellas en un archivo
+
+
 // Muestreo de todo el archivo de todas las botellas
+
 void mostrarTodoElArchivoDeBotellas(char nombre[])
 {
     FILE* buffer = fopen(nombre, "rb");
@@ -197,7 +215,11 @@ void mostrarTodoElArchivoDeBotellas(char nombre[])
 
 }
 
+///Ordena por inserccion La marca de las botellas
+
+
 // Ordenamiento por inserción
+
 void ordenarBotellasPorMarca(char nombre[])
 {
     FILE* archivo = fopen(nombre, "rb+");
@@ -227,7 +249,7 @@ void ordenarBotellasPorMarca(char nombre[])
             rewind(archivo);
             fwrite(botellas, sizeof(botellita), totalBotellas, archivo);
 
-            free(botellas);
+            free(botellas); ///Liberamos memoria que usaba botellas
             fclose(archivo);
             printf("Botellas ordenadas por marca.\n");
         }
@@ -242,7 +264,11 @@ void ordenarBotellasPorMarca(char nombre[])
     }
 }
 
+///Función que ordena por selección el ID de las botellas
+
+
 // Ordenamiento por selección
+
 void ordenarBotellasPorID(char nombre[])
 {
     FILE* archivo = fopen(nombre, "rb+");
@@ -293,7 +319,11 @@ void ordenarBotellasPorID(char nombre[])
     }
 }
 
+
+///Función que busca una botella según la marca
+
 // Búsqueda de las botellas por marca
+
 void buscarBotellasPorMarca(char nombre[], const char* marcaBuscada)
 {
     FILE* archivo = fopen(nombre, "rb");
@@ -324,7 +354,11 @@ void buscarBotellasPorMarca(char nombre[], const char* marcaBuscada)
     }
 }
 
+///Función que permite modificar Algún campo de la botella
+
+
 // Modificación según el usuario, modifica pidiendo el ID
+
 void ModificarSegunUsuario(char nombre[], int id)
 {
     FILE* Archi;
