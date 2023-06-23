@@ -4,7 +4,7 @@
 #include "habitaciones.h"
 #include "empleados.h"
 
-///HARCHIVOS
+// ARCHIVOS
 const char arcHabitaciones[30] = {"archivoHabitaciones.dat"};
 
 const int numHabitaciones = 15;
@@ -53,19 +53,19 @@ void menuHabitaciones()//MENU
 
     do
     {
-        printf("=======================================================\n");
-        printf("|             Menu habitaciones                      |\n");
-        printf("=======================================================\n");
+        printf("======================================================\n");
+        printf("|         Menu de registro de habitaciones           |\n");
+        printf("======================================================\n");
         printf("| Opcion |          Descripcion                      |\n");
-        printf("=======================================================\n");
-        printf("|   1    |  Cargar habitacion archivo                |\n");
+        printf("======================================================\n");
+        printf("|   1    |  Cargar habitacion                        |\n");
         printf("|   2    |  Mostrar habitaciones habilitadas         |\n");
         printf("|   3    |  Mostrar habitacion por numero            |\n");
         printf("|   4    |  Mostrar por criterio de ocupacion/reserva|\n");
         printf("|   5    |  Modificar un campo a eleccion            |\n");
         printf("|   6    |  Mostrar habitaciones deshabilitadas      |\n");
         printf("|   0    |  Volver al menu de recepcionista          |\n");
-        printf("=======================================================\n");
+        printf("======================================================\n");
 
         printf("Su decision: ");
         fflush(stdin);
@@ -73,7 +73,7 @@ void menuHabitaciones()//MENU
         switch(ejercicio)
         {
         case 1:
-           validos=arcCargarHabitaciones(arcHabitaciones, opcion);
+            validos=arcCargarHabitaciones(arcHabitaciones, opcion);
             break;
         case 2:
             arcMostrarHabitaciones(arcHabitaciones);//PUNTO 4
@@ -90,10 +90,8 @@ void menuHabitaciones()//MENU
                 printf("================================================\n");
                 printf("| Opcion |          Descripcion               |\n");
                 printf("================================================\n");
-                printf("|   1    |  Mostrar habitaciones no ocupadas  |\n");
-                printf("|   2    |  Mostrar habitaciones no reservadas|\n");
-                printf("|   3    |  Mostrar habitaciones ocupadas     |\n");
-                printf("|   4    |  Mostrar habitaciones reservadas   |\n");
+                printf("|   1    |  Mostrar habitaciones no reservadas|\n");
+                printf("|   2    |  Mostrar habitaciones reservadas   |\n");
                 printf("|   0    |  Volver al menu de habitaciones    |\n");
                 printf("================================================\n");
                 fflush(stdin);
@@ -101,34 +99,19 @@ void menuHabitaciones()//MENU
                 switch(subMenuPunto4)
                 {
                 case 1:
-                    opcPunto4=1;
-                    valorPunto4=0;
-                    validosPunto4=arcBuscarHabitacionesSegunCriterio(arcHabitaciones, habitacionesSinOcupar, opcPunto4, valorPunto4);
-                    printf("Las habitaciones sin ocupar son:\n");
-                    mostrarArregloDeStructs(habitacionesSinOcupar, validosPunto4);
-                    break;
-                case 2:
                     opcPunto4=2;
                     valorPunto4=0;
                     validosPunto4=arcBuscarHabitacionesSegunCriterio(arcHabitaciones, habitacionesSinReservas, opcPunto4, valorPunto4);
                     printf("Las habitaciones sin reservar son:\n");
                     mostrarArregloDeStructs(habitacionesSinReservas, validosPunto4);
                     break;
-                case 3:
-                    opcPunto4=1;
-                    valorPunto4=1;
-                    validosPunto4=arcBuscarHabitacionesSegunCriterio(arcHabitaciones, habitacionesOcupadas, opcPunto4, valorPunto4);
-                    printf("Las habitaciones ocupadas son:\n");
-                    mostrarArregloDeStructs(habitacionesOcupadas, validosPunto4);
-                    break;
-                case 4:
+                case 2:
                     opcPunto4=2;
                     valorPunto4=1;
                     validosPunto4=arcBuscarHabitacionesSegunCriterio(arcHabitaciones, habitacionesReservadas, opcPunto4, valorPunto4);
                     printf("Las habitaciones reservadas son:\n");
                     mostrarArregloDeStructs(habitacionesReservadas, validosPunto4);
                     break;
-
                 }
 
 
@@ -218,39 +201,55 @@ void menuHabitaciones()//MENU
     while(ejercicio!=0);
 }
 
-strHabitacion strCargarHabitacion(int num) //  CARGAR UNA HABITACION
+strHabitacion strCargarHabitacion(int num)
 {
     strHabitacion aux;
 
-    printf("¿La habitacion está ocupada? (0 = No, 1 = Si): ");
+    printf("¿La habitación está reservada? (0 = No, 1 = Si): ");
     fflush(stdin);
-    scanf("%i", &aux.ocupado);
-
-    printf("¿La habitacion está reservada? (0 = No, 1 = Si): ");
-    fflush(stdin);
-    scanf("%i", &aux.reservado);
+    while (scanf("%i", &aux.reservado) != 1 || (aux.reservado != 0 && aux.reservado != 1))
+    {
+        printf("Opción inválida. Por favor, ingrese 0 o 1: ");
+        fflush(stdin);
+    }
 
     aux.numeroDeHabitacion = num;
 
     printf("Ingrese la capacidad de huéspedes: ");
     fflush(stdin);
-    scanf("%i", &aux.capacidadDeHuespedes);
+    while (scanf("%i", &aux.capacidadDeHuespedes) != 1 || aux.capacidadDeHuespedes <= 0)
+    {
+        printf("Valor inválido. Por favor, ingrese un número válido: ");
+        fflush(stdin);
+    }
 
-    printf("Ingrese la cantidad de banios de la habitacion: ");
+    printf("Ingrese la cantidad de baños de la habitación: ");
     fflush(stdin);
-    scanf("%i", &aux.cantBanios);
+    while (scanf("%i", &aux.cantBanios) != 1 || aux.cantBanios <= 0)
+    {
+        printf("Valor inválido. Por favor, ingrese un número válido: ");
+        fflush(stdin);
+    }
 
-    printf("¿Tiene frigobar? (0 = No, 1 = Si) ");
+    printf("¿Tiene frigobar? (0 = No, 1 = Si): ");
     fflush(stdin);
-    scanf("%i", &aux.frigobar);
+    while (scanf("%i", &aux.frigobar) != 1 || (aux.frigobar != 0 && aux.frigobar != 1))
+    {
+        printf("Opción inválida. Por favor, ingrese 0 o 1: ");
+        fflush(stdin);
+    }
 
-    printf("¿Tiene aire acondicionado? (0 = No, 1 = Si) ");
+    printf("¿Tiene aire acondicionado? (0 = No, 1 = Si): ");
     fflush(stdin);
-    scanf("%i", &aux.aireAcondicionado);
+    while (scanf("%i", &aux.aireAcondicionado) != 1 || (aux.aireAcondicionado != 0 && aux.aireAcondicionado != 1))
+    {
+        printf("Opción inválida. Por favor, ingrese 0 o 1: ");
+        fflush(stdin);
+    }
 
     aux.habilitada = 1;
 
-    printf("La habitacion fue cargada satisfactoriamente. ");
+    printf("La habitación ha sido cargada satisfactoriamente.\n");
 
     return aux;
 }
@@ -408,8 +407,7 @@ int auxCargaHabitaciones(char nombreArchi[]) //AUX PARA VERIFICAR SI EL ARCHIVO 
         }
         else
         {
-            printf("El archivo tiene datos cargados que quiere hacer?\n 0=sobreescribirlo, 1=agregar datos, otro=no hacer nada\n");
-            fflush(stdin);
+            printf("El archivo tiene datos cargados. ¿Qué desea hacer?\n 0 = Sobreescribirlo, 1 = Agregar datos, Otro = No hacer nada\n");            fflush(stdin);
             scanf("%i", &opc);
         }
         fclose(buffer);
@@ -481,10 +479,14 @@ int arcCargarHabitaciones(char nombreArchi[], char opcion[])//PUNTO 1 CARGAR HAB
                     i++;
                 }
 
-
-                printf("Quiere seguir ingresando habitaciones? s/n\n");
+                printf("¿Desea seguir ingresando habitaciones? (s/n): ");
                 fflush(stdin);
-                scanf("%c", &continuar);
+                while (scanf(" %c", &continuar) != 1 || (continuar != 's' && continuar != 'n'))
+                {
+                    printf("Opción inválida. Por favor, ingrese 's' o 'n': ");
+                    fflush(stdin);
+                }
+
             }
             fclose(buffer);
         }
@@ -501,7 +503,7 @@ int arcCargarHabitaciones(char nombreArchi[], char opcion[])//PUNTO 1 CARGAR HAB
     }
 
 
-return i;
+    return i;
 }
 
 void arcMostrarHabitaciones(char nombreArchivo[])//PUNTO 2 MOSTRAR HABITACIONES DEL ARCHIVO
@@ -538,7 +540,7 @@ void arcMostrarHabitaciones(char nombreArchivo[])//PUNTO 2 MOSTRAR HABITACIONES 
     }
     else
     {
-        printf("Error al abrir el archivo\n");
+        printf("Error al abrir el archivo o no hay habitaciones cargadas. \n");
     }
 }
 
@@ -559,7 +561,6 @@ int arcBuscarHabitacionPorNumero(const char nombreArchi[], int num)
     int i = 0;
     if(buffer)
     {
-        printf("Abierto\n");
 
 
         while((fread(&aux, sizeof(strHabitacion), 1, buffer))>0)
