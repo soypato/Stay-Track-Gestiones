@@ -135,7 +135,7 @@ void menuHabitaciones()//MENU
                     printf("|   3    |  Habilitadas                       |\n");
                     printf("|   4    |  Cantidad de huespedes             |\n");
                     printf("|   5    |  Numero de habitacion              |\n");
-                    printf("|   6    |  Cantidad de baños                 |\n");
+                    printf("|   6    |  Cantidad de baï¿½os                 |\n");
                     printf("|   7    |  Aire acondicionado                |\n");
                     printf("|   8    |  Frigobar                          |\n");
                     printf("|   0    |  Volver al menu de habitaciones    |\n");
@@ -205,51 +205,51 @@ strHabitacion strCargarHabitacion(int num)
 {
     strHabitacion aux;
 
-    printf("¿La habitación está reservada? (0 = No, 1 = Si): ");
+    printf("ï¿½La habitaciï¿½n estï¿½ reservada? (0 = No, 1 = Si): ");
     fflush(stdin);
     while (scanf("%i", &aux.reservado) != 1 || (aux.reservado != 0 && aux.reservado != 1))
     {
-        printf("Opción inválida. Por favor, ingrese 0 o 1: ");
+        printf("Opciï¿½n invï¿½lida. Por favor, ingrese 0 o 1: ");
         fflush(stdin);
     }
 
     aux.numeroDeHabitacion = num;
 
-    printf("Ingrese la capacidad de huéspedes: ");
+    printf("Ingrese la capacidad de huï¿½spedes: ");
     fflush(stdin);
     while (scanf("%i", &aux.capacidadDeHuespedes) != 1 || aux.capacidadDeHuespedes <= 0)
     {
-        printf("Valor inválido. Por favor, ingrese un número válido: ");
+        printf("Valor invï¿½lido. Por favor, ingrese un nï¿½mero vï¿½lido: ");
         fflush(stdin);
     }
 
-    printf("Ingrese la cantidad de baños de la habitación: ");
+    printf("Ingrese la cantidad de baï¿½os de la habitaciï¿½n: ");
     fflush(stdin);
     while (scanf("%i", &aux.cantBanios) != 1 || aux.cantBanios <= 0)
     {
-        printf("Valor inválido. Por favor, ingrese un número válido: ");
+        printf("Valor invï¿½lido. Por favor, ingrese un nï¿½mero vï¿½lido: ");
         fflush(stdin);
     }
 
-    printf("¿Tiene frigobar? (0 = No, 1 = Si): ");
+    printf("ï¿½Tiene frigobar? (0 = No, 1 = Si): ");
     fflush(stdin);
     while (scanf("%i", &aux.frigobar) != 1 || (aux.frigobar != 0 && aux.frigobar != 1))
     {
-        printf("Opción inválida. Por favor, ingrese 0 o 1: ");
+        printf("Opciï¿½n invï¿½lida. Por favor, ingrese 0 o 1: ");
         fflush(stdin);
     }
 
-    printf("¿Tiene aire acondicionado? (0 = No, 1 = Si): ");
+    printf("ï¿½Tiene aire acondicionado? (0 = No, 1 = Si): ");
     fflush(stdin);
     while (scanf("%i", &aux.aireAcondicionado) != 1 || (aux.aireAcondicionado != 0 && aux.aireAcondicionado != 1))
     {
-        printf("Opción inválida. Por favor, ingrese 0 o 1: ");
+        printf("Opciï¿½n invï¿½lida. Por favor, ingrese 0 o 1: ");
         fflush(stdin);
     }
 
     aux.habilitada = 1;
 
-    printf("La habitación ha sido cargada satisfactoriamente.\n");
+    printf("La habitaciï¿½n ha sido cargada satisfactoriamente.\n");
 
     return aux;
 }
@@ -268,7 +268,7 @@ void auxOcupado(strHabitacion aux)//AUX OCUPADO PARA MOSTRAR HABITACIONES
     }
     else
     {
-        printf("Error con el estado de la habitacion.\n");
+        printf("No se especifico el estado de ocupamiento.\n");
     }
 }
 void auxHabilitada(strHabitacion aux)//AUX PARA SABER SI LA HABITACION SE ENCUENTRA HABILITADA
@@ -284,7 +284,7 @@ void auxHabilitada(strHabitacion aux)//AUX PARA SABER SI LA HABITACION SE ENCUEN
     }
     else
     {
-        printf("Error con el estado de la habilitacion.\n");
+        printf("No se proporciono informacion sobre el estado de habilitacion.\n");
     }
 }
 
@@ -301,7 +301,7 @@ void auxReservado(strHabitacion aux)//AUX RESERVADO PARA MOSTRAR HABITACIONES
     }
     else
     {
-        printf("Error con el estado de la reserva.\n");
+        printf("No se proporciono informacion sobre el estado de reserva.\n");
     }
 }
 
@@ -342,7 +342,7 @@ void auxAireAcondicionado(strHabitacion aux)//AUX AIRE ACONDICIONADO PARA MOSTRA
 
 
 
-void auxPrecioHabitaciones(strHabitacion* aux) // Corrección: agregar asterisco para pasar por referencia
+void auxPrecioHabitaciones(strHabitacion* aux) // Correcciï¿½n: agregar asterisco para pasar por referencia
 {
     int precioPorPersona = 2500;
     int precioFrigobar = 2000;
@@ -351,7 +351,7 @@ void auxPrecioHabitaciones(strHabitacion* aux) // Corrección: agregar asterisco 
 
     int precioHabitacionNoche;
 
-    precioHabitacionNoche = aux->cantBanios * precioPorBanio + aux->capacidadDeHuespedes * precioPorPersona; // Corrección: utilizar los campos correctos del struct
+    precioHabitacionNoche = aux->cantBanios * precioPorBanio + aux->capacidadDeHuespedes * precioPorPersona; // Correcciï¿½n: utilizar los campos correctos del struct
 
     if (aux->aireAcondicionado == 1)
     {
@@ -362,10 +362,10 @@ void auxPrecioHabitaciones(strHabitacion* aux) // Corrección: agregar asterisco 
         precioHabitacionNoche += precioFrigobar;
     }
 
-    // Corrección: imprimir el precio calculado
+    // Correcciï¿½n: imprimir el precio calculado
 
     aux->precio = precioHabitacionNoche;
-    // Corrección: imprimir el precio asignado a aux.precio
+    // Correcciï¿½n: imprimir el precio asignado a aux.precio
 }
 
 void strMostrarUnaHabitacion(strHabitacion aux)//MOSTRAR UNA HABITACION
@@ -384,7 +384,7 @@ void strMostrarUnaHabitacion(strHabitacion aux)//MOSTRAR UNA HABITACION
     auxFrigobar(aux);
 
     auxAireAcondicionado(aux);
-    auxPrecioHabitaciones(&aux); // Corrección: pasar la estructura por referencia
+    auxPrecioHabitaciones(&aux); // Correcciï¿½n: pasar la estructura por referencia
 
     printf("El precio de la habitacion por noche es de $%i.\n", aux.precio);
 }
@@ -398,7 +398,7 @@ int auxCargaHabitaciones(char nombreArchi[]) //AUX PARA VERIFICAR SI EL ARCHIVO 
     {
         printf("Archivo abierto correctamente\n");
         fseek(buffer, 0, SEEK_END); // Mover el puntero de archivo al final
-        long fileSize = ftell(buffer); // Obtener el tamaño del archivo
+        long fileSize = ftell(buffer); // Obtener el tamaï¿½o del archivo
         if(fileSize == 0)
         {
 
@@ -407,7 +407,7 @@ int auxCargaHabitaciones(char nombreArchi[]) //AUX PARA VERIFICAR SI EL ARCHIVO 
         }
         else
         {
-            printf("El archivo tiene datos cargados. ¿Qué desea hacer?\n 0 = Sobreescribirlo, 1 = Agregar datos, Otro = No hacer nada\n");            fflush(stdin);
+            printf("El archivo tiene datos cargados. ï¿½Quï¿½ desea hacer?\n 0 = Sobreescribirlo, 1 = Agregar datos, Otro = No hacer nada\n");            fflush(stdin);
             scanf("%i", &opc);
         }
         fclose(buffer);
@@ -479,11 +479,11 @@ int arcCargarHabitaciones(char nombreArchi[], char opcion[])//PUNTO 1 CARGAR HAB
                     i++;
                 }
 
-                printf("¿Desea seguir ingresando habitaciones? (s/n): ");
+                printf("ï¿½Desea seguir ingresando habitaciones? (s/n): ");
                 fflush(stdin);
                 while (scanf(" %c", &continuar) != 1 || (continuar != 's' && continuar != 'n'))
                 {
-                    printf("Opción inválida. Por favor, ingrese 's' o 'n': ");
+                    printf("Opciï¿½n invï¿½lida. Por favor, ingrese 's' o 'n': ");
                     fflush(stdin);
                 }
 
@@ -515,7 +515,7 @@ void arcMostrarHabitaciones(char nombreArchivo[])//PUNTO 2 MOSTRAR HABITACIONES 
     {
         printf("Abierto\n");
         fseek(buffer, 0, SEEK_END); // Mover el puntero de archivo al final
-        long fileSize = ftell(buffer); // Obtener el tamaño del archivo
+        long fileSize = ftell(buffer); // Obtener el tamaï¿½o del archivo
         if (fileSize == 0)
         {
             printf("El archivo no tiene datos cargados\n");
@@ -714,7 +714,7 @@ void arcModificarUnCampoDeUnaHabitacion(int num, char nombreArchi[], int opc)//F
 
             else if(opc==6)
             {
-                printf("Ingrese la cantidad de baños de la habitacion.\n");
+                printf("Ingrese la cantidad de baï¿½os de la habitacion.\n");
                 fflush(stdin);
                 scanf("%i", &aux.cantBanios);
             }
