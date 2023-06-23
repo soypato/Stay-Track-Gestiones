@@ -9,11 +9,14 @@ const int DIM_F = 15;
 
 int op = 0;
 char decision;
-char Comidas[15][MATRIZ_C];
-char comidaEliminar[MATRIZ_C];
-char comidaModificar[MATRIZ_C];
-char nuevaComida[MATRIZ_C];
+char Comidas[15][MATRIZ_C]; ///Arreglo de palabras que sera cargado en el archivo
+char comidaEliminar[MATRIZ_C]; ///Case 6. Nombre de comida que vamos a buscar para luego eliminarlo
+char comidaModificar[MATRIZ_C]; ///Case 4. Nombre de comida  que vamos a querer modificar
+char nuevaComida[MATRIZ_C]; /// Case 4. Nombre de comida  nuevo que será modificado
 
+
+
+///Menu para elegir las distintas opciones
 int menuComidas()
 {
     do
@@ -80,6 +83,8 @@ int menuComidas()
     return 0;
 }
 
+
+///Funcion que carga comidas
 int CargarComidas(char Comidas[][MATRIZ_C], int dimF)
 {
     int f = 0;
@@ -94,12 +99,13 @@ int CargarComidas(char Comidas[][MATRIZ_C], int dimF)
             gets(Comidas[f]);
 
             int len = strlen(Comidas[f]);
-            int esPalabra = 1;
+            int esPalabra= 1;
 
             for (int i = 0; i < len; i++)
             {
                 if (!isalpha(Comidas[f][i]) && Comidas[f][i] != ' ')
                 {
+                    ///isalpha sirve para validar si los caracteres son letras alfabéticas
                     esPalabra = 0;
                     break;
                 }
@@ -119,7 +125,7 @@ int CargarComidas(char Comidas[][MATRIZ_C], int dimF)
 
     return f;
 }
-
+///Función que muestra todas las comidas
 void mostrarComidas(char Comidas[][MATRIZ_C], int validos)
 {
     puts("|------------------------|");
@@ -129,7 +135,7 @@ void mostrarComidas(char Comidas[][MATRIZ_C], int validos)
     }
     puts("|------------------------|");
 }
-
+///Función que carga las comidas en un archivo
 void CargarComidasArchivo(char nombre[], char Comidas[][MATRIZ_C], int dimF)
 {
     FILE *Archi;
@@ -145,6 +151,7 @@ void CargarComidasArchivo(char nombre[], char Comidas[][MATRIZ_C], int dimF)
     }
 }
 
+///Función que muestra las comidas que están en el  archivo
 void mostrarComidasArchivo(char nombre[], char Comidas[][MATRIZ_C])
 {
     FILE *Archi;
@@ -162,6 +169,7 @@ void mostrarComidasArchivo(char nombre[], char Comidas[][MATRIZ_C])
     }
 }
 
+///Función que Comunica si existe una comida especifica en el archivo
 char VerificarSiExisteComidas(char nombreArchivo[], char Comidas[][MATRIZ_C])
 {
     FILE *Archi;
@@ -202,6 +210,7 @@ char VerificarSiExisteComidas(char nombreArchivo[], char Comidas[][MATRIZ_C])
     }
 }
 
+///Funcion que borra una comida en el archivo
 void BorrarComidaEspecifica(char Comidas[][MATRIZ_C], int dimF, char comida[])
 {
     int encontrada = 0;
@@ -209,7 +218,7 @@ void BorrarComidaEspecifica(char Comidas[][MATRIZ_C], int dimF, char comida[])
     {
         if (strcmp(Comidas[f], comida) == 0)
         {
-            strcpy(Comidas[f], "");
+            strcpy(Comidas[f], ""); ///Se copia una cadeva vacia en la fila correspondiente y esto hace que borre el contenido que habia antes
             printf("Comida '%s' eliminada correctamente.\n", comida);
             encontrada = 1;
             break;
@@ -223,7 +232,7 @@ void BorrarComidaEspecifica(char Comidas[][MATRIZ_C], int dimF, char comida[])
     GuardarCambiosArchivo("Comidas.dat", Comidas, dimF);
 }
 
-
+///Funcion que permite modificar el nombre de la comida en el archivo
 void modificarComida(char Comidas[][MATRIZ_C], int dimF, char comida[], char nuevaComida[])
 {
     int encontrada = 0;
@@ -245,7 +254,7 @@ void modificarComida(char Comidas[][MATRIZ_C], int dimF, char comida[], char nue
 
     GuardarCambiosArchivo(ArchC, Comidas, dimF);
 }
-
+///Función que borra todas las comidas del archivo
 void BorrarTodasLasComidas(char Comidas[][MATRIZ_C], int dimF)
 {
     for (int f = 0; f < dimF; f++)
@@ -255,10 +264,12 @@ void BorrarTodasLasComidas(char Comidas[][MATRIZ_C], int dimF)
     GuardarCambiosArchivo(ArchC, Comidas, dimF);
 }
 
+
+///Funcion que Guarda todos los cambios que hagamos, sea de modificar, borrar  etc.
 void GuardarCambiosArchivo(char nombre[], char Comidas[][MATRIZ_C], int dimF)
 {
     FILE* Archi;
-    Archi = fopen(nombre, "wb"); //
+    Archi = fopen(nombre, "wb");
     int validos = 0;
 
     if (Archi != NULL)
