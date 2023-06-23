@@ -23,13 +23,17 @@ Mejora de comida.h y algunas liberías.
     Se resolvieron conflictos en la rama. Durante el proceso de desarrollo y fusión de cambios, se encontraron conflictos en la rama en la que se estaba trabajando. Estos conflictos se resolvieron para asegurar la coherencia y consistencia del código.
 Comenzamos a probar datos. Terminado reservas y botellas.
 
-Semana del 17 a 22: Codificación. Organización del proyecto y continuación desde el 16.
+20/06/2023: Se dedica el día a aprender GIT y GitHub
+
+19/06/2023: Entre otras cosas, repaso teóricos de ordenamientos. No encontramos en la teoría ordenamiento sin intermediaros en archivos.
+
+Semana del 17 a 19: Codificación. Organización del proyecto y continuación desde el 16.
 DESARROLLO INTENSIVO DE:
-HABITACIONES, RESERVA, BOTELLAS, COMIDA, EMPLEADO, PORLIMPIAR, Y LAS 12 LIBERÍAS QUE CONFORMAN EL PROYECTO.
+HABITACIONES, RESERVA, BOTELLAS, COMIDA, EMPLEADO, PORLIMPIAR, Y LAS 12 LIBERÍAS QUE CONFORMAN EL PROYECTO HASTA EL MOMENTO.
 
 Semana del 16/06/2023: Retomamos con el proyecto; empezamos con tiempo.h y asignación de tareas de habitaciones, reservas y botellas.
 
-31 a 14: Investigación off-code de gestión de hoteles.
+Semana 31 a 15: Investigación off-code de gestión de hoteles.
 
 30/05/2023: Comenzamos el proyecto desde 0. Organizamos todas los diagramas en Trello.Problematicas: Libreria de tiempo
 
