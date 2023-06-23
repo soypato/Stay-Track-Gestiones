@@ -31,7 +31,7 @@ int menuEmpleados()
         printf("================================================\n");
         printf("| Opcion |           Descripcion              |\n");
         printf("================================================\n");
-        printf("|   1    | Alta empleados                     |\n");
+        printf("|   1    | Alta empleado                     |\n");
         printf("|   2    | Listar empleados                   |\n");
         printf("|   3    | Modificar datos                    |\n");
         printf("|   4    | Dar de baja un empleado            |\n");
@@ -126,7 +126,7 @@ stEmpleado alta1Empleado(int DNITemporal)
     gets(A.genero);
 
     printf("\nIngrese Numero de telefono: \n");
-    scanf("%i", &A.telefono);
+    scanf("%*c%i", &A.telefono);
 
     if (DNITemporal == 0)
     {
@@ -178,12 +178,21 @@ int altaEmpleados(stEmpleado A[], int dimension, int DNITemporal)
 
     while (control == 's' && i < dimension)
     {
-        A[i] = alta1Empleado(DNITemporal);
+        if (i == 0)
+        {
+            A[i] = alta1Empleado(DNITemporal);
+        }
+        else
+        {
+            printf("\n=== Alta de empleado ===\n");
+            DNITemporal = preguntarDNI();
+            A[i] = alta1Empleado(DNITemporal);
+        }
+
         i++;
 
         printf("\nEmpleado cargado. ¿Quiere cargar otro empleado al sistema? Presione (s/n)\n");
         getchar();
-
         scanf("%c", &control);
 
         // Llama a la función cargar1EmpleadoEnArchivo para guardar el empleado en el archivo
@@ -192,6 +201,7 @@ int altaEmpleados(stEmpleado A[], int dimension, int DNITemporal)
 
     return i;
 }
+
 
 
 // [Funcion que muestra un empleado] //
@@ -295,7 +305,7 @@ void modificarEmpleadoEnArchivo(char nombreArchivo[]) {
                         break;
                     case 4:
                         printf("Ingrese el nuevo DNI:\n");
-                        scanf("%d", &aux.dni);
+                        scanf("%*c%i", &aux.dni);
                         break;
                     case 5:
                         printf("Ingrese el nuevo correo electronico:\n");

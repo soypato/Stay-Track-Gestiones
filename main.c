@@ -12,7 +12,6 @@
 #include "porLimpiar.h"
 #include "preguntarDNI.h"
 #include "tipoUsuario.h"
-#include "admin.h"
 
 void inicioSesion();
 void limpiarPantalla();
