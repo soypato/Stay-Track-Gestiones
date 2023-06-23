@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
-
+// Función que sirve en varias libs de preguntar el DNI
+// Decidimos apartarla para que se conecte con varias libs
 int preguntarDNI()
 {
     int dniTmp;
