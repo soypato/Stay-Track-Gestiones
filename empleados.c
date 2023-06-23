@@ -70,7 +70,7 @@ int menuEmpleados()
             break;
         case 4:
             printf("\n=== Dar de baja empleado ===\n");
-            bajaEmpleado(empleadosArchivo);
+            bajaEmpleado(empleadosArchivo, validos);
             break;
         case 5:
             printf("\n=== Filtrar por DNI ===\n");
@@ -341,7 +341,8 @@ void modificarEmpleadoEnArchivo(char nombreArchivo[]) {
 
 
 // [Funcion para dar de baja un empleado] //
-void bajaEmpleado(char nombreArchivo[]) {
+void bajaEmpleado(char nombreArchivo[], int validos) {
+    mostrarArchivo(nombreArchivo, validos);
     char nombreBuscado[35];
     int flag = 0;
     int decision = 1;
@@ -453,11 +454,12 @@ void reactivarEmpleado(const char* nombreArchivo)
 
     if (buffer != NULL)
     {
+        printf("\n\nIngrese nombre y apellido a buscar: ");
+        fflush(stdin);
+        gets(nombreBuscado);
         while (flag == 0 && decision == 1 && fread(&aux, sizeof(stEmpleado), 1, buffer) > 0)
         {
-            printf("\n\nIngrese nombre y apellido a buscar: ");
-            fflush(stdin);
-            gets(nombreBuscado);
+
             if (strcmp(aux.nombreyApellido, nombreBuscado) == 0)
             {
                 flag = 1;
@@ -518,17 +520,20 @@ void mostrarEmpleadosOrdenadosPorEdad(const char* nombreArchivo)
         }
         else
         {
-            // Ordenar los empleados por edad utilizando el método de inserción
-            for (int i = 1; i < encontrados; i++)
+            // Ordenar los empleados por edad utilizando el método de selección
+            for (int i = 0; i < encontrados - 1; i++)
             {
-                stEmpleado temp = empleados[i];
-                int j = i - 1;
-                while (j >= 0 && empleados[j].edad > temp.edad)
+                int min_idx = i;
+                for (int j = i + 1; j < encontrados; j++)
                 {
-                    empleados[j + 1] = empleados[j];
-                    j--;
+                    if (empleados[j].edad < empleados[min_idx].edad)
+                    {
+                        min_idx = j;
+                    }
                 }
-                empleados[j + 1] = temp;
+                stEmpleado temp = empleados[min_idx];
+                empleados[min_idx] = empleados[i];
+                empleados[i] = temp;
             }
 
             // Mostrar los empleados ordenados por edad

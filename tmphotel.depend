@@ -288,7 +288,7 @@
 1679999162 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reservas-segunda-ver\pila.c
 	"pila.h"
 
-1687394227 D
+1687413384 D
 
 1687394227 0b10219ef9968e5466827b103d3af42bcf026
 
@@ -713,7 +713,7 @@
 	<stdlib.h>
 	<stdio.h>
 
-1687306477 
+1687414033 
 
 1687299463 source:d:\codeblock\codigos\reserva-hotel\preguntardni.c
 	<stdlib.h>
@@ -832,6 +832,127 @@
 
 1687413384 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\gestion-hotel\tipousuario.h
 
+1687414033 source:c:\users\juanm\stay-track-gestiones\botellas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"botellas.h"
+	"tipoUsuario.h"
+
+1687414033 c:\users\juanm\stay-track-gestiones\botellas.h
+	"pila.h"
+
+1687414033 c:\users\juanm\stay-track-gestiones\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1687414033 c:\users\juanm\stay-track-gestiones\tipousuario.h
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\comidas.c
+	<stdio.h>
+	<string.h>
+	"tipoUsuario.h"
+
+1687475890 source:c:\users\juanm\stay-track-gestiones\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"empleados.h"
+	<time.h>
+	<unistd.h>
+	"const.h"
+	"preguntarDNI.h"
+	"habitaciones.h"
+	"tipoUsuario.h"
+
+1687414033 c:\users\juanm\stay-track-gestiones\tiempo.h
+	<stdio.h>
+	<stdlib.h>
+
+1687476121 c:\users\juanm\stay-track-gestiones\empleados.h
+	"tiempo.h"
+
+1687414033 c:\users\juanm\stay-track-gestiones\const.h
+
+1687414033 c:\users\juanm\stay-track-gestiones\preguntardni.h
+
+1687414033 c:\users\juanm\stay-track-gestiones\habitaciones.h
+
+1687414985 source:c:\users\juanm\stay-track-gestiones\habitaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"habitaciones.h"
+	"empleados.h"
+	"tipoUsuario.h"
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\linkdepago.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"const.h"
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tiempo.h"
+	"reservas.h"
+	"const.h"
+	<time.h>
+	<unistd.h>
+	"linkdepago.h"
+	"botellas.h"
+	"comidas.h"
+	"empleados.h"
+	"porLimpiar.h"
+	"preguntarDNI.h"
+	"tipoUsuario.h"
+
+1687414033 c:\users\juanm\stay-track-gestiones\reservas.h
+
+1687414033 c:\users\juanm\stay-track-gestiones\linkdepago.h
+
+1687414033 c:\users\juanm\stay-track-gestiones\comidas.h
+
+1687414033 c:\users\juanm\stay-track-gestiones\porlimpiar.h
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\pila.c
+	"pila.h"
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\porlimpiar.c
+	<stdlib.h>
+	<stdio.h>
+	"pila.h"
+	"porLimpiar.h"
+	"tipoUsuario.h"
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\preguntardni.c
+	<stdlib.h>
+	<stdio.h>
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"reservas.h"
+	"preguntarDNI.h"
+	"tipoUsuario.h"
+	<stdio.h>
+	<string.h>
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\tiempo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+
+1687414033 source:c:\users\juanm\stay-track-gestiones\tipousuario.c
+	<stdlib.h>
+	<stdio.h>
+
 1687465299 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\tipousuario.h
 
 1687471944 source:c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\admin.c
@@ -841,6 +962,8 @@
 	<string.h>
 
 1687472456 c:\users\usuario\desktop\utn tarea\prog 1 y lab 1\tp_final aportacionnacho\repodepatotb\reserva-hotel\admin.h
+
+1687472456 cb4a52927f928d41a1ec8feb9158431adc8a4
 
 1687414475 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reserva-hotel\botellas.c
 	<stdio.h>
@@ -867,7 +990,7 @@
 
 1687480023 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reserva-hotel\comidas.h
 
-1687414475 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reserva-hotel\empleados.c
+1687480635 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reserva-hotel\empleados.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -884,7 +1007,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1687414475 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reserva-hotel\empleados.h
+1687480635 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reserva-hotel\empleados.h
 	"tiempo.h"
 
 1687414475 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reserva-hotel\const.h
@@ -893,7 +1016,7 @@
 
 1687414475 c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reserva-hotel\habitaciones.h
 
-1687414475 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reserva-hotel\habitaciones.c
+1687480635 source:c:\storage\docs\learning-aprendizaje\aa tecnología\docs\utn\tup\cursada\primer cuatrimestre\prog-laboratorio\trabajo final\reserva-hotel\habitaciones.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

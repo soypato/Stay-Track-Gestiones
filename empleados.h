@@ -26,7 +26,7 @@ void listarEmpleados(stEmpleado A[], int validos);
 void cargar1EmpleadoEnArchivo(stEmpleado A, const char *nombreArchivo);
 void mostrarArchivo(char nombreArchivo[], int validos);
 void modificarEmpleadoEnArchivo (char nombreArchivo[]);
-void bajaEmpleado (char nombreArchivo[]);
+void bajaEmpleado (char nombreArchivo[], int validos);
 void buscarEmpleadoPorDNI(char nombreArchivo[], int dniBuscado);
 void mostrarEmpleadosDadosDeBaja(const char* nombreArchivo);
 void reactivarEmpleado(const char* nombreArchivo);
