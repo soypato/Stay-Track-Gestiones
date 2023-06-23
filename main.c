@@ -13,6 +13,16 @@
 #include "preguntarDNI.h"
 #include "tipoUsuario.h"
 
+/* CLAVES:
+
+Mozo -  9234
+Recepcionista -  2389
+Limpieza - 3290
+Admin - 2349
+
+*/
+
+
 // Prototipado
 void inicioSesion();
 void limpiarPantalla();
@@ -36,7 +46,7 @@ void controlInicio()
 
     while (continuar)
     {
-        inicioSesion();
+        inicioSesion(); // login siempre, PRIMER LOGIN AL EJECUTAR
         printf("Que desea hacer? 1: Ir a inicio de sesion / 0: Cerrar programa): ");
         scanf("%d", &continuar);
         limpiarPantalla();

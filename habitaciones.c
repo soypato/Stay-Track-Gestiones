@@ -59,7 +59,7 @@ void menuHabitaciones()//MENU
         printf("| Opcion |          Descripcion                      |\n");
         printf("=======================================================\n");
         printf("|   1    |  Cargar habitacion archivo                |\n");
-        printf("|   2    |  Mostrar habitacion archivo               |\n");
+        printf("|   2    |  Mostrar habitaciones habilitadas         |\n");
         printf("|   3    |  Mostrar habitacion por numero            |\n");
         printf("|   4    |  Mostrar por criterio de ocupacion/reserva|\n");
         printf("|   5    |  Modificar un campo a eleccion            |\n");
@@ -394,7 +394,7 @@ void strMostrarUnaHabitacion(strHabitacion aux)//MOSTRAR UNA HABITACION
 int auxCargaHabitaciones(char nombreArchi[]) //AUX PARA VERIFICAR SI EL ARCHIVO ESTA CARGADO ANTES DE CARGARLO Y EN BASE A ESO RETORNA QUE HACER CON EL ARCHIVO
 {
     int opc;
-    FILE* buffer = fopen(nombreArchi, "r+b");
+    FILE* buffer = fopen(nombreArchi, "ab");
     if (buffer)
     {
         printf("Archivo abierto correctamente\n");
@@ -441,7 +441,6 @@ int otroAuxDeCargarHabitaciones(int opc, char opcion[])//AUX PARA CARGAR UN ARRE
         i=0;
     }
 
-    puts(opcion);
     return i;
 }
 
@@ -469,7 +468,6 @@ int arcCargarHabitaciones(char nombreArchi[], char opcion[])//PUNTO 1 CARGAR HAB
 
         if (buffer)
         {
-            printf("Abierto\n");
 
             while(i<numHabitaciones&&continuar=='s')
             {
