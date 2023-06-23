@@ -1,0 +1,32 @@
+23/06/2023:
+
+    Se realizaron arreglos en el código relacionado con la impresión de datos de habitaciones. Estos cambios se hicieron en el archivo habitaciones.c para corregir problemas con los printf.
+    Se fusionaron los cambios de la rama principal en el repositorio. Esto implicó combinar los cambios realizados en la rama principal del repositorio remoto con la rama actual en la que se estaba trabajando.
+    Se agregaron validaciones para las reservas de habitaciones. Se implementaron comprobaciones adicionales en el código para garantizar que las reservas de habitaciones cumplieran con ciertos criterios y restricciones.
+    Se aseguraron los datos de prueba para las habitaciones. Se realizaron ajustes en el código para asegurar que los datos de prueba utilizados en el programa fueran consistentes y confiables.
+    Se eliminó código innecesario. Se identificó y eliminó código que ya no era necesario para mejorar la legibilidad y mantenibilidad del proyecto.
+    Se resolvieron conflictos en los archivos .dat. Durante la fusión de cambios, surgieron conflictos en los archivos .dat, que se solucionaron para asegurar la integridad de los datos.
+    Se modificó el archivo empleados.c y se agregaron 15 clientes y empleados. Se realizaron modificaciones en el archivo empleados.c para implementar cambios específicos relacionados con la gestión de clientes y empleados. Además, se añadieron 15 registros de clientes y empleados al archivo correspondiente.
+    Se actualizaron los manuales y se realizaron comentarios de funciones. Se realizaron actualizaciones en los manuales de documentación del proyecto para reflejar los cambios recientes. También se agregaron comentarios en el código para mejorar la comprensión y claridad de las funciones implementadas.
+
+22/06/2023:
+
+    Se realizaron los últimos cambios en el archivo empleados.c y se agregaron 15 empleados al archivo. Se llevaron a cabo ajustes finales en el archivo empleados.c antes de completar los cambios relacionados con la gestión de empleados. Además, se añadieron 15 registros de empleados al archivo correspondiente.
+    Se actualizaron los archivos readme.md y manual. Se realizaron modificaciones en los archivos readme.md y manual del proyecto para reflejar las últimas actualizaciones y proporcionar información actualizada sobre el mismo.
+    Se resolvieron conflictos en el código. Durante el proceso de fusión de cambios, se encontraron conflictos en el código que se resolvieron para asegurar que todas las partes del programa funcionaran correctamente.
+    Se realizaron modificaciones en el archivo comidas.c para obtener una versión estable. Se hicieron ajustes en el archivo comidas.c para mejorar su estabilidad y rendimiento, corrigiendo errores y realizando optimizaciones necesarias.
+    Se implementó la matriz en el archivo comidas.c. Se agregó una implementación de matriz en el archivo comidas.c para manejar y manipular datos relacionados con las comidas ofrecidas en el hotel.
+    Se actualizaron los manuales y la documentación oficial del proyecto. Se realizaron cambios y actualizaciones en los manuales y la documentación oficial del proyecto para reflejar las modificaciones recientes y proporcionar información precisa y completa.
+
+21/06/2023:
+    Se resolvieron conflictos en la rama. Durante el proceso de desarrollo y fusión de cambios, se encontraron conflictos en la rama en la que se estaba trabajando. Estos conflictos se resolvieron para asegurar la coherencia y consistencia del código.
+Comenzamos a probar datos.
+
+17 a 22: Codificación menor, organización del proyecto y continuación desde el 16.
+
+16/06/2023: Retomamos con el proyecto; empezamos con tiempo.h y asignación de tareas de habitaciones, reservas y botellas.
+
+31 a 14: Investigación off-code de gestión de hoteles.
+
+30/05/2023: Comenzamos el proyecto desde 0. Organizamos todas los diagramas en Trello.Problematicas: Libreria de tiempo
+
