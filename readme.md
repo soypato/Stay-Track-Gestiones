@@ -2,7 +2,7 @@
 ![StayTrack Gestiones LOGO
 ](https://github.com/soypato/Stay-Track-Gestiones/blob/main/OFFCODE%20ASSETS/branding/cover.png?raw=true)
 # ¿Qué es StayTrack?
-No solamente es el proyecto final de una materia en la UTN (Laboratorio I), sino que también es un completo sistema de gestión de hotel, contando con seis menús diferentes en cuatro usuarios:
+Es un completo sistema de gestión de hotel, contando con seis menús diferentes en cuatro usuarios:
 - Empleados
 - Link de pago
 - Limpieza
