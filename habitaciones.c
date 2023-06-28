@@ -22,6 +22,7 @@ const int numHabitaciones = 15;
 
 void menuHabitaciones()//MENU
 {
+    limpiarPantalla();
     int validos;
     int ejercicio;
     strHabitacion hab;

@@ -1213,3 +1213,123 @@
 	<stdlib.h>
 	<stdio.h>
 
+1687494092 source:c:\users\admin\desktop\stay-track\botellas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"botellas.h"
+	"tipoUsuario.h"
+
+1687486988 c:\users\admin\desktop\stay-track\botellas.h
+	"pila.h"
+
+1687414475 c:\users\admin\desktop\stay-track\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1687486760 c:\users\admin\desktop\stay-track\tipousuario.h
+
+1687911079 source:c:\users\admin\desktop\stay-track\comidas.c
+	<stdio.h>
+	<string.h>
+	"tipoUsuario.h"
+	"comidas.h"
+	<ctype.h>
+
+1687486177 c:\users\admin\desktop\stay-track\comidas.h
+
+1687912518 source:c:\users\admin\desktop\stay-track\empleados.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"empleados.h"
+	<time.h>
+	<unistd.h>
+	"const.h"
+	"preguntarDNI.h"
+	"habitaciones.h"
+	"tipoUsuario.h"
+
+1687486706 c:\users\admin\desktop\stay-track\tiempo.h
+	<stdio.h>
+	<stdlib.h>
+
+1687486666 c:\users\admin\desktop\stay-track\empleados.h
+	"tiempo.h"
+
+1687486655 c:\users\admin\desktop\stay-track\const.h
+
+1687486698 c:\users\admin\desktop\stay-track\preguntardni.h
+
+1687498554 c:\users\admin\desktop\stay-track\habitaciones.h
+
+1687911096 source:c:\users\admin\desktop\stay-track\habitaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"habitaciones.h"
+	"empleados.h"
+
+1687486150 source:c:\users\admin\desktop\stay-track\linkdepago.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	"const.h"
+
+1687912506 source:c:\users\admin\desktop\stay-track\main.c
+	<stdio.h>
+	<stdlib.h>
+	"tiempo.h"
+	"reservas.h"
+	"const.h"
+	<time.h>
+	<unistd.h>
+	"linkdepago.h"
+	"botellas.h"
+	"comidas.h"
+	"empleados.h"
+	"porLimpiar.h"
+	"preguntarDNI.h"
+	"tipoUsuario.h"
+
+1687414475 c:\users\admin\desktop\stay-track\reservas.h
+
+1687486684 c:\users\admin\desktop\stay-track\linkdepago.h
+
+1687486691 c:\users\admin\desktop\stay-track\porlimpiar.h
+
+1687414475 source:c:\users\admin\desktop\stay-track\pila.c
+	"pila.h"
+
+1687911120 source:c:\users\admin\desktop\stay-track\porlimpiar.c
+	<stdlib.h>
+	<stdio.h>
+	"pila.h"
+	"porLimpiar.h"
+	"tipoUsuario.h"
+
+1687489596 source:c:\users\admin\desktop\stay-track\preguntardni.c
+	<stdlib.h>
+	<stdio.h>
+
+1687911138 source:c:\users\admin\desktop\stay-track\reservas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+	"reservas.h"
+	"preguntarDNI.h"
+	"tipoUsuario.h"
+
+1687489515 source:c:\users\admin\desktop\stay-track\tiempo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"tiempo.h"
+
+1687911148 source:c:\users\admin\desktop\stay-track\tipousuario.c
+	<stdlib.h>
+	<stdio.h>
+

@@ -10,6 +10,7 @@ const char arHuespedes[] = "datosPersonas.dat";
 
 int menuReservas()
 {
+    limpiarPantalla();
     int op = 0;
     char decision = 's';
     int dniTmp = 0;

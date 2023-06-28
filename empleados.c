@@ -17,6 +17,7 @@ const char empleadosArchivo[]="arEmpleados.dat";
 
 int menuEmpleados()
 {
+    limpiarPantalla();
     int opcion;
     stEmpleado A[30];
     stEmpleado temp;
@@ -31,7 +32,7 @@ int menuEmpleados()
         printf("================================================\n");
         printf("| Opcion |           Descripcion              |\n");
         printf("================================================\n");
-        printf("|   1    | Alta empleado                     |\n");
+        printf("|   1    | Alta empleado                      |\n");
         printf("|   2    | Listar empleados                   |\n");
         printf("|   3    | Modificar datos                    |\n");
         printf("|   4    | Dar de baja un empleado            |\n");

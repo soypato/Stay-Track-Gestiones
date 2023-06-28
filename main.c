@@ -75,6 +75,7 @@ void inicioSesion()
         "  / / / / / / / / /   | | |  _ <  / ___ \\ |___| . \\ ",
         " /_/_/_/_/_/_/_/_/    |_| |_| \\_\\/_/   \\_\\____|_|\\_\\",
         "                                                    "
+        "\nProgramadores: Ignacio Acuña, Juan Manuel Ciardi,\nIvan Ialonardi, Patricio Tubio."
     };
 
     int numLineas = sizeof(titulo) / sizeof(titulo[0]);

@@ -6,6 +6,7 @@
 // MENU DE LIMPIEZA
 void menuLimpieza()
 {
+    limpiarPantalla();
     int numAeliminar;
     Pila habitacionesPorLimpiar;
     inicpila(&habitacionesPorLimpiar);

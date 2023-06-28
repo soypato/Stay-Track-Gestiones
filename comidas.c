@@ -19,10 +19,11 @@ char nuevaComida[MATRIZ_C]; /// Case 4. Nombre de comida  nuevo que será modifi
 ///Menu para elegir las distintas opciones
 int menuComidas()
 {
+    limpiarPantalla();
     do
     {
         printf("============================================\n");
-        printf("|              Menu                        |\n");
+        printf("|              Menu de comidas             |\n");
         printf("|==========================================|\n");
         printf("| Opcion |           Descripcion           |\n");
         printf("|==========================================|\n");
